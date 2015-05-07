@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-background" translatesAutoresizingMaskIntoConstraints="NO" id="Led-0H-mQA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="560" id="x5k-5G-siD"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-IN-HG3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-dc-7RT" userLabel="Wrapper">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1800"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1800" id="mhS-JC-59o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gv3-dc-7RT" secondAttribute="bottom" constant="-200" id="HPI-Y1-aTz"/>
+                                    <constraint firstItem="gv3-dc-7RT" firstAttribute="centerX" secondItem="GRg-IN-HG3" secondAttribute="centerX" id="Iq5-Ei-N6q"/>
+                                    <constraint firstItem="gv3-dc-7RT" firstAttribute="leading" secondItem="GRg-IN-HG3" secondAttribute="leading" id="MVj-l5-y4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="gv3-dc-7RT" secondAttribute="trailing" id="cTP-vp-Wt6"/>
+                                    <constraint firstItem="gv3-dc-7RT" firstAttribute="top" secondItem="GRg-IN-HG3" secondAttribute="top" id="wyT-nM-fGi"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Led-0H-mQA" secondAttribute="trailing" constant="-16" id="3pS-Ao-8qd"/>
+                            <constraint firstItem="Led-0H-mQA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="7or-Rh-47S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRg-IN-HG3" secondAttribute="trailing" constant="-16" id="F9A-01-6T7"/>
+                            <constraint firstItem="GRg-IN-HG3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="J9x-sS-4ta"/>
+                            <constraint firstItem="GRg-IN-HG3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="SaG-ew-iVf"/>
+                            <constraint firstItem="Led-0H-mQA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="qSo-jG-cty"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GRg-IN-HG3" secondAttribute="bottom" id="uNN-yP-xhn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainBackground" destination="Led-0H-mQA" id="75o-Uk-0dR"/>
+                        <outlet property="mainScrollView" destination="GRg-IN-HG3" id="x4L-gu-LeD"/>
+                        <outlet property="mainWrapper" destination="gv3-dc-7RT" id="Qt0-ff-Oev"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="main-background" width="320" height="566"/>
+    </resources>
 </document>
