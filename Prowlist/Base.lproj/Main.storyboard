@@ -4,6 +4,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ITCFranklinGothicStd-Book.otf">
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+        </mutableArray>
+        <mutableArray key="ITCFranklinGothicStd-Demi.otf">
+            <string>ITCFranklinGothicStd-Demi</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,14 +32,99 @@
                                     <constraint firstAttribute="height" constant="560" id="x5k-5G-siD"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-IN-HG3">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-IN-HG3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-dc-7RT" userLabel="Wrapper">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-dc-7RT" userLabel="wrapper">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1800"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-image" translatesAutoresizingMaskIntoConstraints="NO" id="SUM-dN-WxP" userLabel="shadow">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="560" id="acr-RS-TGM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-UB-7DZ" userLabel="content">
+                                                <rect key="frame" x="0.0" y="560" width="600" height="1240"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prowlist-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-GK-JgK" userLabel="logo">
+                                                <rect key="frame" x="252" y="155" width="97" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="97" id="3go-lc-Hr3"/>
+                                                    <constraint firstAttribute="height" constant="109" id="e1F-5c-m33"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMc-Ls-4ju" userLabel="welcome view">
+                                                <rect key="frame" x="20" y="293" width="560" height="240"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zombie ipsum rever ab viral inferno, nam rick grimes." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-Qz-JML">
+                                                        <rect key="frame" x="65" y="17" width="485" height="98"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="98" id="hUx-mA-7td"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Demi" family="ITC Franklin Gothic Std" pointSize="24"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="support-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tt5-VA-cSK">
+                                                        <rect key="frame" x="10" y="32" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="sqf-EW-4ik"/>
+                                                            <constraint firstAttribute="height" constant="40" id="vpr-qY-zWm"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-KY-PhW">
+                                                        <rect key="frame" x="65" y="109" width="495" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="6qc-1z-erG"/>
+                                                        </constraints>
+                                                        <string key="text">De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</string>
+                                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicut malus putrid voodoo horror." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb3-Sq-Dmb">
+                                                        <rect key="frame" x="65" y="216" width="485" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="00w-av-JaS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="12"/>
+                                                        <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="QUc-Qz-JML" firstAttribute="top" secondItem="XMc-Ls-4ju" secondAttribute="top" constant="17" id="9HN-xd-VYG"/>
+                                                    <constraint firstItem="mhu-KY-PhW" firstAttribute="top" secondItem="QUc-Qz-JML" secondAttribute="bottom" constant="-6" id="9ar-Do-A65"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mhu-KY-PhW" secondAttribute="trailing" id="Bub-ZR-VaW"/>
+                                                    <constraint firstItem="Tt5-VA-cSK" firstAttribute="top" secondItem="XMc-Ls-4ju" secondAttribute="top" constant="32" id="SwU-wi-uNx"/>
+                                                    <constraint firstItem="wb3-Sq-Dmb" firstAttribute="leading" secondItem="XMc-Ls-4ju" secondAttribute="leading" constant="65" id="VK8-Ks-lg5"/>
+                                                    <constraint firstItem="Tt5-VA-cSK" firstAttribute="leading" secondItem="XMc-Ls-4ju" secondAttribute="leading" constant="10" id="Xav-OW-bHu"/>
+                                                    <constraint firstItem="wb3-Sq-Dmb" firstAttribute="top" secondItem="mhu-KY-PhW" secondAttribute="bottom" constant="7" id="ddZ-ql-tKK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wb3-Sq-Dmb" secondAttribute="trailing" constant="10" id="jYs-nT-FfR"/>
+                                                    <constraint firstItem="QUc-Qz-JML" firstAttribute="leading" secondItem="XMc-Ls-4ju" secondAttribute="leading" constant="65" id="qJy-Zb-KN7"/>
+                                                    <constraint firstItem="mhu-KY-PhW" firstAttribute="leading" secondItem="XMc-Ls-4ju" secondAttribute="leading" constant="65" id="sVg-Fu-BgO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QUc-Qz-JML" secondAttribute="trailing" constant="10" id="xsL-cf-l5m"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="1ud-UB-7DZ" firstAttribute="leading" secondItem="gv3-dc-7RT" secondAttribute="leading" id="1z3-pb-Io6"/>
+                                            <constraint firstItem="1ud-UB-7DZ" firstAttribute="top" secondItem="XMc-Ls-4ju" secondAttribute="bottom" constant="27" id="6Yr-30-9Vo"/>
+                                            <constraint firstAttribute="bottom" secondItem="1ud-UB-7DZ" secondAttribute="bottom" id="9dX-Fv-uWD"/>
+                                            <constraint firstItem="XMc-Ls-4ju" firstAttribute="top" secondItem="2vc-GK-JgK" secondAttribute="bottom" constant="29" id="EHo-VH-bPu"/>
+                                            <constraint firstAttribute="centerX" secondItem="2vc-GK-JgK" secondAttribute="centerX" constant="-0.5" id="IWf-ca-L5P"/>
+                                            <constraint firstItem="2vc-GK-JgK" firstAttribute="top" secondItem="gv3-dc-7RT" secondAttribute="top" constant="155" id="PP5-M0-wWK"/>
+                                            <constraint firstItem="XMc-Ls-4ju" firstAttribute="leading" secondItem="gv3-dc-7RT" secondAttribute="leading" constant="20" id="Zqx-Ik-VjA"/>
+                                            <constraint firstItem="1ud-UB-7DZ" firstAttribute="top" secondItem="gv3-dc-7RT" secondAttribute="top" constant="560" id="bv1-9U-3L2"/>
+                                            <constraint firstAttribute="trailing" secondItem="1ud-UB-7DZ" secondAttribute="trailing" id="hWn-Tf-31s"/>
+                                            <constraint firstItem="SUM-dN-WxP" firstAttribute="top" secondItem="gv3-dc-7RT" secondAttribute="top" id="lvA-0V-Ie5"/>
                                             <constraint firstAttribute="height" constant="1800" id="mhS-JC-59o"/>
+                                            <constraint firstAttribute="trailing" secondItem="SUM-dN-WxP" secondAttribute="trailing" id="oYy-Iv-9Af"/>
+                                            <constraint firstAttribute="trailing" secondItem="XMc-Ls-4ju" secondAttribute="trailing" constant="20" id="pBE-fZ-jvJ"/>
+                                            <constraint firstItem="SUM-dN-WxP" firstAttribute="leading" secondItem="gv3-dc-7RT" secondAttribute="leading" id="uCr-Tz-T3n"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -66,5 +160,8 @@
     </scenes>
     <resources>
         <image name="main-background" width="320" height="566"/>
+        <image name="prowlist-logo" width="97" height="109"/>
+        <image name="shadow-image" width="321" height="568"/>
+        <image name="support-icon" width="42" height="41"/>
     </resources>
 </document>

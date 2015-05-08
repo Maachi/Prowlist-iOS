@@ -15,6 +15,10 @@
 		63EF87521AFA8D4A001B9C7B /* ProwlistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87511AFA8D4A001B9C7B /* ProwlistTests.m */; };
 		63EF875F1AFC228A001B9C7B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF875E1AFC228A001B9C7B /* BaseViewController.m */; };
 		63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87611AFC2321001B9C7B /* WelcomeViewController.m */; };
+		63EF87691AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87651AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf */; };
+		63EF876A1AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87661AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf */; };
+		63EF876B1AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87671AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf */; };
+		63EF876C1AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */; };
 		B36081EC6E30162FE374DA81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7234FB154731B2256C790884 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		63EF875E1AFC228A001B9C7B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Classes/Controllers/BaseViewController.m; sourceTree = "<group>"; };
 		63EF87601AFC2321001B9C7B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = Classes/Controllers/WelcomeViewController.h; sourceTree = "<group>"; };
 		63EF87611AFC2321001B9C7B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Classes/Controllers/WelcomeViewController.m; sourceTree = "<group>"; };
+		63EF87651AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Book.otf"; sourceTree = "<group>"; };
+		63EF87661AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Demi.otf"; sourceTree = "<group>"; };
+		63EF87671AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-DmCd.otf"; sourceTree = "<group>"; };
+		63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Med.otf"; sourceTree = "<group>"; };
 		7234FB154731B2256C790884 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16D5AABD1789C241E9AF2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +99,7 @@
 		63EF87341AFA8D4A001B9C7B /* Prowlist */ = {
 			isa = PBXGroup;
 			children = (
+				63EF87631AFC406D001B9C7B /* Resources */,
 				63EF875B1AFC223A001B9C7B /* Classes */,
 				63EF87351AFA8D4A001B9C7B /* Supporting Files */,
 				63EF87391AFA8D4A001B9C7B /* AppDelegate.h */,
@@ -145,6 +154,25 @@
 				63EF87611AFC2321001B9C7B /* WelcomeViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		63EF87631AFC406D001B9C7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63EF87641AFC4089001B9C7B /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		63EF87641AFC4089001B9C7B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				63EF87651AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf */,
+				63EF87661AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf */,
+				63EF87671AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf */,
+				63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		6D626E13FFFE113BC9A2F811 /* Pods */ = {
@@ -247,8 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */,
+				63EF876C1AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
+				63EF87691AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf in Resources */,
+				63EF876B1AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf in Resources */,
 				63EF87431AFA8D4A001B9C7B /* Images.xcassets in Resources */,
+				63EF876A1AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
