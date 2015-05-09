@@ -149,13 +149,45 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentWrapper" destination="1ud-UB-7DZ" id="94F-Ch-hVJ"/>
                         <outlet property="mainBackground" destination="Led-0H-mQA" id="75o-Uk-0dR"/>
                         <outlet property="mainScrollView" destination="GRg-IN-HG3" id="x4L-gu-LeD"/>
                         <outlet property="mainWrapper" destination="gv3-dc-7RT" id="Qt0-ff-Oev"/>
+                        <segue destination="rRW-vn-k5y" kind="custom" identifier="showCityDetail" customClass="CellTransitionSegue" id="IXM-Vn-qjm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="349" y="293"/>
+        </scene>
+        <!--Detail City View Controller-->
+        <scene sceneID="N9n-A0-b1f">
+            <objects>
+                <viewController id="rRW-vn-k5y" customClass="DetailCityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4r7-mI-ebQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="OQp-zR-wj9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eYB-vO-BZD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-qx-RYc">
+                                <rect key="frame" x="54" y="33" width="88" height="34"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="rRW-vn-k5y" eventType="touchUpInside" id="HNV-i3-BtM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhh-5o-Hat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="293"/>
         </scene>
     </scenes>
     <resources>

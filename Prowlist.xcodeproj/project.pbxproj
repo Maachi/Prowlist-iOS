@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 		63EF876A1AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87661AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf */; };
 		63EF876B1AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87671AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf */; };
 		63EF876C1AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */; };
+		63EF87761AFDA23B001B9C7B /* CellBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87751AFDA23B001B9C7B /* CellBase.xib */; };
+		63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87791AFDB310001B9C7B /* CellTransitionSegue.m */; };
+		63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF877C1AFDB515001B9C7B /* CellBase.m */; };
 		B36081EC6E30162FE374DA81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7234FB154731B2256C790884 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		16B228E27CEDE99756672967 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		634655DB1AFDCE2B00B3AC61 /* DetailCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailCityViewController.h; path = Classes/Controllers/DetailCityViewController.h; sourceTree = "<group>"; };
+		634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailCityViewController.m; path = Classes/Controllers/DetailCityViewController.m; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,6 +59,11 @@
 		63EF87661AFC41AE001B9C7B /* ITCFranklinGothicStd-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Demi.otf"; sourceTree = "<group>"; };
 		63EF87671AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-DmCd.otf"; sourceTree = "<group>"; };
 		63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Med.otf"; sourceTree = "<group>"; };
+		63EF87751AFDA23B001B9C7B /* CellBase.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellBase.xib; path = Classes/Controls/MainCell/CellBase.xib; sourceTree = "<group>"; };
+		63EF87781AFDB310001B9C7B /* CellTransitionSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTransitionSegue.h; path = Classes/ControllerTransition/CellTransitionSegue.h; sourceTree = "<group>"; };
+		63EF87791AFDB310001B9C7B /* CellTransitionSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTransitionSegue.m; path = Classes/ControllerTransition/CellTransitionSegue.m; sourceTree = "<group>"; };
+		63EF877B1AFDB515001B9C7B /* CellBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellBase.h; path = Classes/Controls/MainCell/CellBase.h; sourceTree = "<group>"; };
+		63EF877C1AFDB515001B9C7B /* CellBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellBase.m; path = Classes/Controls/MainCell/CellBase.m; sourceTree = "<group>"; };
 		7234FB154731B2256C790884 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16D5AABD1789C241E9AF2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +151,8 @@
 		63EF875B1AFC223A001B9C7B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				63EF87771AFDB2A4001B9C7B /* ControllerTransition */,
+				63EF876D1AFD96B6001B9C7B /* Controls */,
 				63EF875C1AFC2245001B9C7B /* Controllers */,
 			);
 			name = Classes;
@@ -152,6 +165,8 @@
 				63EF875E1AFC228A001B9C7B /* BaseViewController.m */,
 				63EF87601AFC2321001B9C7B /* WelcomeViewController.h */,
 				63EF87611AFC2321001B9C7B /* WelcomeViewController.m */,
+				634655DB1AFDCE2B00B3AC61 /* DetailCityViewController.h */,
+				634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +188,33 @@
 				63EF87681AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		63EF876D1AFD96B6001B9C7B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				63EF876E1AFD9746001B9C7B /* MainCell */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		63EF876E1AFD9746001B9C7B /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				63EF87751AFDA23B001B9C7B /* CellBase.xib */,
+				63EF877B1AFDB515001B9C7B /* CellBase.h */,
+				63EF877C1AFDB515001B9C7B /* CellBase.m */,
+			);
+			name = MainCell;
+			sourceTree = "<group>";
+		};
+		63EF87771AFDB2A4001B9C7B /* ControllerTransition */ = {
+			isa = PBXGroup;
+			children = (
+				63EF87781AFDB310001B9C7B /* CellTransitionSegue.h */,
+				63EF87791AFDB310001B9C7B /* CellTransitionSegue.m */,
+			);
+			name = ControllerTransition;
 			sourceTree = "<group>";
 		};
 		6D626E13FFFE113BC9A2F811 /* Pods */ = {
@@ -276,6 +318,7 @@
 			files = (
 				63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */,
 				63EF876C1AFC41AE001B9C7B /* ITCFranklinGothicStd-Med.otf in Resources */,
+				63EF87761AFDA23B001B9C7B /* CellBase.xib in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
 				63EF87691AFC41AE001B9C7B /* ITCFranklinGothicStd-Book.otf in Resources */,
 				63EF876B1AFC41AE001B9C7B /* ITCFranklinGothicStd-DmCd.otf in Resources */,
@@ -331,10 +374,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */,
+				634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */,
 				63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */,
 				63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */,
 				63EF875F1AFC228A001B9C7B /* BaseViewController.m in Sources */,
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,
+				63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

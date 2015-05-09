@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ITCFranklinGothicStd-Book.otf">
+            <string>ITCFranklinGothicStd-Book</string>
+        </mutableArray>
+        <mutableArray key="ITCFranklinGothicStd-Med.otf">
+            <string>ITCFranklinGothicStd-Med</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0E6-Gf-s5v" customClass="CellBase">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XF4-Pt-o8f">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caq-cL-Os1">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mockup-image" translatesAutoresizingMaskIntoConstraints="NO" id="y08-84-MUp">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-cell" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-UK-MSX">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOF-N3-Qhz" userLabel="title">
+                                    <rect key="frame" x="10" y="110" width="280" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="zYO-lf-icD"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Med" family="ITC Franklin Gothic Std" pointSize="18"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103 Hotels in this city" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-Ol-0dj" userLabel="small description">
+                                    <rect key="frame" x="10" y="130" width="280" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="JcM-zZ-scS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="13"/>
+                                    <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX6-BT-JaZ" userLabel="action">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onTouchUpInside:" destination="0E6-Gf-s5v" eventType="touchUpInside" id="DMb-fE-Kyf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="y08-84-MUp" secondAttribute="bottom" id="2lh-Yi-pGN"/>
+                                <constraint firstAttribute="trailing" secondItem="SOF-N3-Qhz" secondAttribute="trailing" constant="10" id="C20-cO-g0G"/>
+                                <constraint firstItem="TX6-BT-JaZ" firstAttribute="leading" secondItem="caq-cL-Os1" secondAttribute="leading" id="InV-eR-7KM"/>
+                                <constraint firstAttribute="trailing" secondItem="dyh-Ol-0dj" secondAttribute="trailing" constant="10" id="KIq-RG-EGN"/>
+                                <constraint firstItem="y08-84-MUp" firstAttribute="top" secondItem="caq-cL-Os1" secondAttribute="top" id="OTO-Xp-Zgu"/>
+                                <constraint firstItem="dyh-Ol-0dj" firstAttribute="top" secondItem="SOF-N3-Qhz" secondAttribute="bottom" constant="-1" id="ZGq-1l-pSf"/>
+                                <constraint firstItem="TX6-BT-JaZ" firstAttribute="top" secondItem="caq-cL-Os1" secondAttribute="top" id="bvz-Ds-tJB"/>
+                                <constraint firstItem="SOF-N3-Qhz" firstAttribute="leading" secondItem="caq-cL-Os1" secondAttribute="leading" constant="10" id="cMK-4w-AyM"/>
+                                <constraint firstAttribute="bottom" secondItem="TX6-BT-JaZ" secondAttribute="bottom" id="dGz-fO-zGG"/>
+                                <constraint firstAttribute="bottom" secondItem="GDP-UK-MSX" secondAttribute="bottom" id="ddi-15-GWt"/>
+                                <constraint firstItem="y08-84-MUp" firstAttribute="leading" secondItem="caq-cL-Os1" secondAttribute="leading" id="kr7-F5-4XU"/>
+                                <constraint firstItem="dyh-Ol-0dj" firstAttribute="leading" secondItem="caq-cL-Os1" secondAttribute="leading" constant="10" id="mOJ-4J-NhU"/>
+                                <constraint firstAttribute="bottom" secondItem="dyh-Ol-0dj" secondAttribute="bottom" constant="9" id="nAb-Jd-oI2"/>
+                                <constraint firstItem="GDP-UK-MSX" firstAttribute="leading" secondItem="caq-cL-Os1" secondAttribute="leading" id="nlk-RN-dx9"/>
+                                <constraint firstAttribute="trailing" secondItem="y08-84-MUp" secondAttribute="trailing" id="pTJ-Jc-a7I"/>
+                                <constraint firstAttribute="trailing" secondItem="TX6-BT-JaZ" secondAttribute="trailing" id="tOI-mp-pdk"/>
+                                <constraint firstItem="GDP-UK-MSX" firstAttribute="top" secondItem="caq-cL-Os1" secondAttribute="top" id="vtK-No-Spe"/>
+                                <constraint firstAttribute="trailing" secondItem="GDP-UK-MSX" secondAttribute="trailing" id="w1e-LS-bCo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="caq-cL-Os1" firstAttribute="top" secondItem="XF4-Pt-o8f" secondAttribute="top" id="JBo-MU-lpK"/>
+                        <constraint firstItem="caq-cL-Os1" firstAttribute="centerY" secondItem="XF4-Pt-o8f" secondAttribute="centerY" id="UPg-xy-BO6"/>
+                        <constraint firstItem="caq-cL-Os1" firstAttribute="leading" secondItem="XF4-Pt-o8f" secondAttribute="leading" id="Ys5-OQ-chr"/>
+                        <constraint firstAttribute="bottom" secondItem="caq-cL-Os1" secondAttribute="bottom" id="aXy-uj-dZe"/>
+                        <constraint firstAttribute="trailing" secondItem="caq-cL-Os1" secondAttribute="trailing" id="hIx-9e-dNr"/>
+                        <constraint firstItem="caq-cL-Os1" firstAttribute="centerX" secondItem="XF4-Pt-o8f" secondAttribute="centerX" id="o3g-s8-PTv"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XF4-Pt-o8f" secondAttribute="bottom" id="7sH-O1-MDT"/>
+                <constraint firstItem="XF4-Pt-o8f" firstAttribute="leading" secondItem="0E6-Gf-s5v" secondAttribute="leading" id="Qib-bk-SXT"/>
+                <constraint firstAttribute="trailing" secondItem="XF4-Pt-o8f" secondAttribute="trailing" id="nsQ-Mz-vml"/>
+                <constraint firstItem="XF4-Pt-o8f" firstAttribute="top" secondItem="0E6-Gf-s5v" secondAttribute="top" id="tBU-Js-sld"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="image" destination="y08-84-MUp" id="od0-r0-b87"/>
+                <outlet property="shortDescription" destination="dyh-Ol-0dj" id="cgb-Mq-F3O"/>
+                <outlet property="title" destination="SOF-N3-Qhz" id="XYX-QC-xlw"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="mockup-image" width="320" height="209"/>
+        <image name="shadow-cell" width="303" height="155"/>
+    </resources>
+</document>
