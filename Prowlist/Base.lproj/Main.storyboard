@@ -14,6 +14,7 @@
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -22,9 +23,6 @@
             <string>ITCFranklinGothicStd-Demi</string>
             <string>ITCFranklinGothicStd-Demi</string>
             <string>ITCFranklinGothicStd-Demi</string>
-        </mutableArray>
-        <mutableArray key="ITCFranklinGothicStd-Med.otf">
-            <string>ITCFranklinGothicStd-Med</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -544,7 +542,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="2Hu-gH-eJa"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
                                                         <state key="normal" title="Are you ready to get started?">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -601,7 +599,6 @@
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVX-xs-vzN" userLabel="pager indicator" customClass="PageIndicator">
                                 <rect key="frame" x="0.0" y="537" width="600" height="3"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="Dc4-ty-lxb"/>
                                 </constraints>
@@ -610,10 +607,9 @@
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prowlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgK-dm-tBz">
-                                        <rect key="frame" x="226" y="20" width="149" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="jPb-ow-52g"/>
-                                            <constraint firstAttribute="width" constant="149" id="wo9-8n-dlQ"/>
+                                            <constraint firstAttribute="height" constant="60" id="jPb-ow-52g"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
@@ -622,7 +618,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-SK-zzw">
                                         <rect key="frame" x="0.0" y="80" width="600" height="60"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.81176470588235294" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Med" family="ITC Franklin Gothic Std" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
                                         <state key="normal" title="Start with Prowlist">
                                             <color key="titleColor" red="0.16470588235294117" green="0.13725490196078433" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,10 +631,11 @@
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="fl3-SK-zzw" secondAttribute="trailing" id="4w8-gX-dDZ"/>
-                                    <constraint firstAttribute="centerX" secondItem="cgK-dm-tBz" secondAttribute="centerX" constant="-0.5" id="5QB-Nh-GZ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="cgK-dm-tBz" secondAttribute="trailing" id="8IY-5N-TRR"/>
                                     <constraint firstItem="fl3-SK-zzw" firstAttribute="leading" secondItem="C4p-zF-RLS" secondAttribute="leading" id="BoJ-85-zBt"/>
                                     <constraint firstItem="fl3-SK-zzw" firstAttribute="top" secondItem="C4p-zF-RLS" secondAttribute="top" constant="80" id="Ogf-rH-E8x"/>
-                                    <constraint firstItem="cgK-dm-tBz" firstAttribute="top" secondItem="C4p-zF-RLS" secondAttribute="top" constant="20" id="TRP-qv-Qqw"/>
+                                    <constraint firstItem="cgK-dm-tBz" firstAttribute="top" secondItem="C4p-zF-RLS" secondAttribute="top" id="TRP-qv-Qqw"/>
+                                    <constraint firstItem="cgK-dm-tBz" firstAttribute="leading" secondItem="C4p-zF-RLS" secondAttribute="leading" id="qpN-jQ-ys3"/>
                                     <constraint firstItem="fl3-SK-zzw" firstAttribute="height" secondItem="C4p-zF-RLS" secondAttribute="height" id="yBg-yX-HhD"/>
                                     <constraint firstAttribute="height" constant="60" id="yTL-NX-NIz"/>
                                 </constraints>

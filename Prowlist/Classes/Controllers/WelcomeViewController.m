@@ -67,7 +67,7 @@
 {
     UIStoryboard *storyBoard = [self storyboard];
     UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"WalkthroughViewController"];
-    [self presentViewController:modalLoginViewController animated:NO completion:nil];
+    [self presentViewController:modalLoginViewController animated:YES completion:nil];
     
 }
 

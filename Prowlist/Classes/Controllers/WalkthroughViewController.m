@@ -31,9 +31,9 @@
 
 
 - (void) viewDidAppear:(BOOL)animated {
-    pageIndicator.pages = 4;
+    pageIndicator.pages = (int)[sections count];
     titleFooter.text = [sections objectAtIndex:0];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*4, self.view.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*(int)[sections count], self.view.frame.size.height);
     
 }
 
@@ -48,7 +48,7 @@
     
     [footer.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == titleFooter) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
-            constraint.constant = 150;
+            constraint.constant = 180;
         }
         if (![titleFooter.text isEqualToString:@"Prowlist"]){
             if ((constraint.firstItem == startWIth) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
@@ -69,8 +69,16 @@
         
         [footer.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
             if ((constraint.firstItem == titleFooter) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
-                constraint.constant = 20;
+                constraint.constant = 0;
             }
+            
+            /*if([titleFooter.text isEqualToString:@"Tailored"]){
+                titleFooter.backgroundColor = [UIColor colorWithRed:128.0/255.0 green:168.0/255.0 blue:204.0/255.0 alpha:1];
+            } else if([titleFooter.text isEqualToString:@"Upgraded"]){
+                titleFooter.backgroundColor = [UIColor colorWithRed:191.0/255.0 green:51.0/255.0 blue:5.0/255.0 alpha:1];
+            }else {*/
+                titleFooter.backgroundColor = [UIColor clearColor];
+            //}
             
             if ([titleFooter.text isEqualToString:@"Prowlist"]){
                 if ((constraint.firstItem == startWIth) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
@@ -148,7 +156,7 @@
 
 
 - (IBAction)startProwlist:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }

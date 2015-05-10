@@ -44,7 +44,7 @@
         UIView *step  = [self.subviews objectAtIndex:index];
         CGRect frame = step.frame;
         frame.size.height = 10;
-        frame.origin.y = -5;
+        frame.origin.y = -7;
         step.frame = frame;
     } completion:^(BOOL finished) {
     }];
