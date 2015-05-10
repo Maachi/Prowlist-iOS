@@ -26,9 +26,18 @@
 }
 
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self loadStyleGuide];
+    if(!self.walkthroughShown){
+        self.walkthroughShown = YES;
+        [self showWalkthroughController];
+    }
     for (int i = 0; i<4; i++){
         [self loadPlaceInView:i];
     }
@@ -53,6 +62,14 @@
     }
 }
 
+
+- (void) showWalkthroughController
+{
+    UIStoryboard *storyBoard = [self storyboard];
+    UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"WalkthroughViewController"];
+    [self presentViewController:modalLoginViewController animated:NO completion:nil];
+    
+}
 
 
 -(void) loadStyleGuide {

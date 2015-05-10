@@ -15,6 +15,8 @@
 		634655ED1AFF05D300B3AC61 /* ITCFranklinGothicStd-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 634655E91AFF05D300B3AC61 /* ITCFranklinGothicStd-Demi.otf */; };
 		634655EE1AFF05D300B3AC61 /* ITCFranklinGothicStd-DmCd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 634655EA1AFF05D300B3AC61 /* ITCFranklinGothicStd-DmCd.otf */; };
 		634655EF1AFF05D300B3AC61 /* ITCFranklinGothicStd-Med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 634655EB1AFF05D300B3AC61 /* ITCFranklinGothicStd-Med.otf */; };
+		634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */; };
+		634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F51AFF2D6900B3AC61 /* PageIndicator.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -52,6 +54,10 @@
 		634655E91AFF05D300B3AC61 /* ITCFranklinGothicStd-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ITCFranklinGothicStd-Demi.otf"; path = "Resources/Fonts/ITCFranklinGothicStd-Demi.otf"; sourceTree = "<group>"; };
 		634655EA1AFF05D300B3AC61 /* ITCFranklinGothicStd-DmCd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ITCFranklinGothicStd-DmCd.otf"; path = "Resources/Fonts/ITCFranklinGothicStd-DmCd.otf"; sourceTree = "<group>"; };
 		634655EB1AFF05D300B3AC61 /* ITCFranklinGothicStd-Med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ITCFranklinGothicStd-Med.otf"; path = "Resources/Fonts/ITCFranklinGothicStd-Med.otf"; sourceTree = "<group>"; };
+		634655F01AFF136D00B3AC61 /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkthroughViewController.h; path = Classes/Controllers/WalkthroughViewController.h; sourceTree = "<group>"; };
+		634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WalkthroughViewController.m; path = Classes/Controllers/WalkthroughViewController.m; sourceTree = "<group>"; };
+		634655F41AFF2D6900B3AC61 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageIndicator.h; path = Classes/Controls/PageIndicator/PageIndicator.h; sourceTree = "<group>"; };
+		634655F51AFF2D6900B3AC61 /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageIndicator.m; path = Classes/Controls/PageIndicator/PageIndicator.m; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +118,15 @@
 				634655E61AFEFADF00B3AC61 /* StyleGuide.xib */,
 			);
 			name = StyleGuide;
+			sourceTree = "<group>";
+		};
+		634655F31AFF2D3500B3AC61 /* PageIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				634655F41AFF2D6900B3AC61 /* PageIndicator.h */,
+				634655F51AFF2D6900B3AC61 /* PageIndicator.m */,
+			);
+			name = PageIndicator;
 			sourceTree = "<group>";
 		};
 		63EF87291AFA8D4A001B9C7B = {
@@ -195,6 +210,8 @@
 				63EF87611AFC2321001B9C7B /* WelcomeViewController.m */,
 				634655DB1AFDCE2B00B3AC61 /* DetailCityViewController.h */,
 				634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */,
+				634655F01AFF136D00B3AC61 /* WalkthroughViewController.h */,
+				634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 		63EF876D1AFD96B6001B9C7B /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				634655F31AFF2D3500B3AC61 /* PageIndicator */,
 				634655E51AFEFAA600B3AC61 /* StyleGuide */,
 				63EF876E1AFD9746001B9C7B /* MainCell */,
 			);
@@ -407,8 +425,10 @@
 				63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */,
 				634655E11AFECCC500B3AC61 /* ProwlistTheme.m in Sources */,
 				634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */,
+				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
 				63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */,
 				634655E41AFECE4C00B3AC61 /* BlackTheme.m in Sources */,
+				634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */,
 				63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */,
 				63EF875F1AFC228A001B9C7B /* BaseViewController.m in Sources */,
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,

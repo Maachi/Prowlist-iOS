@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *scrollWrapper;
 @property (strong, nonatomic) id <ProwlistTheme> theme;
+@property (nonatomic) BOOL walkthroughShown;
 
 - (void) initializeScroll;
 - (void) displayView;
