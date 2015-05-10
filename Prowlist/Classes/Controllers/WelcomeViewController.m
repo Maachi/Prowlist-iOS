@@ -9,9 +9,7 @@
 #import "WelcomeViewController.h"
 #import "CellBase.h"
 
-@interface WelcomeViewController ()<UIScrollViewDelegate>{
-    __weak IBOutlet UIImageView *mainBackground;
-    __weak IBOutlet UIScrollView *mainScrollView;
+@interface WelcomeViewController (){
     __weak IBOutlet UIView *mainWrapper;
     __weak IBOutlet UIView *contentWrapper;
     
@@ -24,12 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    mainScrollView.delegate = self;
+    [self initializeScroll];
 }
 
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self loadStyleGuide];
     for (int i = 0; i<4; i++){
         [self loadPlaceInView:i];
     }
@@ -49,9 +48,22 @@
     {
         CellTransitionSegue *cellResizeSegue = (CellTransitionSegue *)segue;
         cellResizeSegue.selectedCell = selectedCell;
-        cellResizeSegue.scrollView = mainScrollView;
+        cellResizeSegue.scrollView = self.scrollView;
         cellResizeSegue.mainView = self.view;
     }
+}
+
+
+
+-(void) loadStyleGuide {
+    UIView *styleGuide = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"StyleGuide" owner:self options:nil] firstObject];
+    CGRect frame = styleGuide.frame;
+    frame.size.width = contentWrapper.frame.size.width - 60;
+    frame.size.height = 400;
+    frame.origin.x = 30;
+    frame.origin.y = 0;
+    styleGuide.frame = frame;
+    [contentWrapper addSubview:styleGuide];
 }
 
 
@@ -62,7 +74,7 @@
     CGRect frame = cell.frame;
     frame.size.width = contentWrapper.frame.size.width - 60;
     frame.origin.x = 30;
-    frame.origin.y = (index*(frame.size.height+20));
+    frame.origin.y = (index*(frame.size.height+20)) + 410;
     cell.frame = frame;
     
     [cell setOnSelect:^(CellBase *referenceCell) {
@@ -74,19 +86,5 @@
     [contentWrapper addSubview:cell];
 }
 
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)_scrollView{
-    //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
-    [mainBackground.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == mainBackground) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
-            if (constraint.constant>0){
-                if(560 +(_scrollView.contentOffset.y*-1) >= 50){
-                    constraint.constant = 560 +(_scrollView.contentOffset.y*-1);
-                }
-            }
-        }
-    }];
-}
 
 @end

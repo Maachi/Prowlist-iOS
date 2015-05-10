@@ -25,16 +25,10 @@
     
     
     
-    [UIView animateWithDuration:.6 animations:^{
-        CGRect frame = viewDot.frame;
-        frame.size.width = self.mainView.frame.size.width+500;
-        frame.size.height = self.mainView.frame.size.height+500;
+    [UIView animateWithDuration:.5 animations:^{
         
-        
-        frame.origin.x = -200;
-        frame.origin.y = self.scrollView.contentOffset.y -200;
-        viewDot.frame = frame;
-        
+        [viewDot setTransform:CGAffineTransformMakeScale(50.0, 50.0)];
+
     } completion:^(BOOL finished) {
         [self.sourceViewController presentViewController:self.destinationViewController
                                                 animated:NO
@@ -54,7 +48,7 @@
     
     viewDot = [[UIView alloc] initWithFrame:CGRectMake(position.x + ((self.selectedCell.frame.size.width - initialSize )/2),position.y+ ((self.selectedCell.frame.size.height - initialSize )/2),initialSize,initialSize)];
     
-    viewDot.layer.cornerRadius = 100;
+    viewDot.layer.cornerRadius = 15;
     viewDot.backgroundColor = [UIColor blackColor];
     
     [self.selectedCell.superview.superview addSubview:viewDot];

@@ -8,7 +8,11 @@
 
 #import "DetailCityViewController.h"
 
-@interface DetailCityViewController ()
+@interface DetailCityViewController (){
+    
+    __weak IBOutlet UIView *thumbWrapper;
+    __weak IBOutlet UIImageView *imageThumb;
+}
 
 @end
 
@@ -16,7 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initializeScroll];
+    [self styleView];
+}
+
+
+- (void) viewWillAppear:(BOOL)animated{
+    [self displayView];
+}
+
+
+-(void) styleView {
+    [self.theme styleRoudCornersThumb:thumbWrapper];
+    [self.theme styleRoudCornersThumb:imageThumb];
 }
 
 - (void)didReceiveMemoryWarning {

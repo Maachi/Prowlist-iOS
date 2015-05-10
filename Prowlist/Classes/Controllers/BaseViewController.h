@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProwlistTheme.h"
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *mainHeader;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *scrollWrapper;
+@property (strong, nonatomic) id <ProwlistTheme> theme;
+
+- (void) initializeScroll;
+- (void) displayView;
 
 @end
