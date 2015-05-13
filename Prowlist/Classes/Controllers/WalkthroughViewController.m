@@ -156,7 +156,7 @@
 
 
 - (IBAction)startProwlist:(id)sender {
-    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }

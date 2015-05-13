@@ -12,6 +12,7 @@
 @interface WelcomeViewController (){
     __weak IBOutlet UIView *mainWrapper;
     __weak IBOutlet UIView *contentWrapper;
+    __weak IBOutlet UIScrollView *horizontalScroll;
     
     CellBase *selectedCell;
 }
@@ -24,6 +25,7 @@
     [super viewDidLoad];
     [self initializeScroll];
 }
+
 
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -41,6 +43,8 @@
     for (int i = 0; i<4; i++){
         [self loadPlaceInView:i];
     }
+    
+     horizontalScroll.contentSize = CGSizeMake(self.view.frame.size.width*2, self.view.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +71,7 @@
 {
     UIStoryboard *storyBoard = [self storyboard];
     UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"WalkthroughViewController"];
-    [self presentViewController:modalLoginViewController animated:YES completion:nil];
+    [self presentViewController:modalLoginViewController animated:NO completion:nil];
     
 }
 
