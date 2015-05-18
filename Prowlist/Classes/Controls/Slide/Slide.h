@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Slide : UIScrollView
+@interface Slide : UIView <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UIView *mainWrapper;
+
+
+-(void) initialize;
 
 @end

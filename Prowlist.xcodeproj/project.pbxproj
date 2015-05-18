@@ -18,6 +18,7 @@
 		634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */; };
 		634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F51AFF2D6900B3AC61 /* PageIndicator.m */; };
 		634655FA1B056FF800B3AC61 /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F91B056FF800B3AC61 /* Slide.m */; };
+		634655FC1B0A21B400B3AC61 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634655FB1B0A21B400B3AC61 /* SlideView.xib */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		634655F51AFF2D6900B3AC61 /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageIndicator.m; path = Classes/Controls/PageIndicator/PageIndicator.m; sourceTree = "<group>"; };
 		634655F81B056FF800B3AC61 /* Slide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slide.h; path = Classes/Controls/Slide/Slide.h; sourceTree = "<group>"; };
 		634655F91B056FF800B3AC61 /* Slide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slide.m; path = Classes/Controls/Slide/Slide.m; sourceTree = "<group>"; };
+		634655FB1B0A21B400B3AC61 /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlideView.xib; path = Classes/Controls/Slide/SlideView.xib; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				634655F81B056FF800B3AC61 /* Slide.h */,
 				634655F91B056FF800B3AC61 /* Slide.m */,
+				634655FB1B0A21B400B3AC61 /* SlideView.xib */,
 			);
 			name = Slide;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				634655E71AFEFADF00B3AC61 /* StyleGuide.xib in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
 				63EF87431AFA8D4A001B9C7B /* Images.xcassets in Resources */,
+				634655FC1B0A21B400B3AC61 /* SlideView.xib in Resources */,
 				634655EE1AFF05D300B3AC61 /* ITCFranklinGothicStd-DmCd.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

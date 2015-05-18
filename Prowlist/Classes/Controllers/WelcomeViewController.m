@@ -8,6 +8,7 @@
 #import "CellTransitionSegue.h"
 #import "WelcomeViewController.h"
 #import "CellBase.h"
+#import "Slide.h"
 #import "GBInfiniteScrollView.h"
 
 @interface WelcomeViewController ()<GBInfiniteScrollViewDataSource, GBInfiniteScrollViewDelegate>{
@@ -86,7 +87,7 @@
     
     self.data = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < 18; i++) {
+    for (int i = 0; i < 3; i++) {
         [self.data addObject:@(i)];
     }
     
@@ -96,7 +97,6 @@
     self.infiniteScrollView.infiniteScrollViewDelegate = self;
     self.infiniteScrollView.debug = self.debug;
     self.infiniteScrollView.verboseDebug = verboseDebug;
-    self.infiniteScrollView.interval = 3.0f;
     self.infiniteScrollView.pageIndex = 0;
     self.infiniteScrollView.scrollDirection = GBScrollDirectionHorizontal;
     
@@ -166,8 +166,17 @@
     if (page == nil) {
         page = [[GBInfiniteScrollViewPage alloc] initWithFrame:self.view.bounds style:GBInfiniteScrollViewPageStyleText];
     }
-    page.contentView.backgroundColor = [self randomColor];
     
+    Slide *slideView = (Slide *)[[[NSBundle mainBundle] loadNibNamed:@"SlideView" owner:self options:nil] firstObject];
+    CGRect frame = slideView.frame;
+    frame.size.width = page.contentView.frame.size.width;
+    frame.size.height = page.contentView.frame.size.height;
+    slideView.frame = frame;
+    [slideView initialize];
+    
+    NSLog(@"%f %f", page.contentView.frame.size.width, page.contentView.frame.size.height);
+    //page.contentView.backgroundColor = [self randomColor];
+    [page.contentView addSubview:slideView];
     return page;
 }
 
