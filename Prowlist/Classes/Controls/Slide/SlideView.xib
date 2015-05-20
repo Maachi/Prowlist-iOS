@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ITCFranklinGothicStd-Demi.otf">
+            <string>ITCFranklinGothicStd-Demi</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -10,13 +15,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mockup-detail-image" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-f5-Ap4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-background" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-f5-Ap4">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="560" id="nem-z2-Yhz"/>
                     </constraints>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cn-tC-WNW">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cn-tC-WNW">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-iE-cJh" userLabel="wrapper">
@@ -32,36 +37,27 @@
                                     <rect key="frame" x="0.0" y="560" width="600" height="2240"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ty-Ho-RBA">
-                                    <rect key="frame" x="260" y="167" width="80" height="80"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumb-mockup" translatesAutoresizingMaskIntoConstraints="NO" id="Y2j-YQ-9F0">
-                                            <rect key="frame" x="4" y="4" width="72" height="72"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy the products and services you love wherever you travel in the world." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBj-lG-cxJ">
+                                    <rect key="frame" x="30" y="242" width="540" height="150"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="80" id="5Qy-zM-6lK"/>
-                                        <constraint firstAttribute="width" constant="80" id="eyX-Px-r2w"/>
+                                        <constraint firstAttribute="height" constant="150" id="IpI-3B-UGN"/>
                                     </constraints>
-                                </view>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdx-uT-64N">
-                                    <rect key="frame" x="17" y="18" width="46" height="30"/>
-                                    <state key="normal" title="Button">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
+                                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Demi" family="ITC Franklin Gothic Std" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="n1h-Hz-wbf" secondAttribute="trailing" id="2cl-at-V5g"/>
                                 <constraint firstItem="9Lz-6o-Cds" firstAttribute="top" secondItem="rbh-iE-cJh" secondAttribute="top" id="8a7-7y-g1W"/>
+                                <constraint firstAttribute="trailing" secondItem="JBj-lG-cxJ" secondAttribute="trailing" constant="30" id="CBG-gi-PW0"/>
                                 <constraint firstAttribute="bottom" secondItem="n1h-Hz-wbf" secondAttribute="bottom" id="DjP-LE-5yQ"/>
                                 <constraint firstAttribute="height" constant="2800" id="EXo-V8-RaL"/>
-                                <constraint firstItem="2ty-Ho-RBA" firstAttribute="top" secondItem="rbh-iE-cJh" secondAttribute="top" constant="167" id="Goo-2h-RrW"/>
                                 <constraint firstItem="n1h-Hz-wbf" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" id="If2-Lb-8Il"/>
+                                <constraint firstItem="JBj-lG-cxJ" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" constant="30" id="Mzp-1e-d81"/>
                                 <constraint firstItem="9Lz-6o-Cds" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" id="QH0-UO-trO"/>
-                                <constraint firstAttribute="centerX" secondItem="2ty-Ho-RBA" secondAttribute="centerX" id="U6x-0I-JXM"/>
+                                <constraint firstItem="JBj-lG-cxJ" firstAttribute="top" secondItem="rbh-iE-cJh" secondAttribute="top" constant="242" id="WYV-FH-FmM"/>
                                 <constraint firstAttribute="trailing" secondItem="9Lz-6o-Cds" secondAttribute="trailing" id="imZ-xO-5M1"/>
                                 <constraint firstItem="n1h-Hz-wbf" firstAttribute="top" secondItem="9Lz-6o-Cds" secondAttribute="bottom" id="uFn-p2-h3H"/>
                             </constraints>
@@ -94,8 +90,7 @@
         </view>
     </objects>
     <resources>
-        <image name="mockup-detail-image" width="320" height="549"/>
+        <image name="main-background" width="320" height="566"/>
         <image name="shadow-image" width="321" height="568"/>
-        <image name="thumb-mockup" width="97" height="98"/>
     </resources>
 </document>

@@ -22,22 +22,47 @@
 
 -(void) initialize {
     _scrollView.delegate = self;
+    //_scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
+    _scrollView.scrollEnabled = YES;
+    self.mainScroll.delegate = self;
 }
 
 
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
-    [_headerImage.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == _headerImage) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
-            if (constraint.constant>0){
-                if(560 +(_scrollView.contentOffset.y*-1) >= 50){
-                    constraint.constant = 560 +(_scrollView.contentOffset.y*-1);
+    
+    if(scrollView == _scrollView){
+        //self.mainScroll.delaysContentTouches = NO;
+        //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
+        [_headerImage.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+            if ((constraint.firstItem == _headerImage) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+                if (constraint.constant>0){
+                    if(560 +(_scrollView.contentOffset.y*-1) >= 50){
+                        constraint.constant = 560 +(_scrollView.contentOffset.y*-1);
+                    }
                 }
             }
-        }
-    }];
+        }];
+    }
+}
+
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    if(scrollView == _scrollView){
+        self.mainScroll.scrollEnabled = NO;
+    } else {
+        _scrollView.scrollEnabled = NO;
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView == _scrollView){
+        self.mainScroll.scrollEnabled = YES;
+    } else {
+        _scrollView.scrollEnabled = YES;
+    }
 }
 
 

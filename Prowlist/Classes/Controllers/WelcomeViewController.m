@@ -10,14 +10,18 @@
 #import "CellBase.h"
 #import "Slide.h"
 #import "GBInfiniteScrollView.h"
+#import "PageIndicator.h"
 
 @interface WelcomeViewController ()<GBInfiniteScrollViewDataSource, GBInfiniteScrollViewDelegate>{
     __weak IBOutlet UIView *mainWrapper;
     __weak IBOutlet UIView *contentWrapper;
     __weak IBOutlet UIScrollView *horizontalScroll;
+    __weak IBOutlet UIView *sliderWrapper;
     
     __weak IBOutlet UIImageView *firstBackground;
     CellBase *selectedCell;
+    __weak IBOutlet PageIndicator *pageIndicator;
+    
 }
 
 @property (nonatomic, strong) GBInfiniteScrollView *infiniteScrollView;
@@ -42,6 +46,7 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    pageIndicator.pages = 4;
     if(!self.walkthroughShown){
         self.walkthroughShown = YES;
         [self showWalkthroughController];
@@ -87,7 +92,7 @@
     
     self.data = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         [self.data addObject:@(i)];
     }
     
@@ -95,12 +100,13 @@
     self.infiniteScrollView = [[GBInfiniteScrollView alloc] initWithFrame:self.view.bounds];
     self.infiniteScrollView.infiniteScrollViewDataSource = self;
     self.infiniteScrollView.infiniteScrollViewDelegate = self;
-    self.infiniteScrollView.debug = self.debug;
+    //aself.infiniteScrollView.debug = self.debug;
     self.infiniteScrollView.verboseDebug = verboseDebug;
     self.infiniteScrollView.pageIndex = 0;
     self.infiniteScrollView.scrollDirection = GBScrollDirectionHorizontal;
+    self.infiniteScrollView.delegate = self;
     
-    [self.view addSubview:self.infiniteScrollView];
+    [sliderWrapper addSubview:self.infiniteScrollView];
     
     [self.infiniteScrollView reloadData];
     
@@ -113,22 +119,16 @@
 
 - (void)infiniteScrollViewDidScrollNextPage:(GBInfiniteScrollView *)infiniteScrollView
 {
-    if (self.debug) {
-        NSLog(@"Did scroll next page");
-    }
 }
 
 - (void)infiniteScrollViewDidScrollPreviousPage:(GBInfiniteScrollView *)infiniteScrollView
 {
-    if (self.debug) {
-        NSLog(@"Did scroll previous page");
-    }
 }
 
 - (BOOL)infiniteScrollViewShouldScrollNextPage:(GBInfiniteScrollView *)infiniteScrollView
 {
-    if (self.debug) {
-        NSLog(@"Should scroll next page");
+    if(pageIndicator.pages){
+        [pageIndicator selectItem:(int)self.infiniteScrollView.currentPageIndex];
     }
     
     return YES;
@@ -136,8 +136,8 @@
 
 - (BOOL)infiniteScrollViewShouldScrollPreviousPage:(GBInfiniteScrollView *)infiniteScrollView
 {
-    if (self.debug) {
-        NSLog(@"Should scroll previous page");
+    if(pageIndicator.pages){
+        [pageIndicator selectItem:(int)self.infiniteScrollView.currentPageIndex];
     }
     
     return YES;
@@ -145,9 +145,6 @@
 
 - (void)infiniteScrollView:(GBInfiniteScrollView *)infiniteScrollView didTapAtIndex:(NSInteger)pageIndex
 {
-    if (self.debug) {
-        NSLog(@"Did tap at page %lu", (unsigned long)index);
-    }
 }
 
 - (NSInteger)numberOfPagesInInfiniteScrollView:(GBInfiniteScrollView *)infiniteScrollView
@@ -156,9 +153,21 @@
 }
 
 
+-(void)infiniteScrollViewDidPan:(UIPanGestureRecognizer*)pan
+{
+    if(pageIndicator.pages){
+        [pageIndicator selectItem:(int)self.infiniteScrollView.currentPageIndex];
+    }
+}
+
+
+
 - (GBInfiniteScrollViewPage *)infiniteScrollView:(GBInfiniteScrollView *)infiniteScrollView pageAtIndex:(NSUInteger)index
 {
-    NSLog(@"Page at index %lu", (unsigned long)index);
+    
+    /*if(pageIndicator.pages){
+        [pageIndicator selectItem:(int)index];
+    }*/
     
     //id record = [self.data objectAtIndex:index];
     GBInfiniteScrollViewPage *page = [infiniteScrollView dequeueReusablePage];
@@ -172,37 +181,12 @@
     frame.size.width = page.contentView.frame.size.width;
     frame.size.height = page.contentView.frame.size.height;
     slideView.frame = frame;
+    slideView.mainScroll = self.infiniteScrollView;
     [slideView initialize];
     
-    NSLog(@"%f %f", page.contentView.frame.size.width, page.contentView.frame.size.height);
     //page.contentView.backgroundColor = [self randomColor];
     [page.contentView addSubview:slideView];
     return page;
-}
-
-
-- (UIColor *)randomColor
-{
-    CGFloat hue = (arc4random() % 256 / 256.0f);
-    CGFloat saturation = (arc4random() % 128 / 256.0f) + 0.5f;
-    CGFloat brightness = (arc4random() % 128 / 256.0f) + 0.5f;
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1.0f];
-    
-    return color;
-}
-
-
-- (CGFloat)fontSizeForNumber:(int)number
-{
-    CGFloat scale = 0;
-    
-    if (number >= 100.0f) {
-        scale = 1;
-    } else if (number >= 1000.0f) {
-        scale = 2;
-    }
-    
-    return 192.0f - (64.0f * scale);
 }
 
 @end

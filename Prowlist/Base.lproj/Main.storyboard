@@ -13,6 +13,7 @@
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -34,9 +35,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpX-NQ-sNN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-M5-cXm" userLabel="pager indicator" customClass="PageIndicator">
+                                <rect key="frame" x="0.0" y="537" width="600" height="3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="OTo-Qh-Qij"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-pX-v35" userLabel="Footer">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prowlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-xw-Q2Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9XW-IE-Kjt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="y7H-xw-Q2Q" firstAttribute="leading" secondItem="Skl-pX-v35" secondAttribute="leading" id="3Kh-et-e94"/>
+                                    <constraint firstAttribute="height" constant="60" id="Xjr-lZ-rPB"/>
+                                    <constraint firstItem="y7H-xw-Q2Q" firstAttribute="top" secondItem="Skl-pX-v35" secondAttribute="top" id="aCw-bW-UcC"/>
+                                    <constraint firstAttribute="trailing" secondItem="y7H-xw-Q2Q" secondAttribute="trailing" id="pfq-mH-Up8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bpX-NQ-sNN" secondAttribute="bottom" id="0tz-xO-Zel"/>
+                            <constraint firstItem="Skl-pX-v35" firstAttribute="top" secondItem="5mj-M5-cXm" secondAttribute="bottom" id="44S-Xl-dAc"/>
+                            <constraint firstItem="5mj-M5-cXm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="LVt-KY-WjP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Skl-pX-v35" secondAttribute="bottom" id="VaW-xQ-8xR"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="amM-bu-wPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bpX-NQ-sNN" secondAttribute="trailing" constant="-16" id="kLh-Gy-oHi"/>
+                            <constraint firstItem="Skl-pX-v35" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="oPY-IZ-efo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Skl-pX-v35" secondAttribute="trailing" constant="-16" id="wBm-FH-xrZ"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ybl-4M-03N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5mj-M5-cXm" secondAttribute="trailing" constant="-16" id="zuk-56-TIs"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="pageIndicator" destination="5mj-M5-cXm" id="VyD-Z8-dGS"/>
+                        <outlet property="sliderWrapper" destination="bpX-NQ-sNN" id="7tf-NZ-Ryv"/>
                         <segue destination="KZN-Ib-2EE" kind="custom" identifier="showCityDetail" customClass="CellTransitionSegue" id="eAk-NW-tMn"/>
                     </connections>
                 </viewController>
@@ -485,7 +532,7 @@
                                             <constraint firstAttribute="height" constant="60" id="jPb-ow-52g"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-SK-zzw">

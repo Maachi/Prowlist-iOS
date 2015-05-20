@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBInfiniteScrollView.h"
 
 @interface Slide : UIView <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UIView *mainWrapper;
-
+@property (assign, nonatomic) GBInfiniteScrollView *mainScroll;
 
 -(void) initialize;
 
