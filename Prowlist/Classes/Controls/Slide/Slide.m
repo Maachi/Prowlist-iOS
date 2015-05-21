@@ -7,6 +7,7 @@
 //
 
 #import "Slide.h"
+#import "CellBase.h"
 
 @implementation Slide
 
@@ -25,6 +26,36 @@
     //_scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     _scrollView.scrollEnabled = YES;
     self.mainScroll.delegate = self;
+    
+    [self adjustTitle];
+    
+    
+    /*CellBase *cell = (CellBase *)[[[NSBundle mainBundle] loadNibNamed:@"CellBase" owner:self options:nil] firstObject];
+    CGRect frame = cell.frame;
+    frame.size.width = contentWrapper.frame.size.width - 60;
+    frame.origin.x = 30;
+    frame.origin.y = (index*(frame.size.height+20)) + 410;
+    cell.frame = frame;
+    
+    [cell setOnSelect:^(CellBase *referenceCell) {
+        selectedCell = referenceCell;
+        [self performSegueWithIdentifier:@"showCityDetail" sender:self];
+    }];
+    
+    
+    [contentWrapper addSubview:cell];*/
+}
+
+
+
+-(void) adjustTitle {
+    [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+            if (constraint.constant>0){
+                constraint.constant = self.frame.size.height - 300;
+            }
+        }
+    }];
 }
 
 

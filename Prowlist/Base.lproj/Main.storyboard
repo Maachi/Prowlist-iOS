@@ -13,7 +13,6 @@
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
-            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -40,30 +39,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-M5-cXm" userLabel="pager indicator" customClass="PageIndicator">
-                                <rect key="frame" x="0.0" y="537" width="600" height="3"/>
+                                <rect key="frame" x="0.0" y="597" width="600" height="3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="OTo-Qh-Qij"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-pX-v35" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prowlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-xw-Q2Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="9XW-IE-Kjt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="y7H-xw-Q2Q" firstAttribute="leading" secondItem="Skl-pX-v35" secondAttribute="leading" id="3Kh-et-e94"/>
-                                    <constraint firstAttribute="height" constant="60" id="Xjr-lZ-rPB"/>
-                                    <constraint firstItem="y7H-xw-Q2Q" firstAttribute="top" secondItem="Skl-pX-v35" secondAttribute="top" id="aCw-bW-UcC"/>
-                                    <constraint firstAttribute="trailing" secondItem="y7H-xw-Q2Q" secondAttribute="trailing" id="pfq-mH-Up8"/>
+                                    <constraint firstAttribute="height" id="Xjr-lZ-rPB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -532,7 +517,7 @@
                                             <constraint firstAttribute="height" constant="60" id="jPb-ow-52g"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-SK-zzw">
