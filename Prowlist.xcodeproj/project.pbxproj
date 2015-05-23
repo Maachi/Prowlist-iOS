@@ -19,6 +19,8 @@
 		634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F51AFF2D6900B3AC61 /* PageIndicator.m */; };
 		634655FA1B056FF800B3AC61 /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655F91B056FF800B3AC61 /* Slide.m */; };
 		634655FC1B0A21B400B3AC61 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634655FB1B0A21B400B3AC61 /* SlideView.xib */; };
+		634655FF1B111D9900B3AC61 /* SmallUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634655FE1B111D9900B3AC61 /* SmallUserCell.xib */; };
+		634656021B1132BF00B3AC61 /* SmallUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634656011B1132BF00B3AC61 /* SmallUserCell.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -63,6 +65,9 @@
 		634655F81B056FF800B3AC61 /* Slide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slide.h; path = Classes/Controls/Slide/Slide.h; sourceTree = "<group>"; };
 		634655F91B056FF800B3AC61 /* Slide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slide.m; path = Classes/Controls/Slide/Slide.m; sourceTree = "<group>"; };
 		634655FB1B0A21B400B3AC61 /* SlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlideView.xib; path = Classes/Controls/Slide/SlideView.xib; sourceTree = "<group>"; };
+		634655FE1B111D9900B3AC61 /* SmallUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SmallUserCell.xib; path = Classes/Controls/SmallUserCell/SmallUserCell.xib; sourceTree = "<group>"; };
+		634656001B1132BF00B3AC61 /* SmallUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallUserCell.h; path = Classes/Controls/SmallUserCell/SmallUserCell.h; sourceTree = "<group>"; };
+		634656011B1132BF00B3AC61 /* SmallUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallUserCell.m; path = Classes/Controls/SmallUserCell/SmallUserCell.m; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +147,16 @@
 				634655FB1B0A21B400B3AC61 /* SlideView.xib */,
 			);
 			name = Slide;
+			sourceTree = "<group>";
+		};
+		634655FD1B111D4700B3AC61 /* SmallUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				634655FE1B111D9900B3AC61 /* SmallUserCell.xib */,
+				634656001B1132BF00B3AC61 /* SmallUserCell.h */,
+				634656011B1132BF00B3AC61 /* SmallUserCell.m */,
+			);
+			name = SmallUserCell;
 			sourceTree = "<group>";
 		};
 		63EF87291AFA8D4A001B9C7B = {
@@ -253,6 +268,7 @@
 		63EF876D1AFD96B6001B9C7B /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				634655FD1B111D4700B3AC61 /* SmallUserCell */,
 				634655F71B056FCB00B3AC61 /* Slide */,
 				634655F31AFF2D3500B3AC61 /* PageIndicator */,
 				634655E51AFEFAA600B3AC61 /* StyleGuide */,
@@ -383,6 +399,7 @@
 				63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */,
 				634655EF1AFF05D300B3AC61 /* ITCFranklinGothicStd-Med.otf in Resources */,
 				63EF87761AFDA23B001B9C7B /* CellBase.xib in Resources */,
+				634655FF1B111D9900B3AC61 /* SmallUserCell.xib in Resources */,
 				634655ED1AFF05D300B3AC61 /* ITCFranklinGothicStd-Demi.otf in Resources */,
 				634655E71AFEFADF00B3AC61 /* StyleGuide.xib in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
@@ -450,6 +467,7 @@
 				63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */,
 				63EF875F1AFC228A001B9C7B /* BaseViewController.m in Sources */,
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,
+				634656021B1132BF00B3AC61 /* SmallUserCell.m in Sources */,
 				63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

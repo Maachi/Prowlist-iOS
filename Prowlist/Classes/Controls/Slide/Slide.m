@@ -8,6 +8,13 @@
 
 #import "Slide.h"
 #import "CellBase.h"
+#import "SmallUserCell.h"
+
+
+@interface Slide()
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *itemsCollection;
+
+@end
 
 @implementation Slide
 
@@ -28,6 +35,19 @@
     self.mainScroll.delegate = self;
     
     [self adjustTitle];
+    
+   
+    
+    
+    for (UIView *item in _itemsCollection) {
+        SmallUserCell *cellC = (SmallUserCell *)[[[NSBundle mainBundle] loadNibNamed:@"SmallUserCell" owner:self options:nil] firstObject];
+        [item addSubview:cellC];
+        [cellC initialize];
+        CGRect frame = cellC.frame;
+        frame.size.width = item.frame.size.width;
+        frame.size.height = item.frame.size.height;
+        cellC.frame = frame;
+    }
     
     
     /*CellBase *cell = (CellBase *)[[[NSBundle mainBundle] loadNibNamed:@"CellBase" owner:self options:nil] firstObject];

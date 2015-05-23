@@ -15,6 +15,7 @@
 
 
 - (void) styleRoudCornersThumb:(UIView *)view;
+- (void) roundCorners:(UIView *)view;
 
 @end
 

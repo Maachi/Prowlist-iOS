@@ -17,4 +17,10 @@
     [layer setCornerRadius:view.frame.size.width/2];
 }
 
+
+- (void) roundCorners:(UIView *)view {
+    view.layer.cornerRadius = 5;
+    view.layer.masksToBounds = YES;
+}
+
 @end
