@@ -76,7 +76,8 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="4Wt-H0-aNZ"/>
                     </constraints>
-                    <string key="text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</string>
+                    <string key="text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam.</string>
                     <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="12"/>
                     <color key="textColor" red="0.49803921568627452" green="0.51764705882352946" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

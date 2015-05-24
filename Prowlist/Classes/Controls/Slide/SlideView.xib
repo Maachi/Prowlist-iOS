@@ -70,28 +70,42 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qq-uy-uXW" userLabel="item">
-                                            <rect key="frame" x="0.0" y="5" width="255" height="250"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="0.0" y="5" width="255" height="100"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="250" id="6E0-Jr-gbL"/>
+                                                <constraint firstAttribute="height" constant="100" id="6E0-Jr-gbL"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gy-Ld-nfx" userLabel="item">
-                                            <rect key="frame" x="285" y="5" width="255" height="250"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="250" id="J3y-Lr-Mb3"/>
-                                            </constraints>
+                                            <rect key="frame" x="285" y="5" width="255" height="100"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rs1-b4-YbK" userLabel="item">
+                                            <rect key="frame" x="285" y="135" width="255" height="100"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ueh-2i-YC0" userLabel="item">
+                                            <rect key="frame" x="0.0" y="135" width="255" height="100"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="eif-WU-VEL" firstAttribute="leading" secondItem="Ueh-2i-YC0" secondAttribute="trailing" id="0vx-2E-kOa"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rs1-b4-YbK" secondAttribute="trailing" id="42H-Q4-EJ7"/>
                                         <constraint firstItem="5Gy-Ld-nfx" firstAttribute="leading" secondItem="eif-WU-VEL" secondAttribute="trailing" id="4H7-Mk-GrL"/>
+                                        <constraint firstItem="Ueh-2i-YC0" firstAttribute="height" secondItem="7qq-uy-uXW" secondAttribute="height" id="5MN-jM-oHV"/>
                                         <constraint firstItem="5Gy-Ld-nfx" firstAttribute="top" secondItem="a5a-r5-WeZ" secondAttribute="top" constant="5" id="910-px-Fdp"/>
                                         <constraint firstItem="7qq-uy-uXW" firstAttribute="top" secondItem="a5a-r5-WeZ" secondAttribute="top" constant="5" id="JZ0-VR-PQc"/>
                                         <constraint firstAttribute="height" constant="300" id="LdA-Zn-1gT"/>
                                         <constraint firstAttribute="centerX" secondItem="eif-WU-VEL" secondAttribute="centerX" id="Pnw-YB-YPe"/>
+                                        <constraint firstItem="Ueh-2i-YC0" firstAttribute="leading" secondItem="a5a-r5-WeZ" secondAttribute="leading" id="QTk-E2-17k"/>
+                                        <constraint firstItem="7qq-uy-uXW" firstAttribute="height" secondItem="5Gy-Ld-nfx" secondAttribute="height" id="UQB-va-Hhg"/>
+                                        <constraint firstItem="Rs1-b4-YbK" firstAttribute="top" secondItem="5Gy-Ld-nfx" secondAttribute="bottom" constant="30" id="Wd7-R8-jEx"/>
                                         <constraint firstItem="eif-WU-VEL" firstAttribute="top" secondItem="a5a-r5-WeZ" secondAttribute="top" id="ZbE-Kg-gdI"/>
+                                        <constraint firstItem="Rs1-b4-YbK" firstAttribute="leading" secondItem="eif-WU-VEL" secondAttribute="trailing" id="aoy-YC-VGm"/>
                                         <constraint firstAttribute="bottom" secondItem="eif-WU-VEL" secondAttribute="bottom" id="evI-XH-wHk"/>
+                                        <constraint firstItem="Ueh-2i-YC0" firstAttribute="top" secondItem="7qq-uy-uXW" secondAttribute="bottom" constant="30" id="iYQ-bh-WM5"/>
+                                        <constraint firstItem="Rs1-b4-YbK" firstAttribute="height" secondItem="7qq-uy-uXW" secondAttribute="height" id="nDn-hI-hUR"/>
                                         <constraint firstItem="7qq-uy-uXW" firstAttribute="leading" secondItem="a5a-r5-WeZ" secondAttribute="leading" id="rfv-QT-Va3"/>
                                         <constraint firstItem="eif-WU-VEL" firstAttribute="leading" secondItem="7qq-uy-uXW" secondAttribute="trailing" id="uii-WZ-uf0"/>
                                         <constraint firstAttribute="trailing" secondItem="5Gy-Ld-nfx" secondAttribute="trailing" id="wkT-ZT-N6Y"/>
@@ -179,12 +193,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="firstElement" destination="7qq-uy-uXW" id="1z5-4h-aKe"/>
                 <outlet property="headerImage" destination="TSa-f5-Ap4" id="rDi-rd-iZ3"/>
                 <outlet property="mainWrapper" destination="rbh-iE-cJh" id="5kF-Ae-jhF"/>
                 <outlet property="scrollView" destination="4cn-tC-WNW" id="3Aq-An-uDg"/>
                 <outlet property="title" destination="cg8-eR-MHn" id="OxK-yL-oE9"/>
                 <outletCollection property="itemsCollection" destination="7qq-uy-uXW" id="A1W-GH-80Q"/>
                 <outletCollection property="itemsCollection" destination="5Gy-Ld-nfx" id="krC-I7-c83"/>
+                <outletCollection property="itemsCollection" destination="Ueh-2i-YC0" id="n0w-YM-GtZ"/>
+                <outletCollection property="itemsCollection" destination="Rs1-b4-YbK" id="Wjm-2Y-zTW"/>
             </connections>
         </view>
     </objects>

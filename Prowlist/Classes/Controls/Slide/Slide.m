@@ -12,6 +12,7 @@
 
 
 @interface Slide()
+@property (weak, nonatomic) IBOutlet UIView *firstElement;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *itemsCollection;
 
 @end
@@ -35,7 +36,7 @@
     self.mainScroll.delegate = self;
     
     [self adjustTitle];
-    
+    [self adjustCell];
    
     
     
@@ -48,6 +49,19 @@
         frame.size.height = item.frame.size.height;
         cellC.frame = frame;
     }
+    
+    
+    [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _mainWrapper) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                constraint.constant = 2200;
+            }
+        }
+    }];
+    
+    
+    
+    //_scrollView.contentSize = CGSizeMake(self.frame.size.width, 1800);
     
     
     /*CellBase *cell = (CellBase *)[[[NSBundle mainBundle] loadNibNamed:@"CellBase" owner:self options:nil] firstObject];
@@ -67,15 +81,39 @@
 }
 
 
+- (void) adjustCell {
+    [_firstElement.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _firstElement) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                constraint.constant = 250;
+            }
+        }
+    }];
+}
+
+
 
 -(void) adjustTitle {
     [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
             if (constraint.constant>0){
-                constraint.constant = self.frame.size.height - 300;
+                constraint.constant = self.frame.size.height - 400;
             }
         }
     }];
+    
+    /*
+    [UIView animateWithDuration:0.8
+                          delay: 0
+         usingSpringWithDamping: 0.8
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [_mainWrapper layoutIfNeeded];
+                         
+                     } completion:^(BOOL finished){
+                     }];*/
+    
 }
 
 
@@ -85,7 +123,7 @@
     
     if(scrollView == _scrollView){
         //self.mainScroll.delaysContentTouches = NO;
-        //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
+        NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
         [_headerImage.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
             if ((constraint.firstItem == _headerImage) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
                 if (constraint.constant>0){
@@ -95,7 +133,52 @@
                 }
             }
         }];
+        if(_scrollView.contentOffset.y < -120){
+            
+            
+            [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+                if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+                    if (constraint.constant>0){
+                        constraint.constant = self.frame.size.height;
+                    }
+                }
+            }];
+            
+            [UIView animateWithDuration:0.8
+                                  delay: 0
+                 usingSpringWithDamping: 0.8
+                  initialSpringVelocity:0.5
+                                options: UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 [_mainWrapper layoutIfNeeded];
+                                 
+                             } completion:^(BOOL finished){
+                             }];
+        } else if (_scrollView.contentOffset.y > 160){
+            [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+                if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+                    if (constraint.constant>0){
+                        constraint.constant = self.frame.size.height - 400;
+                    }
+                }
+            }];
+            
+            [UIView animateWithDuration:0.8
+                                  delay: 0
+                 usingSpringWithDamping: 0.8
+                  initialSpringVelocity:0.5
+                                options: UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 [_mainWrapper layoutIfNeeded];
+                                 
+                             } completion:^(BOOL finished){
+                             }];
+        }
     }
+}
+
+-(void) enableMainScroll{
+    _scrollView.scrollEnabled = YES;
 }
 
 
@@ -104,6 +187,7 @@
         self.mainScroll.scrollEnabled = NO;
     } else {
         _scrollView.scrollEnabled = NO;
+        [self performSelector:@selector(enableMainScroll) withObject:self afterDelay:2];
     }
 }
 
