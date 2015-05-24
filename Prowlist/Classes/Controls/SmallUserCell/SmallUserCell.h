@@ -9,12 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "ProwlistTheme.h"
 
+
+@protocol SmallUserCellDelegate <NSObject>
+
+@optional
+- (void) cellSelected:(UIView *)cell;
+
+@end
+
 @interface SmallUserCell : UIView
 @property (weak, nonatomic) IBOutlet UIView *frameS;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) id <ProwlistTheme> theme;
+@property (nonatomic,assign) id <SmallUserCellDelegate> delegate;
 
 - (void) initialize;
 

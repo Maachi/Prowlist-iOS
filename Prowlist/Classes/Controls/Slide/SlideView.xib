@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="ITCFranklinGothicStd-Book.otf">
             <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -18,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-background" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-f5-Ap4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sf-mockup" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-f5-Ap4">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="560" id="nem-z2-Yhz"/>
@@ -30,17 +31,17 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-iE-cJh" userLabel="wrapper">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="2800"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-image" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-6o-Cds" userLabel="shadow">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-image" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-6o-Cds" userLabel="Shadow">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="560" id="9lS-Db-6P5"/>
                                     </constraints>
                                 </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1h-Hz-wbf" userLabel="content">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1h-Hz-wbf" userLabel="Content">
                                     <rect key="frame" x="0.0" y="560" width="600" height="2240"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-eR-MHn">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-eR-MHn" userLabel="Title">
                                     <rect key="frame" x="30" y="64" width="540" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="4DH-Lv-rrL"/>
@@ -50,7 +51,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XP0-Wi-Dtm" userLabel="description">
-                                    <rect key="frame" x="30" y="110" width="540" height="62"/>
+                                    <rect key="frame" x="30" y="270" width="540" height="62"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="62" id="OgV-NN-4Lu"/>
                                     </constraints>
@@ -61,7 +62,7 @@
                                     </state>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-r5-WeZ" userLabel="wrapper">
-                                    <rect key="frame" x="30" y="192" width="540" height="300"/>
+                                    <rect key="frame" x="30" y="342" width="540" height="300"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eif-WU-VEL" userLabel="spacer">
                                             <rect key="frame" x="255" y="0.0" width="30" height="300"/>
@@ -111,6 +112,41 @@
                                         <constraint firstAttribute="trailing" secondItem="5Gy-Ld-nfx" secondAttribute="trailing" id="wkT-ZT-N6Y"/>
                                     </constraints>
                                 </view>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ID-ou-ceq" userLabel="Photo Credits">
+                                    <rect key="frame" x="30" y="110" width="540" height="150"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Mike Oria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkH-az-g5h">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="53x-v0-qMh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-jQ-DSa">
+                                            <rect key="frame" x="0.0" y="24" width="540" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="54" id="Fjn-xp-atM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal">
+                                                <string key="title">Here's one from last night's photo workshop in San Francisco. We worked on some long exposures at the cable car turnaround which was tricky but very fun!</string>
+                                                <color key="titleColor" red="0.49803921568627452" green="0.51764705882352946" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aGg-jQ-DSa" firstAttribute="leading" secondItem="2ID-ou-ceq" secondAttribute="leading" id="AtS-50-5xh"/>
+                                        <constraint firstItem="YkH-az-g5h" firstAttribute="top" secondItem="2ID-ou-ceq" secondAttribute="top" id="OAV-lk-WjG"/>
+                                        <constraint firstItem="YkH-az-g5h" firstAttribute="top" secondItem="aGg-jQ-DSa" secondAttribute="top" constant="-24" id="XTc-LQ-TmA"/>
+                                        <constraint firstItem="YkH-az-g5h" firstAttribute="leading" secondItem="2ID-ou-ceq" secondAttribute="leading" id="Xjy-T5-e13"/>
+                                        <constraint firstAttribute="trailing" secondItem="aGg-jQ-DSa" secondAttribute="trailing" id="nuQ-I7-Klf"/>
+                                        <constraint firstAttribute="trailing" secondItem="YkH-az-g5h" secondAttribute="trailing" id="snL-6f-6SA"/>
+                                        <constraint firstAttribute="height" constant="150" id="syd-cz-zxX"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -118,9 +154,8 @@
                                 <constraint firstItem="XP0-Wi-Dtm" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" constant="30" id="6zM-p0-ghc">
                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 </constraint>
-                                <constraint firstItem="a5a-r5-WeZ" firstAttribute="top" secondItem="XP0-Wi-Dtm" secondAttribute="bottom" constant="20" id="7n0-Mn-Duu"/>
+                                <constraint firstItem="a5a-r5-WeZ" firstAttribute="top" secondItem="XP0-Wi-Dtm" secondAttribute="bottom" constant="10" id="7n0-Mn-Duu"/>
                                 <constraint firstItem="9Lz-6o-Cds" firstAttribute="top" secondItem="rbh-iE-cJh" secondAttribute="top" id="8a7-7y-g1W"/>
-                                <constraint firstItem="XP0-Wi-Dtm" firstAttribute="top" secondItem="cg8-eR-MHn" secondAttribute="bottom" constant="2" id="9Rn-O2-uTK"/>
                                 <constraint firstAttribute="bottom" secondItem="n1h-Hz-wbf" secondAttribute="bottom" id="DjP-LE-5yQ"/>
                                 <constraint firstAttribute="height" constant="2800" id="EXo-V8-RaL"/>
                                 <constraint firstItem="n1h-Hz-wbf" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" id="If2-Lb-8Il"/>
@@ -130,26 +165,24 @@
                                 <constraint firstItem="cg8-eR-MHn" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" constant="30" id="NIC-WL-OUj">
                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 </constraint>
+                                <constraint firstItem="XP0-Wi-Dtm" firstAttribute="top" secondItem="2ID-ou-ceq" secondAttribute="bottom" constant="10" id="Nys-q6-h1G"/>
                                 <constraint firstItem="9Lz-6o-Cds" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" id="QH0-UO-trO"/>
+                                <constraint firstItem="2ID-ou-ceq" firstAttribute="leading" secondItem="rbh-iE-cJh" secondAttribute="leading" constant="30" id="SIV-hx-uyd"/>
                                 <constraint firstAttribute="trailing" secondItem="XP0-Wi-Dtm" secondAttribute="trailing" constant="30" id="SOk-YY-r8Y">
                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 </constraint>
-                                <constraint firstAttribute="bottom" secondItem="cg8-eR-MHn" secondAttribute="bottom" constant="2242" id="fs0-dJ-mzQ"/>
+                                <constraint firstAttribute="trailing" secondItem="2ID-ou-ceq" secondAttribute="trailing" constant="30" id="hfa-qM-NCv"/>
                                 <constraint firstAttribute="trailing" secondItem="9Lz-6o-Cds" secondAttribute="trailing" id="imZ-xO-5M1"/>
                                 <constraint firstAttribute="trailing" secondItem="cg8-eR-MHn" secondAttribute="trailing" constant="30" id="l0t-mD-ESS">
                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 </constraint>
+                                <constraint firstItem="2ID-ou-ceq" firstAttribute="top" secondItem="cg8-eR-MHn" secondAttribute="bottom" constant="2" id="mcp-Ql-0pI"/>
                                 <constraint firstItem="n1h-Hz-wbf" firstAttribute="top" secondItem="9Lz-6o-Cds" secondAttribute="bottom" id="uFn-p2-h3H"/>
                                 <constraint firstItem="cg8-eR-MHn" firstAttribute="top" secondItem="rbh-iE-cJh" secondAttribute="top" constant="64" id="v4L-Ax-Pmq"/>
                                 <constraint firstAttribute="trailing" secondItem="a5a-r5-WeZ" secondAttribute="trailing" constant="30" id="ve3-Fn-w3A">
                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 </constraint>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="fs0-dJ-mzQ"/>
-                                </mask>
-                            </variation>
                         </view>
                     </subviews>
                     <constraints>
@@ -196,6 +229,7 @@
                 <outlet property="firstElement" destination="7qq-uy-uXW" id="1z5-4h-aKe"/>
                 <outlet property="headerImage" destination="TSa-f5-Ap4" id="rDi-rd-iZ3"/>
                 <outlet property="mainWrapper" destination="rbh-iE-cJh" id="5kF-Ae-jhF"/>
+                <outlet property="photoCredits" destination="2ID-ou-ceq" id="uL5-u4-lcU"/>
                 <outlet property="scrollView" destination="4cn-tC-WNW" id="3Aq-An-uDg"/>
                 <outlet property="title" destination="cg8-eR-MHn" id="OxK-yL-oE9"/>
                 <outletCollection property="itemsCollection" destination="7qq-uy-uXW" id="A1W-GH-80Q"/>
@@ -206,7 +240,7 @@
         </view>
     </objects>
     <resources>
-        <image name="main-background" width="320" height="566"/>
+        <image name="sf-mockup" width="320" height="566"/>
         <image name="shadow-image" width="321" height="568"/>
     </resources>
 </document>

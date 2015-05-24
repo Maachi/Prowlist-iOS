@@ -56,20 +56,33 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bpX-NQ-sNN" secondAttribute="bottom" id="0tz-xO-Zel"/>
                             <constraint firstItem="Skl-pX-v35" firstAttribute="top" secondItem="5mj-M5-cXm" secondAttribute="bottom" id="44S-Xl-dAc"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="CuI-nJ-Egv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bpX-NQ-sNN" secondAttribute="bottom" id="GJA-hV-K7a"/>
                             <constraint firstItem="5mj-M5-cXm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="LVt-KY-WjP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Skl-pX-v35" secondAttribute="bottom" id="VaW-xQ-8xR"/>
-                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="amM-bu-wPx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bpX-NQ-sNN" secondAttribute="trailing" constant="-16" id="kLh-Gy-oHi"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="amM-bu-wPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bpX-NQ-sNN" secondAttribute="trailing" constant="-16" id="bdB-DH-OYc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bpX-NQ-sNN" secondAttribute="trailing" id="kLh-Gy-oHi"/>
                             <constraint firstItem="Skl-pX-v35" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="oPY-IZ-efo"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="sa2-uP-WXN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Skl-pX-v35" secondAttribute="trailing" constant="-16" id="wBm-FH-xrZ"/>
-                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ybl-4M-03N"/>
+                            <constraint firstItem="bpX-NQ-sNN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ybl-4M-03N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5mj-M5-cXm" secondAttribute="trailing" constant="-16" id="zuk-56-TIs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="amM-bu-wPx"/>
+                                <exclude reference="kLh-Gy-oHi"/>
+                                <exclude reference="ybl-4M-03N"/>
+                                <exclude reference="0tz-xO-Zel"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="HUS-ZV-NWE"/>
                     <connections>
                         <outlet property="pageIndicator" destination="5mj-M5-cXm" id="VyD-Z8-dGS"/>
                         <outlet property="sliderWrapper" destination="bpX-NQ-sNN" id="7tf-NZ-Ryv"/>
-                        <segue destination="KZN-Ib-2EE" kind="custom" identifier="showCityDetail" customClass="CellTransitionSegue" id="eAk-NW-tMn"/>
+                        <segue destination="KZN-Ib-2EE" kind="presentation" identifier="showPlace" modalTransitionStyle="flipHorizontal" id="eAk-NW-tMn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

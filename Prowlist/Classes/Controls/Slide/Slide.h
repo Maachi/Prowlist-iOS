@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import "GBInfiniteScrollView.h"
 
 @interface Slide : UIView <UIScrollViewDelegate>
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UIView *mainWrapper;
 @property (assign, nonatomic) GBInfiniteScrollView *mainScroll;
+@property (assign, nonatomic) BaseViewController *parentController;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
 

@@ -182,6 +182,7 @@
     frame.size.height = page.contentView.frame.size.height;
     slideView.frame = frame;
     slideView.mainScroll = self.infiniteScrollView;
+    slideView.parentController = self;
     [slideView initialize];
     
     //page.contentView.backgroundColor = [self randomColor];

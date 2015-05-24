@@ -30,4 +30,12 @@
 - (IBAction)commentsAction:(id)sender {
 }
 
+- (IBAction)cellAction:(id)sender {
+    if (_delegate){
+        if([_delegate respondsToSelector:@selector(cellSelected:)]){
+            [_delegate cellSelected:self];
+        }
+    }
+}
+
 @end

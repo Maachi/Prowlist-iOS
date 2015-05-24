@@ -21,7 +21,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nK3-Ni-gM8" userLabel="frame">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-beauty" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel-image-small" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                         </imageView>
                     </subviews>
@@ -82,6 +82,15 @@ Ut enim ad minim veniam.</string>
                     <color key="textColor" red="0.49803921568627452" green="0.51764705882352946" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-Mp-Alg">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cellAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="A4c-9S-yJ3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -91,12 +100,16 @@ Ut enim ad minim veniam.</string>
                 <constraint firstItem="wXV-cV-8rB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bcn-qn-qCi"/>
                 <constraint firstItem="nK3-Ni-gM8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Diw-Lb-6u5"/>
                 <constraint firstAttribute="trailing" secondItem="nK3-Ni-gM8" secondAttribute="trailing" id="I4L-fO-uq9"/>
+                <constraint firstItem="Aw2-Mp-Alg" firstAttribute="width" secondItem="nK3-Ni-gM8" secondAttribute="width" id="IXw-Bz-iRm"/>
                 <constraint firstItem="usI-4D-fA5" firstAttribute="top" secondItem="wXV-cV-8rB" secondAttribute="bottom" constant="-3" id="OAm-GV-Bks"/>
                 <constraint firstAttribute="trailing" secondItem="wXV-cV-8rB" secondAttribute="trailing" id="OGq-oJ-8dS"/>
+                <constraint firstItem="Aw2-Mp-Alg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UwW-Ue-cED"/>
                 <constraint firstItem="usI-4D-fA5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cme-EX-bhd"/>
                 <constraint firstItem="edC-u4-XoI" firstAttribute="leading" secondItem="Dyh-QH-xQB" secondAttribute="trailing" constant="6" id="fBO-af-J04"/>
+                <constraint firstItem="Aw2-Mp-Alg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g8R-ZH-AIk"/>
                 <constraint firstItem="Dyh-QH-xQB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l8S-Gc-Gj7"/>
                 <constraint firstAttribute="trailing" secondItem="usI-4D-fA5" secondAttribute="trailing" id="mas-tS-zWB"/>
+                <constraint firstItem="Aw2-Mp-Alg" firstAttribute="height" secondItem="nK3-Ni-gM8" secondAttribute="height" id="oYh-oe-bje"/>
                 <constraint firstItem="edC-u4-XoI" firstAttribute="top" secondItem="usI-4D-fA5" secondAttribute="bottom" constant="-3" id="wrR-kU-Jsl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -113,6 +126,6 @@ Ut enim ad minim veniam.</string>
     <resources>
         <image name="comment-icon" width="11" height="10"/>
         <image name="heart-icon" width="10" height="9"/>
-        <image name="service-beauty" width="164" height="148"/>
+        <image name="hotel-image-small" width="164" height="148"/>
     </resources>
 </document>
