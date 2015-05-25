@@ -15,27 +15,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SmallUserCell">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nK3-Ni-gM8" userLabel="frame">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel-image-small" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb-mockup" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="vz1-YL-uCx" firstAttribute="leading" secondItem="nK3-Ni-gM8" secondAttribute="leading" id="3PX-UJ-k0C"/>
                         <constraint firstAttribute="bottom" secondItem="vz1-YL-uCx" secondAttribute="bottom" id="FEb-gU-CAC"/>
-                        <constraint firstAttribute="height" constant="160" id="SyX-sa-uTU"/>
+                        <constraint firstAttribute="height" constant="120" id="SyX-sa-uTU"/>
                         <constraint firstAttribute="trailing" secondItem="vz1-YL-uCx" secondAttribute="trailing" id="mwG-Ek-r7R"/>
                         <constraint firstItem="vz1-YL-uCx" firstAttribute="top" secondItem="nK3-Ni-gM8" secondAttribute="top" id="r01-ap-epU"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXV-cV-8rB" userLabel="title">
-                    <rect key="frame" x="0.0" y="163" width="150" height="21"/>
+                    <rect key="frame" x="0.0" y="126" width="150" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="bpl-gd-XVC"/>
                     </constraints>
@@ -44,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyh-QH-xQB">
-                    <rect key="frame" x="0.0" y="228" width="37" height="22"/>
+                    <rect key="frame" x="0.0" y="189" width="37" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="37" id="Cht-W3-GPZ"/>
                         <constraint firstAttribute="height" constant="22" id="d0Q-b5-VWS"/>
@@ -58,7 +58,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edC-u4-XoI">
-                    <rect key="frame" x="43" y="228" width="37" height="22"/>
+                    <rect key="frame" x="43" y="189" width="37" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="7L3-6e-m9Q"/>
                         <constraint firstAttribute="width" constant="37" id="WNN-cL-LTY"/>
@@ -72,7 +72,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usI-4D-fA5" userLabel="description">
-                    <rect key="frame" x="0.0" y="181" width="150" height="50"/>
+                    <rect key="frame" x="0.0" y="144" width="150" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="4Wt-H0-aNZ"/>
                     </constraints>
@@ -83,7 +83,7 @@ Ut enim ad minim veniam.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-Mp-Alg">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -94,8 +94,8 @@ Ut enim ad minim veniam.</string>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Dyh-QH-xQB" firstAttribute="top" secondItem="usI-4D-fA5" secondAttribute="bottom" constant="-3" id="5fr-tL-nOs"/>
-                <constraint firstItem="wXV-cV-8rB" firstAttribute="top" secondItem="nK3-Ni-gM8" secondAttribute="bottom" constant="3" id="ASw-Jq-d5e"/>
+                <constraint firstItem="Dyh-QH-xQB" firstAttribute="top" secondItem="usI-4D-fA5" secondAttribute="bottom" constant="-5" id="5fr-tL-nOs"/>
+                <constraint firstItem="wXV-cV-8rB" firstAttribute="top" secondItem="nK3-Ni-gM8" secondAttribute="bottom" constant="6" id="ASw-Jq-d5e"/>
                 <constraint firstItem="nK3-Ni-gM8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AUg-m7-mub"/>
                 <constraint firstItem="wXV-cV-8rB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bcn-qn-qCi"/>
                 <constraint firstItem="nK3-Ni-gM8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Diw-Lb-6u5"/>
@@ -110,7 +110,7 @@ Ut enim ad minim veniam.</string>
                 <constraint firstItem="Dyh-QH-xQB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l8S-Gc-Gj7"/>
                 <constraint firstAttribute="trailing" secondItem="usI-4D-fA5" secondAttribute="trailing" id="mas-tS-zWB"/>
                 <constraint firstItem="Aw2-Mp-Alg" firstAttribute="height" secondItem="nK3-Ni-gM8" secondAttribute="height" id="oYh-oe-bje"/>
-                <constraint firstItem="edC-u4-XoI" firstAttribute="top" secondItem="usI-4D-fA5" secondAttribute="bottom" constant="-3" id="wrR-kU-Jsl"/>
+                <constraint firstItem="edC-u4-XoI" firstAttribute="top" secondItem="usI-4D-fA5" secondAttribute="bottom" constant="-5" id="wrR-kU-Jsl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -126,6 +126,6 @@ Ut enim ad minim veniam.</string>
     <resources>
         <image name="comment-icon" width="11" height="10"/>
         <image name="heart-icon" width="10" height="9"/>
-        <image name="hotel-image-small" width="164" height="148"/>
+        <image name="thumb-mockup" width="97" height="98"/>
     </resources>
 </document>

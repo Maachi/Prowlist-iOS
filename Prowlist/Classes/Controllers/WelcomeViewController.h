@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface WelcomeViewController : BaseViewController
-
+@property (nonatomic, strong) NSMutableArray *data;
 @end

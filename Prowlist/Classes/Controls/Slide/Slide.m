@@ -11,10 +11,19 @@
 #import "SmallUserCell.h"
 
 
-@interface Slide()<SmallUserCellDelegate>
+@interface Slide()<SmallUserCellDelegate> {
+    BOOL showController;
+    int lastScrollYPosition;
+}
 @property (weak, nonatomic) IBOutlet UIView *firstElement;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *itemsCollection;
 @property (weak, nonatomic) IBOutlet UIView *photoCredits;
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *frameCollection;
+@property (weak, nonatomic) IBOutlet UIView *thumbFrame;
+@property (weak, nonatomic) IBOutlet UIImageView *imageDetail;
+@property (strong, nonatomic) id <ProwlistTheme> theme;
+@property (weak, nonatomic) IBOutlet UIButton *descriptionLabelButton;
+@property (weak, nonatomic) IBOutlet UIView *wrapperCollection;
 
 @end
 
@@ -35,10 +44,14 @@
     //_scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     _scrollView.scrollEnabled = YES;
     self.mainScroll.delegate = self;
+    _theme = [ProwlistThemeManager sharedTheme];
+    [_theme styleRoudCornersThumb:_thumbFrame];
+    [_theme styleRoudCornersThumb:_imageDetail];
+    
+    _thumbFrame.alpha = 0;
     
     [self adjustTitle];
     [self adjustCell];
-   
     
     
     for (UIView *item in _itemsCollection) {
@@ -96,7 +109,28 @@
 
 
 - (void) cellSelected:(UIView *)cell {
-    [_scrollView setContentOffset:CGPointMake(0, self.frame.size.height/3 * -1) animated:YES];
+    lastScrollYPosition = _scrollView.contentOffset.y;
+    showController = YES;
+    
+    [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _thumbFrame) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+            if (constraint.constant>0){
+                constraint.constant = self.frame.size.height;
+            }
+        }
+    }];
+    
+    [UIView animateWithDuration:0.8
+                          delay: 0
+         usingSpringWithDamping: 0.8
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [_mainWrapper layoutIfNeeded];
+                     } completion:^(BOOL finished){
+                         [self showControllerAnimated];
+                     }];
+    [_scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     //[_parentController performSegueWithIdentifier:@"showPlace" sender:nil];
 }
 
@@ -105,19 +139,27 @@
     [_firstElement.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == _firstElement) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
             if (constraint.constant>0){
-                constraint.constant = 250;
+                constraint.constant = 210;
             }
         }
     }];
+    [_wrapperCollection.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _wrapperCollection) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                constraint.constant = 490;
+            }
+        }
+    }];
+    
 }
 
 
 
 -(void) adjustTitle {
     [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+        if ((constraint.firstItem == _thumbFrame) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
             if (constraint.constant>0){
-                constraint.constant = self.frame.size.height - 400;
+                constraint.constant = self.frame.size.height - 470;
             }
         }
     }];
@@ -140,7 +182,6 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
     if(scrollView == _scrollView){
         //self.mainScroll.delaysContentTouches = NO;
         //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
@@ -153,13 +194,17 @@
                 }
             }
         }];
+        
+        if(showController){
+            return;
+        }
         if(_scrollView.contentOffset.y < -120){
             
             
             [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-                if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+                if ((constraint.firstItem == _thumbFrame) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
                     if (constraint.constant>0){
-                        constraint.constant = self.frame.size.height - 215;
+                        constraint.constant = self.frame.size.height - 325;
                     }
                 }
             }];
@@ -200,9 +245,9 @@
                              }];
         } else if (_scrollView.contentOffset.y > 100){
             [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-                if ((constraint.firstItem == _title) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+                if ((constraint.firstItem == _thumbFrame) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
                     if (constraint.constant>0){
-                        constraint.constant = self.frame.size.height - 400;
+                        constraint.constant = self.frame.size.height - 470;
                     }
                 }
             }];
@@ -246,6 +291,8 @@
     }
 }
 
+
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if(scrollView == _scrollView){
@@ -253,9 +300,49 @@
     } else {
         _scrollView.scrollEnabled = YES;
     }
+}
+
+
+-(void) showControllerAnimated {
+    [_scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    _title.text = @"The Langahm";
     
     
+    _descriptionLabelButton.alpha = 0;
+    [_descriptionLabelButton.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _descriptionLabelButton) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            //if (constraint.constant>0){
+            constraint.constant = 0;
+            //}
+        }
+    }];
     
+    [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _thumbFrame) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
+            if (constraint.constant>0){
+                constraint.constant = self.frame.size.height -470;
+            }
+        }
+    }];
+    
+    [UIView animateWithDuration:0.8
+                          delay: 0
+         usingSpringWithDamping: 0.8
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _thumbFrame.alpha = 1;
+                         [_mainWrapper layoutIfNeeded];
+                         
+                     } completion:^(BOOL finished){
+                         
+                     }];
+}
+
+- (void) scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if(showController){
+        [self performSelector:@selector(showControllerAnimated) withObject:self afterDelay:0];
+    }
 }
 
 

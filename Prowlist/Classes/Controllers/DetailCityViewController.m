@@ -12,6 +12,7 @@
     
     __weak IBOutlet UIView *thumbWrapper;
     __weak IBOutlet UIImageView *imageThumb;
+    BOOL loaded;
 }
 
 @end
@@ -26,7 +27,22 @@
 
 
 - (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self displayView];
+}
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    loaded = YES;
+}
+
+
+- (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    if(!loaded) {
+        [self.scrollView setContentOffset:CGPointMake(0, self.scrollPosition) animated:NO];
+    }
 }
 
 

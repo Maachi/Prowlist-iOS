@@ -26,7 +26,6 @@
 
 @property (nonatomic, strong) GBInfiniteScrollView *infiniteScrollView;
 @property(nonatomic) BOOL debug;
-@property (nonatomic, strong) NSMutableArray *data;
 
 @end
 
