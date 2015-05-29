@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProwlistTheme.h"
+#import "ContentBase.h"
 
 @interface BaseViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *mainHeader;
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) id <ProwlistTheme> theme;
 @property (nonatomic) BOOL walkthroughShown;
 @property (nonatomic) float scrollPosition;
+@property (strong, nonatomic) ContentBase *contentScroll;
 
 - (void) initializeScroll;
 - (void) displayView;

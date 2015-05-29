@@ -80,6 +80,16 @@
             }
         }
     }];
+    
+    if(_scrollView.contentOffset.y < - 100){
+        if(_contentScroll){
+            [_contentScroll showMoreInformation];
+        }
+    } else if (_scrollView.contentOffset.y > 380){
+        if(_contentScroll){
+            [_contentScroll hideMoreInformation];
+        }
+    }
 }
 
 @end

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ITCFranklinGothicStd-Book.otf">
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+        </mutableArray>
+        <mutableArray key="ITCFranklinGothicStd-Demi.otf">
+            <string>ITCFranklinGothicStd-Demi</string>
+            <string>ITCFranklinGothicStd-Demi</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VenueContent">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="1230"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel-logo-mockup" translatesAutoresizingMaskIntoConstraints="NO" id="wEx-Je-auw" userLabel="Logo">
+                    <rect key="frame" x="213" y="8" width="175" height="94"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="175" id="K2P-GK-3Z8"/>
+                        <constraint firstAttribute="height" constant="94" id="yiG-1w-riz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Axiom Hotel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-c0-fse" userLabel="Hotel Name">
+                    <rect key="frame" x="20" y="93" width="560" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="xz1-38-uVS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Demi" family="ITC Franklin Gothic Std" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, California" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNK-la-6lh" userLabel="City">
+                    <rect key="frame" x="20" y="113" width="560" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="5Xq-ta-DOf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoW-gz-Dqp" userLabel="More">
+                    <rect key="frame" x="20" y="158" width="560" height="0.0"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Mike Oria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Ev-dn0" userLabel="Credits">
+                            <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="55A-z3-YKN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="19"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TYr-ua-WaN" userLabel="Message">
+                            <rect key="frame" x="0.0" y="20" width="560" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="j3m-zG-zub"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal">
+                                <string key="title">Here's one from last night's photo workshop in San Francisco. We worked on some long exposures at the cable car turnaround which was tricky but very fun!</string>
+                                <color key="titleColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Prowlist. All rights reserved." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hk-nl-kmp" userLabel="Copy">
+                            <rect key="frame" x="0.0" y="79" width="560" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="IDN-c2-3dh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="11"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PzC-2s-vyW">
+                            <rect key="frame" x="0.0" y="120" width="560" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="vvS-wV-etL"/>
+                            </constraints>
+                        </mapView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" id="4fS-60-Sp3"/>
+                        <constraint firstItem="6Hk-nl-kmp" firstAttribute="leading" secondItem="hoW-gz-Dqp" secondAttribute="leading" id="6Mb-Cw-re2"/>
+                        <constraint firstAttribute="trailing" secondItem="TYr-ua-WaN" secondAttribute="trailing" id="GU0-Cp-Lyd"/>
+                        <constraint firstItem="PzC-2s-vyW" firstAttribute="top" secondItem="6Hk-nl-kmp" secondAttribute="bottom" constant="20" id="IEF-UU-oHf"/>
+                        <constraint firstItem="6Hk-nl-kmp" firstAttribute="top" secondItem="TYr-ua-WaN" secondAttribute="bottom" constant="5" id="KlE-w9-k4e"/>
+                        <constraint firstItem="usr-Ev-dn0" firstAttribute="leading" secondItem="hoW-gz-Dqp" secondAttribute="leading" id="Lk5-Gt-GNY"/>
+                        <constraint firstItem="PzC-2s-vyW" firstAttribute="leading" secondItem="hoW-gz-Dqp" secondAttribute="leading" id="SAj-Nf-kDF"/>
+                        <constraint firstItem="TYr-ua-WaN" firstAttribute="leading" secondItem="hoW-gz-Dqp" secondAttribute="leading" id="UkO-2c-Dp8"/>
+                        <constraint firstItem="TYr-ua-WaN" firstAttribute="leading" secondItem="hoW-gz-Dqp" secondAttribute="leading" id="dxg-h4-zRI"/>
+                        <constraint firstItem="TYr-ua-WaN" firstAttribute="top" secondItem="usr-Ev-dn0" secondAttribute="bottom" constant="-1" id="f6M-5H-xaP"/>
+                        <constraint firstItem="usr-Ev-dn0" firstAttribute="top" secondItem="hoW-gz-Dqp" secondAttribute="top" id="kLP-Ig-Ys9"/>
+                        <constraint firstAttribute="trailing" secondItem="PzC-2s-vyW" secondAttribute="trailing" id="saD-Mb-KI1"/>
+                        <constraint firstAttribute="trailing" secondItem="usr-Ev-dn0" secondAttribute="trailing" id="uyy-3n-x7q"/>
+                        <constraint firstAttribute="trailing" secondItem="6Hk-nl-kmp" secondAttribute="trailing" id="ygB-IP-KZI"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bCI-z6-LbX" userLabel="Description">
+                    <rect key="frame" x="20" y="168" width="560" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="qzY-E2-QoW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal">
+                        <string key="title">Welcome to the new Axiom Hotel where history collides with the digital revolution. As a guest, prepare to be rewarded with a stay that is on pace with the pulse of San Francisco’s amazing city. </string>
+                        <color key="titleColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-IW-avH" userLabel="title">
+                    <rect key="frame" x="20" y="284" width="560" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="z9T-Db-nHS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Demi" family="ITC Franklin Gothic Std" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="bCI-z6-LbX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1rV-d6-j52"/>
+                <constraint firstItem="Ifc-c0-fse" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="22t-E2-Vbv"/>
+                <constraint firstItem="bCI-z6-LbX" firstAttribute="top" secondItem="hoW-gz-Dqp" secondAttribute="bottom" constant="10" id="3kR-5n-ZaI"/>
+                <constraint firstAttribute="centerX" secondItem="wEx-Je-auw" secondAttribute="centerX" constant="-0.5" id="7VV-6C-DcW"/>
+                <constraint firstAttribute="trailing" secondItem="UTQ-IW-avH" secondAttribute="trailing" constant="20" id="GXv-sb-DPa"/>
+                <constraint firstItem="hoW-gz-Dqp" firstAttribute="top" secondItem="PNK-la-6lh" secondAttribute="bottom" constant="20" id="Ih7-Vl-IVY"/>
+                <constraint firstItem="wEx-Je-auw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="IoX-gI-Dgi"/>
+                <constraint firstAttribute="trailing" secondItem="PNK-la-6lh" secondAttribute="trailing" constant="20" id="LRQ-qP-IBE"/>
+                <constraint firstItem="PNK-la-6lh" firstAttribute="top" secondItem="Ifc-c0-fse" secondAttribute="bottom" constant="-5" id="LUd-Z4-A1n"/>
+                <constraint firstItem="hoW-gz-Dqp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="PV8-cg-mGG"/>
+                <constraint firstItem="UTQ-IW-avH" firstAttribute="top" secondItem="bCI-z6-LbX" secondAttribute="bottom" constant="16" id="Wla-oH-AqA"/>
+                <constraint firstAttribute="trailing" secondItem="bCI-z6-LbX" secondAttribute="trailing" constant="20" id="ddZ-1k-U11"/>
+                <constraint firstAttribute="trailing" secondItem="Ifc-c0-fse" secondAttribute="trailing" constant="20" id="gRi-aj-TXh"/>
+                <constraint firstItem="Ifc-c0-fse" firstAttribute="top" secondItem="wEx-Je-auw" secondAttribute="bottom" constant="-9" id="jnV-FO-W0Y"/>
+                <constraint firstItem="UTQ-IW-avH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="mOh-tg-tsb"/>
+                <constraint firstAttribute="trailing" secondItem="hoW-gz-Dqp" secondAttribute="trailing" constant="20" id="oE5-QG-rrd"/>
+                <constraint firstItem="PNK-la-6lh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="qbU-5x-tPK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="logo" destination="wEx-Je-auw" id="wOM-hI-IVr"/>
+                <outlet property="mapInfo" destination="PzC-2s-vyW" id="E6d-Z4-adl"/>
+                <outlet property="moreInformation" destination="hoW-gz-Dqp" id="mMG-Zy-igN"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="hotel-logo-mockup" width="170" height="41"/>
+    </resources>
+</document>

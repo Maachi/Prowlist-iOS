@@ -44,6 +44,8 @@
     //_scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     _scrollView.scrollEnabled = YES;
     self.mainScroll.delegate = self;
+    _scrollView.directionalLockEnabled = YES;
+    self.mainScroll.directionalLockEnabled = YES;
     _theme = [ProwlistThemeManager sharedTheme];
     [_theme styleRoudCornersThumb:_thumbFrame];
     [_theme styleRoudCornersThumb:_imageDetail];
@@ -283,23 +285,22 @@
 
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    if(scrollView == _scrollView){
+    /*if(scrollView == _scrollView){
         self.mainScroll.scrollEnabled = NO;
     } else {
         _scrollView.scrollEnabled = NO;
-        [self performSelector:@selector(enableMainScroll) withObject:self afterDelay:2];
-    }
+    }*/
 }
 
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if(scrollView == _scrollView){
+    /*if(scrollView == _scrollView){
         self.mainScroll.scrollEnabled = YES;
     } else {
         _scrollView.scrollEnabled = YES;
-    }
+    }*/
 }
 
 

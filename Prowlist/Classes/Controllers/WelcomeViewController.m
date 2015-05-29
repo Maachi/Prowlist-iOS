@@ -11,6 +11,7 @@
 #import "Slide.h"
 #import "GBInfiniteScrollView.h"
 #import "PageIndicator.h"
+#import "VenueContent.h"
 
 @interface WelcomeViewController ()<GBInfiniteScrollViewDataSource, GBInfiniteScrollViewDelegate>{
     __weak IBOutlet UIView *mainWrapper;
@@ -33,7 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUp];
+    [super initializeScroll];
+    [self addElementContent];
 }
 
 
@@ -55,6 +57,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void) addElementContent {
+    self.contentScroll = (VenueContent *)[[[NSBundle mainBundle] loadNibNamed:@"VenueContent" owner:self options:nil] firstObject];
+    self.contentScroll.backgroundColor = [UIColor clearColor];
+    [self.scrollWrapper addSubview:self.contentScroll];
 }
 
 #pragma mark - Navigation
