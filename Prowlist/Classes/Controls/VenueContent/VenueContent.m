@@ -7,10 +7,15 @@
 //
 
 #import "VenueContent.h"
+#import "SmallUserCell.h"
 
-@interface VenueContent(){
+@interface VenueContent() <SmallUserCellDelegate> {
     BOOL addedSuperView;
 }
+@property (weak, nonatomic) IBOutlet UIView *wrapperCollection;
+@property (weak, nonatomic) IBOutlet UIView *firstElement;
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *itemsCollection;
+
 @end
 
 @implementation VenueContent
@@ -26,6 +31,22 @@
 
 -(void) willMoveToSuperview:(UIView *)newSuperview {
     self.moreInformation.alpha = 0;
+    [self adjustCell];
+}
+
+
+-(void) fillServices {
+    
+    for (UIView *item in _itemsCollection) {
+        SmallUserCell *cellC = (SmallUserCell *)[[[NSBundle mainBundle] loadNibNamed:@"SmallUserCell" owner:self options:nil] firstObject];
+        [item addSubview:cellC];
+        cellC.delegate = self;
+        [cellC initialize];
+        CGRect frame = cellC.frame;
+        frame.size.width = item.frame.size.width;
+        frame.size.height = item.frame.size.height;
+        cellC.frame = frame;
+    }
 }
 
 
@@ -63,6 +84,27 @@
     
     
 }
+
+
+
+- (void) adjustCell {
+    [_firstElement.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _firstElement) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                constraint.constant = 210;
+            }
+        }
+    }];
+    [_wrapperCollection.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == _wrapperCollection) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                constraint.constant = 490;
+            }
+        }
+    }];
+}
+
+
 
 
 -(void) hideMoreInformation{
@@ -129,6 +171,7 @@
         addedSuperView = YES;
         [self adjustView];
         [self addMapInformation];
+        [self fillServices];
         CGRect frame = self.frame;
         frame.size.width = self.superview.frame.size.width;
     }
