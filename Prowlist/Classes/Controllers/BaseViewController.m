@@ -77,7 +77,7 @@
                                 options: UIViewAnimationOptionCurveLinear
                              animations:^{
                                  CGRect frame = self.view.frame;
-                                 frame.origin.x = (self.view.bounds.size.width / 2.0) + 50;
+                                 frame.origin.x = (self.view.bounds.size.width / 2.0) - 20;
                                  self.view.frame = frame;
                              }
                              completion:^(BOOL finished){

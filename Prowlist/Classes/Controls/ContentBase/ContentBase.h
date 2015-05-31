@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProwlistTheme.h"
 #import "BaseViewController.h"
 
 @interface ContentBase : UIView
 @property (weak, nonatomic) IBOutlet UIView *moreInformation;
 @property (assign, nonatomic) BaseViewController *parent;
+@property (strong, nonatomic) id <ProwlistTheme> theme;
 -(void) showMoreInformation;
 -(void) hideMoreInformation;
 @end

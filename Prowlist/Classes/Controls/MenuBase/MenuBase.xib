@@ -3,14 +3,158 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ITCFranklinGothicStd-Book.otf">
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
+        </mutableArray>
+        <mutableArray key="ITCFranklinGothicStd-Med.otf">
+            <string>ITCFranklinGothicStd-Med</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MenuBase">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFn-Gy-UxM" userLabel="Thumb">
+                    <rect key="frame" x="500" y="60" width="80" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="javo" translatesAutoresizingMaskIntoConstraints="NO" id="0Nr-g6-aXQ">
+                            <rect key="frame" x="4" y="4" width="72" height="72"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="0Nr-g6-aXQ" firstAttribute="leading" secondItem="aFn-Gy-UxM" secondAttribute="leading" constant="4" id="S96-eV-g8W"/>
+                        <constraint firstItem="0Nr-g6-aXQ" firstAttribute="top" secondItem="aFn-Gy-UxM" secondAttribute="top" constant="4" id="h8T-JB-uG9"/>
+                        <constraint firstAttribute="trailing" secondItem="0Nr-g6-aXQ" secondAttribute="trailing" constant="4" id="i8x-dg-ApB"/>
+                        <constraint firstAttribute="width" constant="80" id="mVl-6O-eVy"/>
+                        <constraint firstAttribute="height" constant="80" id="pZe-p7-QCL"/>
+                        <constraint firstAttribute="bottom" secondItem="0Nr-g6-aXQ" secondAttribute="bottom" constant="4" id="zA1-7w-IJ6"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rK0-t1-eUX">
+                    <rect key="frame" x="0.0" y="362" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Cip-R3-zsi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Support">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-J1-UDw">
+                    <rect key="frame" x="0.0" y="412" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AIb-A7-o7L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Terms of use">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javier Villalobos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlJ-lk-ec0" userLabel="Name">
+                    <rect key="frame" x="20" y="156" width="560" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2ei-Bo-MVo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, California" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-He-Utt" userLabel="Place">
+                    <rect key="frame" x="20" y="178" width="560" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="yyM-pD-FoU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Med" family="ITC Franklin Gothic Std" pointSize="12"/>
+                    <color key="textColor" red="0.50196078431372548" green="0.6588235294117647" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3h-EF-tcr">
+                    <rect key="frame" x="0.0" y="212" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="dXo-bG-3oP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="My profile">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8c-Yd-upw">
+                    <rect key="frame" x="0.0" y="262" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Yyb-JG-iMT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Payments">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-Xo-Nqd">
+                    <rect key="frame" x="0.0" y="312" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="sz1-MD-3LK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Invite friends">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="3rH-He-Utt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="0Yu-54-R4v"/>
+                <constraint firstAttribute="trailing" secondItem="qlJ-lk-ec0" secondAttribute="trailing" constant="20" id="0q0-vw-3H5"/>
+                <constraint firstAttribute="trailing" secondItem="3rH-He-Utt" secondAttribute="trailing" constant="20" id="1rP-kZ-upc"/>
+                <constraint firstItem="rK0-t1-eUX" firstAttribute="top" secondItem="MaC-Xo-Nqd" secondAttribute="bottom" id="3Gx-Gg-zAL"/>
+                <constraint firstItem="rK0-t1-eUX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Av-Kx-ct2"/>
+                <constraint firstItem="i8c-Yd-upw" firstAttribute="top" secondItem="D3h-EF-tcr" secondAttribute="bottom" id="4DT-jQ-t6j"/>
+                <constraint firstItem="3rH-He-Utt" firstAttribute="top" secondItem="qlJ-lk-ec0" secondAttribute="bottom" constant="1" id="8WJ-w1-TZX"/>
+                <constraint firstItem="MaC-Xo-Nqd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8cW-jZ-1zb"/>
+                <constraint firstItem="D3h-EF-tcr" firstAttribute="top" secondItem="aFn-Gy-UxM" secondAttribute="bottom" constant="72" id="8qP-4u-oQN"/>
+                <constraint firstAttribute="trailing" secondItem="WtP-J1-UDw" secondAttribute="trailing" id="DJL-e4-ZmX"/>
+                <constraint firstItem="i8c-Yd-upw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ecc-Ik-giA"/>
+                <constraint firstAttribute="trailing" secondItem="D3h-EF-tcr" secondAttribute="trailing" id="FwO-Vn-Y9Z"/>
+                <constraint firstAttribute="trailing" secondItem="rK0-t1-eUX" secondAttribute="trailing" id="GYp-Wc-OAE"/>
+                <constraint firstItem="WtP-J1-UDw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LE9-tR-4Bx"/>
+                <constraint firstItem="D3h-EF-tcr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="Xv3-Ib-cH9"/>
+                <constraint firstAttribute="trailing" secondItem="aFn-Gy-UxM" secondAttribute="trailing" constant="20" id="acD-gJ-9JG"/>
+                <constraint firstAttribute="trailing" secondItem="MaC-Xo-Nqd" secondAttribute="trailing" id="cMG-2M-rLe"/>
+                <constraint firstAttribute="trailing" secondItem="i8c-Yd-upw" secondAttribute="trailing" id="cxN-x5-XXi"/>
+                <constraint firstItem="aFn-Gy-UxM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="fFQ-Sh-pEj"/>
+                <constraint firstItem="qlJ-lk-ec0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="i30-2j-495"/>
+                <constraint firstItem="WtP-J1-UDw" firstAttribute="top" secondItem="rK0-t1-eUX" secondAttribute="bottom" id="n06-6n-4z8"/>
+                <constraint firstAttribute="centerX" secondItem="aFn-Gy-UxM" secondAttribute="centerX" id="rUY-cv-U0v"/>
+                <constraint firstItem="MaC-Xo-Nqd" firstAttribute="top" secondItem="i8c-Yd-upw" secondAttribute="bottom" id="tSX-LM-Qhh"/>
+                <constraint firstItem="qlJ-lk-ec0" firstAttribute="top" secondItem="aFn-Gy-UxM" secondAttribute="bottom" constant="16" id="u6e-tt-qj1"/>
+                <constraint firstItem="D3h-EF-tcr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xrr-iW-5RP"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Xv3-Ib-cH9"/>
+                    <exclude reference="rUY-cv-U0v"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="thumb" destination="aFn-Gy-UxM" id="M1U-hJ-zza"/>
+            </connections>
         </view>
     </objects>
+    <resources>
+        <image name="javo" width="320" height="320"/>
+    </resources>
 </document>
