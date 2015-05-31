@@ -25,6 +25,7 @@
 		635226431B175E6D00544F34 /* VenueContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635226421B175E6D00544F34 /* VenueContent.xib */; };
 		635226451B177BC800544F34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635226441B177BC800544F34 /* MapKit.framework */; };
 		635226491B178FA600544F34 /* ContentBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226481B178FA600544F34 /* ContentBase.m */; };
+		6352264C1B1ABFB100544F34 /* MenuBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6352264B1B1ABFB100544F34 /* MenuBase.xib */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		635226441B177BC800544F34 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		635226471B178FA600544F34 /* ContentBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentBase.h; path = Classes/Controls/ContentBase/ContentBase.h; sourceTree = "<group>"; };
 		635226481B178FA600544F34 /* ContentBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentBase.m; path = Classes/Controls/ContentBase/ContentBase.m; sourceTree = "<group>"; };
+		6352264B1B1ABFB100544F34 /* MenuBase.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuBase.xib; path = Classes/Controls/MenuBase/MenuBase.xib; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +191,14 @@
 			name = ContentBase;
 			sourceTree = "<group>";
 		};
+		6352264A1B1ABF7800544F34 /* MenuBase */ = {
+			isa = PBXGroup;
+			children = (
+				6352264B1B1ABFB100544F34 /* MenuBase.xib */,
+			);
+			name = MenuBase;
+			sourceTree = "<group>";
+		};
 		63EF87291AFA8D4A001B9C7B = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +308,7 @@
 		63EF876D1AFD96B6001B9C7B /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				6352264A1B1ABF7800544F34 /* MenuBase */,
 				635226461B178F7D00544F34 /* ContentBase */,
 				6352263E1B175E0200544F34 /* VenueContent */,
 				634655FD1B111D4700B3AC61 /* SmallUserCell */,
@@ -438,6 +449,7 @@
 				634655E71AFEFADF00B3AC61 /* StyleGuide.xib in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
 				63EF87431AFA8D4A001B9C7B /* Images.xcassets in Resources */,
+				6352264C1B1ABFB100544F34 /* MenuBase.xib in Resources */,
 				634655FC1B0A21B400B3AC61 /* SlideView.xib in Resources */,
 				634655EE1AFF05D300B3AC61 /* ITCFranklinGothicStd-DmCd.otf in Resources */,
 			);

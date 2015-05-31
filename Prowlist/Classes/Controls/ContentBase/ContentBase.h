@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @interface ContentBase : UIView
 @property (weak, nonatomic) IBOutlet UIView *moreInformation;
+@property (assign, nonatomic) BaseViewController *parent;
 -(void) showMoreInformation;
 -(void) hideMoreInformation;
 @end

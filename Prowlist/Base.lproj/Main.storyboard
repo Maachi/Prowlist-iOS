@@ -21,7 +21,8 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="pr" id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,7 +80,6 @@
                         <outlet property="sliderWrapper" destination="bpX-NQ-sNN" id="7tf-NZ-Ryv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1003" y="317"/>
         </scene>
@@ -139,19 +139,42 @@
                                     <constraint firstAttribute="bottom" secondItem="ex5-6E-ElG" secondAttribute="bottom" constant="-200" id="rYH-tQ-x1U"/>
                                 </constraints>
                             </scrollView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-jw-lVH" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="n0V-25-ooU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBy-Qf-aWu" userLabel="Menu">
+                                <rect key="frame" x="17" y="22" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7X8-I6-XVy"/>
+                                    <constraint firstAttribute="height" constant="40" id="eIZ-mn-cGk"/>
+                                </constraints>
+                                <state key="normal" image="menu-big-icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="3O4-jw-lVH" firstAttribute="leading" secondItem="kdb-OB-sqQ" secondAttribute="leadingMargin" constant="-16" id="19G-om-KOb"/>
                             <constraint firstItem="0jh-tB-bor" firstAttribute="top" secondItem="aRi-Bb-mVv" secondAttribute="bottom" constant="-20" id="CSz-uu-xCu"/>
                             <constraint firstItem="KTC-oD-lgG" firstAttribute="top" secondItem="0jh-tB-bor" secondAttribute="bottom" id="EmU-8W-oua"/>
+                            <constraint firstItem="3O4-jw-lVH" firstAttribute="top" secondItem="aRi-Bb-mVv" secondAttribute="bottom" constant="-20" id="Hfw-SD-L4X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k4W-Sq-2bZ" secondAttribute="trailing" constant="-16" id="Lji-gw-vUP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3O4-jw-lVH" secondAttribute="trailing" constant="-16" id="P6D-9U-BPJ"/>
                             <constraint firstItem="0jh-tB-bor" firstAttribute="leading" secondItem="kdb-OB-sqQ" secondAttribute="leadingMargin" constant="-16" id="cgY-uz-aC8"/>
                             <constraint firstItem="k4W-Sq-2bZ" firstAttribute="top" secondItem="aRi-Bb-mVv" secondAttribute="bottom" constant="-20" id="d7L-Jc-JLX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0jh-tB-bor" secondAttribute="trailing" constant="-16" id="ilI-di-gLu"/>
+                            <constraint firstItem="RBy-Qf-aWu" firstAttribute="leading" secondItem="kdb-OB-sqQ" secondAttribute="leadingMargin" constant="1" id="slu-Ey-McJ"/>
                             <constraint firstItem="k4W-Sq-2bZ" firstAttribute="leading" secondItem="kdb-OB-sqQ" secondAttribute="leadingMargin" constant="-16" id="tRd-Uz-4kE"/>
+                            <constraint firstItem="RBy-Qf-aWu" firstAttribute="top" secondItem="aRi-Bb-mVv" secondAttribute="bottom" constant="2" id="yzo-dZ-cYf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="header" destination="3O4-jw-lVH" id="hsv-1u-hxD"/>
                         <outlet property="mainHeader" destination="k4W-Sq-2bZ" id="9gv-sv-zky"/>
                         <outlet property="scrollView" destination="0jh-tB-bor" id="JO9-6T-v5x"/>
                         <outlet property="scrollWrapper" destination="ex5-6E-ElG" id="UBE-uI-rxn"/>
@@ -474,6 +497,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu-big-icon" width="38" height="25"/>
         <image name="my-stuff-big-icon" width="64" height="74"/>
         <image name="perks-big-icon" width="82" height="84"/>
         <image name="prowlist-logo" width="97" height="109"/>

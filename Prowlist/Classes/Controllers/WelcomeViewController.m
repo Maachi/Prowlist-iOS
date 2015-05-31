@@ -54,6 +54,11 @@
     }
 }
 
+
+-(void) viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -62,6 +67,7 @@
 
 - (void) addElementContent {
     self.contentScroll = (VenueContent *)[[[NSBundle mainBundle] loadNibNamed:@"VenueContent" owner:self options:nil] firstObject];
+    //self.contentScroll.parent = self;
     self.contentScroll.backgroundColor = [UIColor clearColor];
     [self.scrollWrapper addSubview:self.contentScroll];
 }

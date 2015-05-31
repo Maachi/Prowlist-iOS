@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "ContentBase.h"
 
-@interface BaseViewController () {
+@interface BaseViewController ()<UIGestureRecognizerDelegate> {
     UIView *displayView;
 }
 
@@ -18,7 +19,94 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self hideHeader];
+    [self addEvents];
     _theme = [ProwlistThemeManager sharedTheme];
+}
+
+
+-(void) addMenu {
+    _menuView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"MenuBase" owner:self options:nil] firstObject];
+    CGRect frame = _menuView.frame;
+    frame.size.width = ((self.view.bounds.size.width / 2.0) + 50);
+    frame.size.height = self.view.bounds.size.height;
+    frame.origin.x = frame.size.width*-1;
+    
+    _menuView.frame = frame;
+    [self.view addSubview:_menuView];
+}
+
+
+-(void) addEvents {
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    pan.delegate = self;
+    pan.maximumNumberOfTouches = 1;
+    pan.delaysTouchesBegan =YES;
+    pan.cancelsTouchesInView = YES;
+    [self.view addGestureRecognizer:pan];
+    
+    _scrollView.canCancelContentTouches = NO;
+}
+
+
+- (void)handlePan:(UIPanGestureRecognizer *)gesture {
+    CGPoint translate = [gesture translationInView:gesture.view];
+    translate.y = 0.0;
+    
+    CGRect frameMade = CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    if (frameMade.origin.x>0 && frameMade.origin.x<(self.view.bounds.size.width / 2.0) + 50)
+        self.view.frame = frameMade;
+    
+    
+    if (gesture.state == UIGestureRecognizerStateCancelled ||
+        gesture.state == UIGestureRecognizerStateEnded ||
+        gesture.state == UIGestureRecognizerStateFailed)
+    {
+        
+        CGPoint velocity = [gesture velocityInView:gesture.view];
+        
+        
+        if (translate.x > 0.0 && (translate.x + velocity.x * 0.25) > (gesture.view.bounds.size.width / 2.0))
+        {
+            
+            [UIView animateWithDuration:0.5
+                                  delay: 0.0
+                 usingSpringWithDamping: 1.0
+                  initialSpringVelocity:0.5
+                                options: UIViewAnimationOptionCurveLinear
+                             animations:^{
+                                 CGRect frame = self.view.frame;
+                                 frame.origin.x = (self.view.bounds.size.width / 2.0) + 50;
+                                 self.view.frame = frame;
+                             }
+                             completion:^(BOOL finished){
+                             }];
+            
+        } else
+        {
+            [UIView animateWithDuration:0.5
+                                  delay: 0.0
+                 usingSpringWithDamping: 1.0
+                  initialSpringVelocity:0.5
+                                options: UIViewAnimationOptionCurveLinear
+                             animations:^{
+                                 CGRect frame = self.view.frame;
+                                 frame.origin.x = 0;
+                                 self.view.frame = frame;
+                             }
+                             completion:^(BOOL finished){
+                             }];
+            
+        }
+        
+    }
+}
+
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self addMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +117,49 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+
+-(void) hideHeader{
+    [self.header.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == self.header) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            //if (constraint.constant>0){
+            constraint.constant = 0;
+            //}
+        }
+    }];
+    
+    [UIView animateWithDuration:0.8
+                          delay: 0
+         usingSpringWithDamping: 0.8
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.header layoutIfNeeded];
+                     } completion:^(BOOL finished){
+                     }];
+}
+
+
+
+-(void) showHeader{
+    [self.header.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == self.header) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            //if (constraint.constant>0){
+            constraint.constant = 70;
+            //}
+        }
+    }];
+    
+    [UIView animateWithDuration:0.8
+                          delay: 0
+         usingSpringWithDamping: 0.8
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.header layoutIfNeeded];
+                     } completion:^(BOOL finished){
+                     }];
 }
 
 
@@ -85,10 +216,16 @@
         if(_contentScroll){
             [_contentScroll showMoreInformation];
         }
-    } else if (_scrollView.contentOffset.y > 380){
+    } else if (_scrollView.contentOffset.y > 480){
         if(_contentScroll){
             [_contentScroll hideMoreInformation];
         }
+    }
+    
+    if(_scrollView.contentOffset.y > _scrollView.frame.size.height - 360){
+        [self showHeader];
+    } else {
+        [self hideHeader];
     }
 }
 

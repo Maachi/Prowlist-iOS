@@ -13,5 +13,5 @@
 @interface VenueContent : ContentBase
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet MKMapView *mapInfo;
-
+@property (nonatomic) CGFloat topPosition;
 @end

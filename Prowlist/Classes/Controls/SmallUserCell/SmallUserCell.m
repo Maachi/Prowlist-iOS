@@ -38,4 +38,17 @@
     }
 }
 
+
+-(void) setImageSize:(int)imageSize {
+    _imageSize = imageSize;
+    
+    
+    [self.frameS.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == self.frameS) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            constraint.constant = _imageSize;
+        }
+    }];
+    
+}
+
 @end

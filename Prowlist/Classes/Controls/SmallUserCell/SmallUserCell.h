@@ -18,6 +18,7 @@
 @end
 
 @interface SmallUserCell : UIView
+@property (nonatomic) int imageSize;
 @property (weak, nonatomic) IBOutlet UIView *frameS;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *title;

@@ -31,14 +31,16 @@
 
 -(void) willMoveToSuperview:(UIView *)newSuperview {
     self.moreInformation.alpha = 0;
-    [self adjustCell];
+    //[self adjustCell];
 }
 
 
 -(void) fillServices {
-    
+    int i = 0;
+    SmallUserCell *cellC;
+    __block CGFloat lastSize = 0.0;
     for (UIView *item in _itemsCollection) {
-        SmallUserCell *cellC = (SmallUserCell *)[[[NSBundle mainBundle] loadNibNamed:@"SmallUserCell" owner:self options:nil] firstObject];
+        cellC = (SmallUserCell *)[[[NSBundle mainBundle] loadNibNamed:@"SmallUserCell" owner:self options:nil] firstObject];
         [item addSubview:cellC];
         cellC.delegate = self;
         [cellC initialize];
@@ -46,6 +48,25 @@
         frame.size.width = item.frame.size.width;
         frame.size.height = item.frame.size.height;
         cellC.frame = frame;
+        
+        
+        if(i%2 == 0){
+            cellC.imageSize = 180;
+        } else {
+            cellC.imageSize = 120;
+        }
+        [item.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+            if ((constraint.firstItem == item) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+                if (constraint.constant>0){
+                    lastSize = cellC.imageSize + 90;
+                    constraint.constant =  lastSize;
+                }
+            }
+        }];
+        i++;
+    }
+    if (cellC && lastSize){
+        
     }
 }
 
@@ -119,7 +140,7 @@
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == self.logo) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
             if (constraint.constant>0){
-                constraint.constant = self.superview.superview.frame.size.height - 420;
+                constraint.constant = self.topPosition;
             }
         }
     }];
@@ -145,7 +166,8 @@
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == self.logo) && (constraint.firstAttribute == NSLayoutAttributeTop)) {
             if (constraint.constant>0){
-                constraint.constant = self.superview.superview.frame.size.height - 420;
+                [self setTopPosition:self.superview.superview.frame.size.height - 360];
+                constraint.constant = self.topPosition;
             }
         }
     }];
