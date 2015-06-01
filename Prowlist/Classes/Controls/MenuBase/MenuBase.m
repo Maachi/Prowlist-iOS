@@ -7,6 +7,7 @@
 //
 
 #import "MenuBase.h"
+#import "BaseViewController.h"
 
 @implementation MenuBase
 
@@ -23,6 +24,13 @@
     [super didMoveToSuperview];
     _theme = [ProwlistThemeManager sharedTheme];
     [_theme styleRoudCornersThumb:self.thumb];
+}
+
+- (IBAction)myProfileAction:(id)sender {
+    if(_parent){
+        [_parent hideMenu];
+        [_parent showProfileViewController];
+    }
 }
 
 @end

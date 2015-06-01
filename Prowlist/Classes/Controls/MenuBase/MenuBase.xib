@@ -90,6 +90,9 @@
                     <state key="normal" title="My profile">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="myProfileAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="23q-D5-Tbk"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8c-Yd-upw">
                     <rect key="frame" x="0.0" y="262" width="600" height="50"/>

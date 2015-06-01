@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "ContentBase.h"
 
-@interface BaseViewController ()<UIGestureRecognizerDelegate> {
+@interface BaseViewController ()<UIGestureRecognizerDelegate, UIBarPositioningDelegate> {
     UIView *displayView;
 }
 
@@ -25,15 +25,23 @@
 }
 
 
+-(UIBarPosition)positionForBar:(id <UIBarPositioning>)bar{
+    return UIBarPositionTopAttached;
+}
+
+
 -(void) addMenu {
-    _menuView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"MenuBase" owner:self options:nil] firstObject];
-    CGRect frame = _menuView.frame;
-    frame.size.width = ((self.view.bounds.size.width / 2.0) + 50);
-    frame.size.height = self.view.bounds.size.height;
-    frame.origin.x = frame.size.width*-1;
-    
-    _menuView.frame = frame;
-    [self.view addSubview:_menuView];
+    if(!_menuView){
+        _menuView = (MenuBase *)[[[NSBundle mainBundle] loadNibNamed:@"MenuBase" owner:self options:nil] firstObject];
+        CGRect frame = _menuView.frame;
+        frame.size.width = (self.view.bounds.size.width / 2.0) - 20;
+        frame.size.height = self.view.bounds.size.height;
+        frame.origin.x = frame.size.width*-1;
+        
+        _menuView.frame = frame;
+        _menuView.parent = self;
+        [self.view addSubview:_menuView];
+    }
 }
 
 
@@ -42,9 +50,7 @@
     pan.delegate = self;
     pan.maximumNumberOfTouches = 1;
     pan.delaysTouchesBegan =YES;
-    pan.cancelsTouchesInView = YES;
     [self.view addGestureRecognizer:pan];
-    
     _scrollView.canCancelContentTouches = NO;
 }
 
@@ -52,11 +58,15 @@
 - (void)handlePan:(UIPanGestureRecognizer *)gesture {
     CGPoint translate = [gesture translationInView:gesture.view];
     translate.y = 0.0;
+    //NSLog(@"Move : %f %f", translate.x, _menuView.frame.origin.x);
+    //CGRect frameMade = CGRectMake(_menuView.frame.origin.x + translate.x, translate.y, _menuView.bounds.size.width, _menuView.bounds.size.height);
+    CGRect frameMadeMain = CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
     
-    CGRect frameMade = CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    if (frameMadeMain.origin.x>0){
+        //_menuView.frame = frameMade;
+        self.view.frame = frameMadeMain;
+    }
     
-    if (frameMade.origin.x>0 && frameMade.origin.x<(self.view.bounds.size.width / 2.0) + 50)
-        self.view.frame = frameMade;
     
     
     if (gesture.state == UIGestureRecognizerStateCancelled ||
@@ -70,37 +80,70 @@
         if (translate.x > 0.0 && (translate.x + velocity.x * 0.25) > (gesture.view.bounds.size.width / 2.0))
         {
             
-            [UIView animateWithDuration:0.5
-                                  delay: 0.0
-                 usingSpringWithDamping: 1.0
-                  initialSpringVelocity:0.5
-                                options: UIViewAnimationOptionCurveLinear
-                             animations:^{
-                                 CGRect frame = self.view.frame;
-                                 frame.origin.x = (self.view.bounds.size.width / 2.0) - 20;
-                                 self.view.frame = frame;
-                             }
-                             completion:^(BOOL finished){
-                             }];
+            [self showProfileMenu];
             
         } else
         {
-            [UIView animateWithDuration:0.5
-                                  delay: 0.0
-                 usingSpringWithDamping: 1.0
-                  initialSpringVelocity:0.5
-                                options: UIViewAnimationOptionCurveLinear
-                             animations:^{
-                                 CGRect frame = self.view.frame;
-                                 frame.origin.x = 0;
-                                 self.view.frame = frame;
-                             }
-                             completion:^(BOOL finished){
-                             }];
+            [self hideMenu];
             
         }
         
     }
+}
+
+
+- (void) showProfileViewController
+{
+    UIStoryboard *storyBoard = [self storyboard];
+    UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyProfileViewController"];
+    [self presentViewController:modalLoginViewController animated:YES completion:nil];
+    
+}
+
+
+-(void) showProfileMenu {
+    [UIView animateWithDuration:0.5
+                          delay: 0.0
+         usingSpringWithDamping: 1.0
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         
+                         CGRect frame = self.view.frame;
+                         frame.origin.x = (self.view.bounds.size.width / 2.0) - 20;
+                         self.view.frame = frame;
+                         
+                         frame = _menuView.frame;
+                         frame.origin.x = -40;
+                         frame.size.width = frame.size.width + 30;
+                         _menuView.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                         _profileMenuShown = YES;
+                     }];
+}
+
+
+-(void) hideMenu {
+    [UIView animateWithDuration:0.5
+                          delay: 0.0
+         usingSpringWithDamping: 1.0
+          initialSpringVelocity:0.5
+                        options: UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         CGRect frame = self.view.frame;
+                         frame.origin.x = 0;
+                         self.view.frame = frame;
+                         
+                         
+                         frame = _menuView.frame;
+                         frame.size.width = ((self.view.bounds.size.width / 2.0) - 20) - 30;
+                         frame.origin.x = frame.size.width*-1;
+                         _menuView.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                         _profileMenuShown = NO;
+                     }];
 }
 
 
@@ -202,6 +245,9 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //NSLog(@"Scrolling... %f", _scrollView.contentOffset.y);
+    if(_profileMenuShown){
+        [self hideMenu];
+    }
     [_mainHeader.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == _mainHeader) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
             if (constraint.constant>0){
