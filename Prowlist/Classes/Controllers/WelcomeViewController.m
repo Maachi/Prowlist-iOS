@@ -36,7 +36,7 @@
     [super viewDidLoad];
     [super initializeScroll];
     [self addElementContent];
-    [self addMenu];
+    
 }
 
 
@@ -48,6 +48,7 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self addMenu];
     pageIndicator.pages = 4;
     if(!self.walkthroughShown){
         self.walkthroughShown = YES;
@@ -68,7 +69,7 @@
 
 - (void) addElementContent {
     self.contentScroll = (VenueContent *)[[[NSBundle mainBundle] loadNibNamed:@"VenueContent" owner:self options:nil] firstObject];
-    //self.contentScroll.parent = self;
+    self.contentScroll.parent = self;
     self.contentScroll.backgroundColor = [UIColor clearColor];
     [self.scrollWrapper addSubview:self.contentScroll];
 }

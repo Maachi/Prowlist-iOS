@@ -71,6 +71,12 @@
 }
 
 
+- (void) cellSelected:(SmallUserCell *)cell {
+    NSLog(@"Hello cell......... %@", self.parent);
+    [self.parent performSegueWithIdentifier:@"CheckServiceDetail" sender:self];
+}
+
+
 -(void) showMoreInformation {
     [self.moreInformation.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == self.moreInformation) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {

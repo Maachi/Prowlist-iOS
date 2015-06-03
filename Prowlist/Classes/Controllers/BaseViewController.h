@@ -30,6 +30,7 @@
 - (void) hideMenu;
 - (void) showProfileMenu;
 - (void) addMenu;
+- (void) removeMenu;
 
 - (void) formControllerEvents;
 @end

@@ -28,6 +28,7 @@
 		6352264C1B1ABFB100544F34 /* MenuBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6352264B1B1ABFB100544F34 /* MenuBase.xib */; };
 		6352264F1B1AE20500544F34 /* MenuBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352264E1B1AE20500544F34 /* MenuBase.m */; };
 		635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226511B1CCC9300544F34 /* ProfileViewController.m */; };
+		635226561B1EAE3700544F34 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226551B1EAE3700544F34 /* ProductDetailViewController.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -86,6 +87,8 @@
 		6352264E1B1AE20500544F34 /* MenuBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBase.m; path = Classes/Controls/MenuBase/MenuBase.m; sourceTree = "<group>"; };
 		635226501B1CCC9300544F34 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Classes/Controllers/ProfileViewController.h; sourceTree = "<group>"; };
 		635226511B1CCC9300544F34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Classes/Controllers/ProfileViewController.m; sourceTree = "<group>"; };
+		635226541B1EAE3700544F34 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = Classes/Controllers/ProductDetailViewController.h; sourceTree = "<group>"; };
+		635226551B1EAE3700544F34 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = Classes/Controllers/ProductDetailViewController.m; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */,
 				635226501B1CCC9300544F34 /* ProfileViewController.h */,
 				635226511B1CCC9300544F34 /* ProfileViewController.m */,
+				635226541B1EAE3700544F34 /* ProductDetailViewController.h */,
+				635226551B1EAE3700544F34 /* ProductDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */,
 				634655E11AFECCC500B3AC61 /* ProwlistTheme.m in Sources */,
 				634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */,
+				635226561B1EAE3700544F34 /* ProductDetailViewController.m in Sources */,
 				634655FA1B056FF800B3AC61 /* Slide.m in Sources */,
 				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
 				6352264F1B1AE20500544F34 /* MenuBase.m in Sources */,

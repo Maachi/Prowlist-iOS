@@ -58,6 +58,13 @@
 }
 
 
+- (void) removeMenu {
+    if(_menuView){
+        [_menuView removeFromSuperview];
+    }
+}
+
+
 -(void) addEventsMenu {
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     pan.delegate = self;
