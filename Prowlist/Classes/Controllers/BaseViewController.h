@@ -29,4 +29,7 @@
 - (void) showProfileViewController;
 - (void) hideMenu;
 - (void) showProfileMenu;
+- (void) addMenu;
+
+- (void) formControllerEvents;
 @end

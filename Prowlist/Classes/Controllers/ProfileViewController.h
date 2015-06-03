@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface ProfileViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UIView *thumbFrame;
 
 @end

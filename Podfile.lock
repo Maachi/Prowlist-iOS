@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FrameAccessor (1.3.2)
   - GBInfiniteScrollView (1.8):
     - GBInfiniteScrollView/Core (= 1.8)
   - GBInfiniteScrollView/Core (1.8)
@@ -30,6 +31,8 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - VENTokenField (2.4.0):
+    - FrameAccessor (~> 1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -37,13 +40,16 @@ DEPENDENCIES:
   - HockeySDK (~> 3.6.2)
   - ObjectiveRecord (~> 1.5)
   - SDWebImage (~> 3.7)
+  - VENTokenField (~> 2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
   GBInfiniteScrollView: aa8dc078cf1c86a10d65bfa4430c8cf324e18672
   HockeySDK: c07cdd580296737edcd0963e292c19885a53f563
   ObjectiveRecord: f290d17272e476b3c881300910e98284200c54b6
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  VENTokenField: b944ad8c46c59fe05376d940919cb56a993db8e0
 
 COCOAPODS: 0.35.0

@@ -20,8 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self hideHeader];
-    [self addEvents];
     _theme = [ProwlistThemeManager sharedTheme];
+}
+
+
+- (void) formControllerEvents {
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
+    [singleTap setNumberOfTapsRequired:1];
+    [singleTap setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:singleTap];
+}
+
+
+- (void)resignOnTap:(id)iSender {
+    [self.view endEditing:YES];
 }
 
 
@@ -31,6 +43,7 @@
 
 
 -(void) addMenu {
+    [self addEventsMenu];
     if(!_menuView){
         _menuView = (MenuBase *)[[[NSBundle mainBundle] loadNibNamed:@"MenuBase" owner:self options:nil] firstObject];
         CGRect frame = _menuView.frame;
@@ -45,7 +58,7 @@
 }
 
 
--(void) addEvents {
+-(void) addEventsMenu {
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     pan.delegate = self;
     pan.maximumNumberOfTouches = 1;
@@ -96,6 +109,7 @@
 {
     UIStoryboard *storyBoard = [self storyboard];
     UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyProfileViewController"];
+    modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:modalLoginViewController animated:YES completion:nil];
     
 }
@@ -149,7 +163,6 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self addMenu];
 }
 
 - (void)didReceiveMemoryWarning {

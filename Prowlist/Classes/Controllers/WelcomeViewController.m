@@ -36,6 +36,7 @@
     [super viewDidLoad];
     [super initializeScroll];
     [self addElementContent];
+    [self addMenu];
 }
 
 
