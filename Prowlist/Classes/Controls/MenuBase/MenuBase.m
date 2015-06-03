@@ -23,6 +23,7 @@
 -(void) didMoveToSuperview {
     [super didMoveToSuperview];
     _theme = [ProwlistThemeManager sharedTheme];
+    [_theme styleRoudCornersThumb:self.thumbImage];
     [_theme styleRoudCornersThumb:self.thumb];
 }
 

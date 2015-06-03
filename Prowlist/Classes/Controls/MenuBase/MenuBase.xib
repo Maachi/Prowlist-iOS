@@ -154,6 +154,7 @@
             </variation>
             <connections>
                 <outlet property="thumb" destination="aFn-Gy-UxM" id="M1U-hJ-zza"/>
+                <outlet property="thumbImage" destination="0Nr-g6-aXQ" id="CgW-iI-8ED"/>
             </connections>
         </view>
     </objects>

@@ -24,6 +24,8 @@
     [super formControllerEvents];
     [self.theme styleRoudCornersThumb:self.thumbFrame];
     
+    [self.theme styleRoudCornersThumb:self.thumbImage];
+    
     
     self.names = [[NSMutableArray alloc] initWithArray:@[]];
     self.likesTagsField.delegate = self;

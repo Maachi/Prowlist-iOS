@@ -135,7 +135,7 @@
                          self.view.frame = frame;
                          
                          frame = _menuView.frame;
-                         frame.origin.x = -40;
+                         frame.origin.x = -70;
                          frame.size.width = frame.size.width + 30;
                          _menuView.frame = frame;
                      }

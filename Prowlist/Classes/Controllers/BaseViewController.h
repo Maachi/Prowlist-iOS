@@ -32,5 +32,8 @@
 - (void) addMenu;
 - (void) removeMenu;
 
+-(void) showHeader;
+-(void) hideHeader;
+
 - (void) formControllerEvents;
 @end

@@ -21,7 +21,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nK3-Ni-gM8" userLabel="frame">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service-beauty" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wine-cheese" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-YL-uCx">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
                         </imageView>
                     </subviews>
@@ -126,6 +126,6 @@ Ut enim ad minim veniam.</string>
     <resources>
         <image name="comment-icon" width="11" height="10"/>
         <image name="heart-icon" width="10" height="9"/>
-        <image name="service-beauty" width="164" height="148"/>
+        <image name="wine-cheese" width="978" height="651"/>
     </resources>
 </document>

@@ -10,5 +10,6 @@
 
 @interface ProfileViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIView *thumbFrame;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbImage;
 
 @end

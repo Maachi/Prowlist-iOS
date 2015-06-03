@@ -9,6 +9,7 @@
 #import "ProductDetailViewController.h"
 
 @interface ProductDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIView *imageWrapp;
 
 @end
 
@@ -16,12 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [super initializeScroll];
     // Do any additional setup after loading the view.
 }
 
 
 -(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [super addMenu];
+    [self showHeader];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +45,29 @@
 - (IBAction)goBack:(id)sender {
     [self removeMenu];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(self.profileMenuShown){
+        [self hideMenu];
+    }
+    [self.imageWrapp.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == self.imageWrapp) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+            if (constraint.constant>0){
+                if(340 +(self.scrollView.contentOffset.y*-1) >= 50){
+                    constraint.constant = 340 +(self.scrollView.contentOffset.y*-1);
+                }
+            }
+        }
+    }];
+    /*
+    if(self.scrollView.contentOffset.y > self.scrollView.frame.size.height - 360){
+        [self showHeader];
+    } else {
+        [self hideHeader];
+    }*/
 }
 
 @end

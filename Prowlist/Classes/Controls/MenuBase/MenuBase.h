@@ -13,5 +13,6 @@
 @interface MenuBase : UIView
 @property (strong, nonatomic) id <ProwlistTheme> theme;
 @property (weak, nonatomic) IBOutlet UIView *thumb;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbImage;
 @property (assign, nonatomic) BaseViewController *parent;
 @end
