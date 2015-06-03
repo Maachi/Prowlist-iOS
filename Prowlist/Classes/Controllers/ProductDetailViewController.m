@@ -7,6 +7,7 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "ActionSheetStringPicker.h"
 
 @interface ProductDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *imageWrapp;
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super initializeScroll];
-    // Do any additional setup after loading the view.
+    [super formControllerEvents];
 }
 
 
@@ -47,6 +48,31 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)selectType:(UIButton *)sender {
+   __block NSArray *wines = [NSArray arrayWithObjects:@"Dow Vintage Port", @"Prats & Symington Douro Chryseia", @"Quinta do Vale Meão Douro ", @"Brewer-Clifton Pinot Noir Sta. Rita Hills", @"Castello di Volpaia Chianti Classico Riserva", nil];
+    
+    [ActionSheetStringPicker showPickerWithTitle:@"Select the brand of wine you want"
+                                            rows:wines
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           [sender setTitle: selectedValue forState: UIControlStateNormal];
+                                           
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
+}
+
+
+
+- (IBAction)placeOrder:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"Incomplete order."
+                               message:@"We need to know more information about this order, since its a configurable product."
+                              delegate:self
+                     cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -56,18 +82,20 @@
     [self.imageWrapp.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == self.imageWrapp) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
             if (constraint.constant>0){
-                if(340 +(self.scrollView.contentOffset.y*-1) >= 50){
-                    constraint.constant = 340 +(self.scrollView.contentOffset.y*-1);
+                if(280 +(self.scrollView.contentOffset.y*-1) >= 50){
+                    constraint.constant = 280 +(self.scrollView.contentOffset.y*-1);
                 }
             }
         }
     }];
-    /*
-    if(self.scrollView.contentOffset.y > self.scrollView.frame.size.height - 360){
+    
+    if(self.scrollView.contentOffset.y < 20 && self.scrollView.contentOffset.y < -20){
+        [self hideHeader];
+    } else if (self.scrollView.contentOffset.y < -20) {
         [self showHeader];
     } else {
-        [self hideHeader];
-    }*/
+        [self showHeader];
+    }
 }
 
 @end
