@@ -49,7 +49,7 @@
         CGRect frame = _menuView.frame;
         frame.size.width = (self.view.bounds.size.width / 2.0) - 20;
         frame.size.height = self.view.bounds.size.height;
-        frame.origin.x = frame.size.width*-1;
+        frame.origin.x = self.view.bounds.size.width;
         
         _menuView.frame = frame;
         _menuView.parent = self;
@@ -82,8 +82,7 @@
     //CGRect frameMade = CGRectMake(_menuView.frame.origin.x + translate.x, translate.y, _menuView.bounds.size.width, _menuView.bounds.size.height);
     CGRect frameMadeMain = CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
     
-    if (frameMadeMain.origin.x>0){
-        //_menuView.frame = frameMade;
+    if (frameMadeMain.origin.x<0){
         self.view.frame = frameMadeMain;
     }
     
@@ -96,8 +95,7 @@
         
         CGPoint velocity = [gesture velocityInView:gesture.view];
         
-        
-        if (translate.x > 0.0 && (translate.x + velocity.x * 0.25) > (gesture.view.bounds.size.width / 2.0))
+        if (translate.x < 0.0 && (translate.x + velocity.x * 0.25) < (gesture.view.bounds.size.width / 2.0))
         {
             
             [self showProfileMenu];
@@ -131,12 +129,12 @@
                      animations:^{
                          
                          CGRect frame = self.view.frame;
-                         frame.origin.x = (self.view.bounds.size.width / 2.0) - 20;
+                         frame.origin.x = ((self.view.bounds.size.width / 2.0) - 100)*-1;
                          self.view.frame = frame;
                          
                          frame = _menuView.frame;
-                         frame.origin.x = -70;
-                         frame.size.width = frame.size.width + 30;
+                         frame.origin.x = self.view.bounds.size.width - 120;
+                         frame.size.width = frame.size.width + 140;
                          _menuView.frame = frame;
                      }
                      completion:^(BOOL finished){
@@ -158,8 +156,8 @@
                          
                          
                          frame = _menuView.frame;
-                         frame.size.width = ((self.view.bounds.size.width / 2.0) - 20) - 30;
-                         frame.origin.x = frame.size.width*-1;
+                         frame.size.width = (self.view.bounds.size.width / 2.0);
+                         frame.origin.x = self.view.bounds.size.width;
                          _menuView.frame = frame;
                      }
                      completion:^(BOOL finished){
