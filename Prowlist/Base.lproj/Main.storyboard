@@ -41,7 +41,6 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="pr" id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -100,6 +99,7 @@
                         <outlet property="sliderWrapper" destination="bpX-NQ-sNN" id="7tf-NZ-Ryv"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1192" y="359"/>
         </scene>
@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1192" y="1044"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Detail Venue View Controller-->
         <scene sceneID="GPz-d7-umN">
             <objects>
-                <viewController storyboardIdentifier="detailVenue" automaticallyAdjustsScrollViewInsets="NO" id="KZN-Ib-2EE" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVenue" automaticallyAdjustsScrollViewInsets="NO" id="KZN-Ib-2EE" customClass="DetailVenueViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRi-Bb-mVv"/>
                         <viewControllerLayoutGuide type="bottom" id="KTC-oD-lgG"/>

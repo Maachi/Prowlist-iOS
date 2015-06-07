@@ -24,6 +24,11 @@
 }
 
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
+
+
 - (void) formControllerEvents {
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
     [singleTap setNumberOfTapsRequired:1];
@@ -114,7 +119,7 @@
 {
     UIStoryboard *storyBoard = [self storyboard];
     UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyProfileViewController"];
-    modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:modalLoginViewController animated:YES completion:nil];
     
 }

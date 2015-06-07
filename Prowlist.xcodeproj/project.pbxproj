@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */; };
 		634655E11AFECCC500B3AC61 /* ProwlistTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655E01AFECCC500B3AC61 /* ProwlistTheme.m */; };
 		634655E41AFECE4C00B3AC61 /* BlackTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 634655E31AFECE4C00B3AC61 /* BlackTheme.m */; };
 		634655E71AFEFADF00B3AC61 /* StyleGuide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634655E61AFEFADF00B3AC61 /* StyleGuide.xib */; };
@@ -29,6 +28,7 @@
 		6352264F1B1AE20500544F34 /* MenuBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352264E1B1AE20500544F34 /* MenuBase.m */; };
 		635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226511B1CCC9300544F34 /* ProfileViewController.m */; };
 		635226561B1EAE3700544F34 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226551B1EAE3700544F34 /* ProductDetailViewController.m */; };
+		63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A49F821B23587400D469E2 /* DetailVenueViewController.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -55,8 +55,6 @@
 
 /* Begin PBXFileReference section */
 		16B228E27CEDE99756672967 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		634655DB1AFDCE2B00B3AC61 /* DetailCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailCityViewController.h; path = Classes/Controllers/DetailCityViewController.h; sourceTree = "<group>"; };
-		634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailCityViewController.m; path = Classes/Controllers/DetailCityViewController.m; sourceTree = "<group>"; };
 		634655DF1AFECCC500B3AC61 /* ProwlistTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProwlistTheme.h; path = Classes/Theme/ProwlistTheme.h; sourceTree = "<group>"; };
 		634655E01AFECCC500B3AC61 /* ProwlistTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProwlistTheme.m; path = Classes/Theme/ProwlistTheme.m; sourceTree = "<group>"; };
 		634655E21AFECE4C00B3AC61 /* BlackTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackTheme.h; path = Classes/Theme/BlackTheme.h; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		635226511B1CCC9300544F34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Classes/Controllers/ProfileViewController.m; sourceTree = "<group>"; };
 		635226541B1EAE3700544F34 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = Classes/Controllers/ProductDetailViewController.h; sourceTree = "<group>"; };
 		635226551B1EAE3700544F34 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = Classes/Controllers/ProductDetailViewController.m; sourceTree = "<group>"; };
+		63A49F811B23587300D469E2 /* DetailVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailVenueViewController.h; path = Classes/Controllers/DetailVenueViewController.h; sourceTree = "<group>"; };
+		63A49F821B23587400D469E2 /* DetailVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailVenueViewController.m; path = Classes/Controllers/DetailVenueViewController.m; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -289,14 +289,14 @@
 				63EF875E1AFC228A001B9C7B /* BaseViewController.m */,
 				63EF87601AFC2321001B9C7B /* WelcomeViewController.h */,
 				63EF87611AFC2321001B9C7B /* WelcomeViewController.m */,
-				634655DB1AFDCE2B00B3AC61 /* DetailCityViewController.h */,
-				634655DC1AFDCE2B00B3AC61 /* DetailCityViewController.m */,
 				634655F01AFF136D00B3AC61 /* WalkthroughViewController.h */,
 				634655F11AFF136D00B3AC61 /* WalkthroughViewController.m */,
 				635226501B1CCC9300544F34 /* ProfileViewController.h */,
 				635226511B1CCC9300544F34 /* ProfileViewController.m */,
 				635226541B1EAE3700544F34 /* ProductDetailViewController.h */,
 				635226551B1EAE3700544F34 /* ProductDetailViewController.m */,
+				63A49F811B23587300D469E2 /* DetailVenueViewController.h */,
+				63A49F821B23587400D469E2 /* DetailVenueViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -519,7 +519,6 @@
 			files = (
 				63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */,
 				634655E11AFECCC500B3AC61 /* ProwlistTheme.m in Sources */,
-				634655DD1AFDCE2B00B3AC61 /* DetailCityViewController.m in Sources */,
 				635226561B1EAE3700544F34 /* ProductDetailViewController.m in Sources */,
 				634655FA1B056FF800B3AC61 /* Slide.m in Sources */,
 				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
@@ -535,6 +534,7 @@
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,
 				634656021B1132BF00B3AC61 /* SmallUserCell.m in Sources */,
 				63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */,
+				63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
