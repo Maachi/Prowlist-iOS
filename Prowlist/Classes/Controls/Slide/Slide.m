@@ -56,57 +56,15 @@
     [self adjustCell];
     
     
-    for (UIView *item in _itemsCollection) {
-        SmallUserCell *cellC = (SmallUserCell *)[[[NSBundle mainBundle] loadNibNamed:@"SmallUserCell" owner:self options:nil] firstObject];
-        [item addSubview:cellC];
-        cellC.delegate = self;
-        [cellC initialize];
-        CGRect frame = cellC.frame;
-        frame.size.width = item.frame.size.width;
-        frame.size.height = item.frame.size.height;
-        cellC.frame = frame;
-    }
-    
     
     [_mainWrapper.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == _mainWrapper) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
             if (constraint.constant>0){
-                constraint.constant = 2200;
+                constraint.constant = 1000;
             }
         }
     }];
     
-    
-    [_photoCredits.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == _photoCredits) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
-            if (constraint.constant>0){
-                constraint.constant = 0;
-            }
-        }
-    }];
-    
-    
-    
-    
-    
-    
-    //_scrollView.contentSize = CGSizeMake(self.frame.size.width, 1800);
-    
-    
-    /*CellBase *cell = (CellBase *)[[[NSBundle mainBundle] loadNibNamed:@"CellBase" owner:self options:nil] firstObject];
-    CGRect frame = cell.frame;
-    frame.size.width = contentWrapper.frame.size.width - 60;
-    frame.origin.x = 30;
-    frame.origin.y = (index*(frame.size.height+20)) + 410;
-    cell.frame = frame;
-    
-    [cell setOnSelect:^(CellBase *referenceCell) {
-        selectedCell = referenceCell;
-        [self performSegueWithIdentifier:@"showCityDetail" sender:self];
-    }];
-    
-    
-    [contentWrapper addSubview:cell];*/
 }
 
 

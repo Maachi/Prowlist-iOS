@@ -33,10 +33,6 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self addMenu];
-    if(!self.walkthroughShown){
-        self.walkthroughShown = YES;
-        [self showWalkthroughController];
-    }
 }
 
 
@@ -49,6 +45,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)goBack:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void) addElementContent {
     self.contentScroll = (VenueContent *)[[[NSBundle mainBundle] loadNibNamed:@"VenueContent" owner:self options:nil] firstObject];
@@ -62,15 +61,6 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-}
-
-
-- (void) showWalkthroughController
-{
-    UIStoryboard *storyBoard = [self storyboard];
-    UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"WalkthroughViewController"];
-    [self presentViewController:modalLoginViewController animated:NO completion:nil];
-    
 }
 
 @end
