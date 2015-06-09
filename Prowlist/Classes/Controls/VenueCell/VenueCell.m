@@ -19,6 +19,8 @@
 
 
 -(void) render {
+    _theme = [ProwlistThemeManager sharedTheme];
+    [_theme roundCorners:_tagButton];
 }
 
 -(void) setTitle:(NSString *)title {

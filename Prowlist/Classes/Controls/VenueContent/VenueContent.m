@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *wrapperCollection;
 @property (weak, nonatomic) IBOutlet UIView *firstElement;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *itemsCollection;
+@property (weak, nonatomic) IBOutlet UIButton *custumizeStay;
 
 @end
 
@@ -31,6 +32,8 @@
 
 -(void) willMoveToSuperview:(UIView *)newSuperview {
     self.moreInformation.alpha = 0;
+    self.theme = [ProwlistThemeManager sharedTheme];
+    [self.theme roundCorners:_custumizeStay];
     //[self adjustCell];
 }
 
@@ -72,7 +75,6 @@
 
 
 - (void) cellSelected:(SmallUserCell *)cell {
-    NSLog(@"Hello cell......... %@", self.parent);
     [self.parent performSegueWithIdentifier:@"CheckServiceDetail" sender:self];
 }
 

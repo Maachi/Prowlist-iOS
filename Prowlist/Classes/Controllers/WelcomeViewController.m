@@ -10,6 +10,7 @@
 
 @interface WelcomeViewController ()<UITableViewDataSource, UITableViewDelegate>{
     __weak IBOutlet UITableView *tableView;
+    __weak IBOutlet UIView *headerWelcome;
 }
 @end
 
@@ -67,6 +68,12 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(self.profileMenuShown){
+        [self hideMenu];
+    }
+    
+    
+    
     float scrollViewHeight = scrollView.frame.size.height;
     float scrollContentSizeHeight = scrollView.contentSize.height;
     float scrollOffset = scrollView.contentOffset.y;
@@ -76,6 +83,17 @@
         VenueCell *cell = (VenueCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [cell resizeImageCellWithValue:scrollView.contentOffset.y];
         //[tableView setContentInset:UIEdgeInsetsMake((-20 + scrollView.contentOffset.y),0,0,0)];
+        
+        [headerWelcome.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+            if ((constraint.firstItem == headerWelcome) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
+                if (constraint.constant>0){
+                    if((scrollView.contentOffset.y*-1) < 85){
+                        constraint.constant = 80 + (scrollView.contentOffset.y*-1);
+                    }
+                }
+            }
+        }];
+        
     } else if(scrollOffset + scrollViewHeight >= scrollContentSizeHeight) {
         /*NSLog(@"This is it.... %f", (scrollOffset + scrollViewHeight)-scrollContentSizeHeight);
         VenueCell *cell = (VenueCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -91,7 +109,7 @@
 {
     CGFloat rowHeight = 220;
     if (indexPath.row == 0){
-        rowHeight = 300;
+        rowHeight = 450;
     }
     return rowHeight;
 }
@@ -131,6 +149,9 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //selectedFriend = (Friend *)[friends objectAtIndex:indexPath.row];
+    if(self.profileMenuShown){
+        [self hideMenu];
+    }
     [self performSegueWithIdentifier:@"showVenueDetail" sender:self];
 }
 

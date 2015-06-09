@@ -23,4 +23,10 @@
     view.layer.masksToBounds = YES;
 }
 
+
+- (void) roundCornersButton:(UIView *)view {
+    view.layer.cornerRadius = 2;
+    view.layer.masksToBounds = YES;
+}
+
 @end

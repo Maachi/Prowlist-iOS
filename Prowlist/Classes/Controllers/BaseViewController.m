@@ -89,6 +89,8 @@
     
     if (frameMadeMain.origin.x<0){
         self.view.frame = frameMadeMain;
+    } else {
+        
     }
     
     

@@ -8,6 +8,9 @@
         <mutableArray key="ITCFranklinGothicStd-Book.otf">
             <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
+        <mutableArray key="ITCFranklinGothicStd-Med.otf">
+            <string>ITCFranklinGothicStd-Med</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -25,25 +28,58 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Axiom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug4-t8-okB">
-                                <rect key="frame" x="10" y="163" width="300" height="36"/>
+                                <rect key="frame" x="10" y="99" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="t3K-gt-mQg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Med" family="ITC Franklin Gothic Std" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-r2-rfI">
+                                <rect key="frame" x="10" y="157" width="300" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="yW5-fF-4VP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvN-Lq-ebL">
+                                <rect key="frame" x="8" y="135" width="70" height="20"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.81176470590000005" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ipX-Wa-Eyf"/>
+                                    <constraint firstAttribute="height" constant="20" id="ugV-CF-LzT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                <state key="normal" title="NEAR YOU">
+                                    <color key="titleColor" red="0.1647058824" green="0.13725490200000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="D6X-r2-rfI" secondAttribute="bottom" constant="20" id="Bnn-eL-AoF"/>
+                            <constraint firstItem="D6X-r2-rfI" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="10" id="DeF-vv-Qd2"/>
+                            <constraint firstAttribute="trailing" secondItem="D6X-r2-rfI" secondAttribute="trailing" constant="10" id="L7J-2T-aVO"/>
+                            <constraint firstItem="AvN-Lq-ebL" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="8" id="MTX-tk-L4I"/>
+                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="AvN-Lq-ebL" secondAttribute="bottom" constant="2" id="V8P-8t-AHo"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="width" secondItem="Tv3-nz-McH" secondAttribute="width" id="XST-k3-5LX"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="top" secondItem="Tv3-nz-McH" secondAttribute="top" id="Xjf-la-ija"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="height" secondItem="Tv3-nz-McH" secondAttribute="height" id="cQF-Mf-U4e"/>
                             <constraint firstItem="Ug4-t8-okB" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="10" id="i7Y-ll-jck"/>
                             <constraint firstAttribute="trailing" secondItem="Ug4-t8-okB" secondAttribute="trailing" constant="10" id="imq-cb-XXA"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" id="npb-iX-SYs"/>
-                            <constraint firstAttribute="bottom" secondItem="Ug4-t8-okB" secondAttribute="bottom" constant="20" id="wYK-g8-Z5m"/>
+                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" constant="-2" id="r5K-EC-N7N"/>
+                            <constraint firstItem="AvN-Lq-ebL" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" id="ruf-8X-RhD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="r5K-EC-N7N"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-tA-4TS" userLabel="Separator">
                         <rect key="frame" x="0.0" y="211" width="320" height="8"/>
@@ -67,6 +103,7 @@
             <connections>
                 <outlet property="content" destination="28w-e9-SYT" id="Ai3-04-eCr"/>
                 <outlet property="imageWrapper" destination="Tv3-nz-McH" id="hQq-TD-xou"/>
+                <outlet property="tagButton" destination="AvN-Lq-ebL" id="jbo-04-99a"/>
             </connections>
             <point key="canvasLocation" x="279" y="319"/>
         </tableViewCell>
