@@ -72,14 +72,8 @@
                             <constraint firstItem="Ug4-t8-okB" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="10" id="i7Y-ll-jck"/>
                             <constraint firstAttribute="trailing" secondItem="Ug4-t8-okB" secondAttribute="trailing" constant="10" id="imq-cb-XXA"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" id="npb-iX-SYs"/>
-                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" constant="-2" id="r5K-EC-N7N"/>
                             <constraint firstItem="AvN-Lq-ebL" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" id="ruf-8X-RhD"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="r5K-EC-N7N"/>
-                            </mask>
-                        </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-tA-4TS" userLabel="Separator">
                         <rect key="frame" x="0.0" y="211" width="320" height="8"/>
@@ -94,10 +88,18 @@
                     <constraint firstItem="Tv3-nz-McH" firstAttribute="leading" secondItem="28w-e9-SYT" secondAttribute="leadingMargin" constant="-8" id="FIc-4Q-XYO"/>
                     <constraint firstItem="AHY-tA-4TS" firstAttribute="leading" secondItem="28w-e9-SYT" secondAttribute="leadingMargin" constant="-8" id="SU6-nU-kvz"/>
                     <constraint firstItem="Tv3-nz-McH" firstAttribute="top" secondItem="28w-e9-SYT" secondAttribute="topMargin" constant="-8" id="Tu6-XT-Gd4"/>
+                    <constraint firstItem="Tv3-nz-McH" firstAttribute="bottom" secondItem="AHY-tA-4TS" secondAttribute="bottom" id="VdO-Jv-93B"/>
                     <constraint firstAttribute="bottomMargin" secondItem="AHY-tA-4TS" secondAttribute="bottom" constant="-8" id="f9k-GP-FU0"/>
+                    <constraint firstItem="AHY-tA-4TS" firstAttribute="top" secondItem="Tv3-nz-McH" secondAttribute="bottom" constant="-8" id="geT-Ir-YwA"/>
                     <constraint firstAttribute="trailingMargin" secondItem="AHY-tA-4TS" secondAttribute="trailing" constant="-8" id="pH2-iC-MeL"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Tv3-nz-McH" secondAttribute="bottom" constant="-8" id="wrM-s1-0TS"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="f9k-GP-FU0"/>
+                        <exclude reference="geT-Ir-YwA"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.25490196079999999" green="0.71372549019999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>

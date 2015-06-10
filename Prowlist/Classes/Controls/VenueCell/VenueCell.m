@@ -35,6 +35,13 @@
                 constraint.constant = value - 8;
             }
         }];
+    } else {
+        [self.content.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+            NSLog(@"Hola mundo, %ld", (long)constraint.secondAttribute);
+            if ((constraint.secondItem == self.imageWrapper) && (constraint.secondAttribute == NSLayoutAttributeBottom)) {
+                constraint.constant = (8 + value)*-1;
+            }
+        }];
     }
 }
 

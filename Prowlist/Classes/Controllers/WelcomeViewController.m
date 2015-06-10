@@ -65,7 +65,7 @@
                  @"name" : @"Axiom Hotel",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
                  @"tint" : @[@0, @0, @0],
-                 @"photo":@"sf-mockup",
+                 @"photo":@"chicago-mockup",
                  @"height":@200,
                  @"tags" : @[
                          @{
@@ -153,9 +153,10 @@
         }];
         
     } else if(scrollOffset + scrollViewHeight >= scrollContentSizeHeight) {
-        /*NSLog(@"This is it.... %f", (scrollOffset + scrollViewHeight)-scrollContentSizeHeight);
-        VenueCell *cell = (VenueCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        [cell resizeImageCellWithValue:(scrollOffset + scrollViewHeight)-scrollContentSizeHeight];*/
+        float overLap = (scrollOffset + scrollViewHeight)-scrollContentSizeHeight;
+        NSLog(@"This is it.... %f %f", overLap, scrollOffset);
+        VenueCell *cell = (VenueCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:data.count-1 inSection:0]];
+        [cell resizeImageCellWithValue:overLap];
     }
 }
 
