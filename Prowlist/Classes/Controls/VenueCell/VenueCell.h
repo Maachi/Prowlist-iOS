@@ -12,6 +12,7 @@
 @interface VenueCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *imageWrapper;
 @property (weak, nonatomic) IBOutlet UIButton *tagButton;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @property (strong, nonatomic) id <ProwlistTheme> theme;
 

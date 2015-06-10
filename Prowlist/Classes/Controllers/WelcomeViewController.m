@@ -11,6 +11,8 @@
 @interface WelcomeViewController ()<UITableViewDataSource, UITableViewDelegate>{
     __weak IBOutlet UITableView *tableView;
     __weak IBOutlet UIView *headerWelcome;
+    
+    NSArray *data;
 }
 @end
 
@@ -18,6 +20,62 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    data = @[
+             @{
+                 @"name" : @"Axiom Hotel",
+                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"tint" : @[@0, @0, @0],
+                 @"photo":@"losangeles-mockup",
+                 @"height":@470,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"Near You",
+                             @"tint" : @[@0, @0, @0],
+                             }
+                         ]
+                 },
+             @{
+                 @"name" : @"Axiom Hotel",
+                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"tint" : @[@0, @0, @0],
+                 @"photo":@"sf-mockup",
+                 @"height":@200,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"Near You",
+                             @"tint" : @[@0, @0, @0],
+                             }
+                         ]
+                 },
+             @{
+                 @"name" : @"Axiom Hotel",
+                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"tint" : @[@0, @0, @0],
+                 @"photo":@"london-mockup",
+                 @"height":@120,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"Near You",
+                             @"tint" : @[@0, @0, @0],
+                             }
+                         ]
+                 },
+             @{
+                 @"name" : @"Axiom Hotel",
+                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"tint" : @[@0, @0, @0],
+                 @"photo":@"sf-mockup",
+                 @"height":@200,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"Near You",
+                             @"tint" : @[@0, @0, @0],
+                             }
+                         ]
+                 }
+             ];
+    
     [tableView setContentInset:UIEdgeInsetsMake(-20,0,0,0)];
     
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -108,8 +166,8 @@
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 {
     CGFloat rowHeight = 220;
-    if (indexPath.row == 0){
-        rowHeight = 450;
+    if ([[data objectAtIndex:indexPath.row] objectForKey:@"height"]){
+        rowHeight = [[[data objectAtIndex:indexPath.row] objectForKey:@"height"] floatValue];
     }
     return rowHeight;
 }
@@ -120,13 +178,13 @@
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return [data count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"VenueCell";
-    
+    NSDictionary *current = [data objectAtIndex:indexPath.row];
     VenueCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     
@@ -134,10 +192,8 @@
         cell = [[VenueCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    if(indexPath.row == 0){
-        cell.backgroundColor = [UIColor blueColor];
-    } else {
-        cell.backgroundColor = [UIColor clearColor];
+    if([current objectForKey:@"photo"]){
+        cell.image.image = [UIImage imageNamed:[current objectForKey:@"photo"]];
     }
     
     cell.title = @"Hola Mundo";

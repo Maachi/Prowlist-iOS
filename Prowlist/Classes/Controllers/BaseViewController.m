@@ -11,6 +11,7 @@
 
 @interface BaseViewController ()<UIGestureRecognizerDelegate, UIBarPositioningDelegate> {
     UIView *displayView;
+    CGFloat initialPosition;
 }
 
 @end
@@ -83,17 +84,17 @@
 - (void)handlePan:(UIPanGestureRecognizer *)gesture {
     CGPoint translate = [gesture translationInView:gesture.view];
     translate.y = 0.0;
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        initialPosition = self.view.frame.origin.x;
+    }
     //NSLog(@"Move : %f %f", translate.x, _menuView.frame.origin.x);
     //CGRect frameMade = CGRectMake(_menuView.frame.origin.x + translate.x, translate.y, _menuView.bounds.size.width, _menuView.bounds.size.height);
-    CGRect frameMadeMain = CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    CGRect frameMadeMain = CGRectMake(initialPosition + translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
     
     if (frameMadeMain.origin.x<0){
         self.view.frame = frameMadeMain;
-    } else {
-        
     }
-    
-    
     
     if (gesture.state == UIGestureRecognizerStateCancelled ||
         gesture.state == UIGestureRecognizerStateEnded ||
@@ -110,6 +111,9 @@
         } else
         {
             [self hideMenu];
+            if(translate.x > 60.0){
+                [self.navigationController popViewControllerAnimated:YES];
+            }
             
         }
         
