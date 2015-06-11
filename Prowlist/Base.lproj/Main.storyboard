@@ -579,7 +579,7 @@
         <!--Profile View Controller-->
         <scene sceneID="Ltt-xd-vg7">
             <objects>
-                <viewController id="Y0b-9B-aRm" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileViewController" id="Y0b-9B-aRm" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NhA-PG-Ykt"/>
                         <viewControllerLayoutGuide type="bottom" id="hfv-na-tdZ"/>
@@ -833,24 +833,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8A-uU-gfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1883" y="1763"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jCc-zX-r67">
-            <objects>
-                <navigationController storyboardIdentifier="MyProfileViewController" navigationBarHidden="YES" id="eve-1m-0xN" sceneMemberID="viewController">
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wb1-0h-aZm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Y0b-9B-aRm" kind="relationship" relationship="rootViewController" id="m5E-hw-fz2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dVt-OV-edK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1192" y="1763"/>
         </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="8jJ-tf-gEx">

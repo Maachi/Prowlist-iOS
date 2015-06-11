@@ -22,6 +22,7 @@
     [super viewDidLoad];
     [super initializeScroll];
     [super formControllerEvents];
+    [super addEventsMenu];
     [self.theme styleRoudCornersThumb:self.thumbFrame];
     
     [self.theme styleRoudCornersThumb:self.thumbImage];
@@ -65,9 +66,11 @@
 }
 */
 - (IBAction)saveAndClose:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
+    //[self dismissViewControllerAnimated:YES completion:^{
         
-    }];
+    //}];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

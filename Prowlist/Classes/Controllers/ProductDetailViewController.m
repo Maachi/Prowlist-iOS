@@ -9,7 +9,9 @@
 #import "ProductDetailViewController.h"
 #import "ActionSheetStringPicker.h"
 
-@interface ProductDetailViewController ()
+@interface ProductDetailViewController () {
+    NSArray *data;
+}
 @property (weak, nonatomic) IBOutlet UIView *imageWrapp;
 
 @end

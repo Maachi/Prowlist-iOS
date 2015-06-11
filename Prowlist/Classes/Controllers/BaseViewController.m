@@ -92,7 +92,7 @@
     
     CGRect frameMadeMain = CGRectMake(initialPosition + translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
     
-    if (frameMadeMain.origin.x<0){
+    if (frameMadeMain.origin.x<0 && _menuView){
         self.view.frame = frameMadeMain;
     }
     
@@ -105,8 +105,9 @@
         
         if (translate.x < 0.0 && (translate.x + velocity.x * 0.25) < (gesture.view.bounds.size.width / 2.0))
         {
-            
-            [self showProfileMenu];
+            if(_menuView){
+                [self showProfileMenu];
+            }
             
         } else
         {
@@ -125,8 +126,10 @@
 {
     UIStoryboard *storyBoard = [self storyboard];
     UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyProfileViewController"];
-    modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:modalLoginViewController animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:modalLoginViewController animated:YES];
+    //modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //[self presentViewController:modalLoginViewController animated:YES completion:nil];
     
 }
 
