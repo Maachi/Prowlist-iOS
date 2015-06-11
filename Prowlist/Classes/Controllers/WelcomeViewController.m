@@ -20,51 +20,73 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     data = @[
              @{
                  @"name" : @"Axiom Hotel",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@0, @0, @0],
+                 @"tint" : @[@255, @255, @255],
                  @"photo":@"losangeles-mockup",
                  @"height":@470,
                  @"tags" : @[
                          @{
                              @"label" : @"Near You",
-                             @"tint" : @[@0, @0, @0],
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             },
+                         @{
+                             @"label" : @"Fast",
+                             @"tint" : @[@128.0, @168.0, @204.0],
+                             @"textColor" : @[@0, @0, @0],
+                             },
+                         @{
+                             @"label" : @"San Francisco",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
                              }
                          ]
                  },
              @{
                  @"name" : @"Axiom Hotel",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@0, @0, @0],
+                 @"tint" : @[@255, @255, @255],
                  @"photo":@"sf-mockup",
                  @"height":@200,
                  @"tags" : @[
                          @{
                              @"label" : @"Near You",
-                             @"tint" : @[@0, @0, @0],
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
                              }
                          ]
                  },
              @{
-                 @"name" : @"Axiom Hotel",
-                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"name" : @"London view",
+                 @"smallDescription": @"",
                  @"tint" : @[@0, @0, @0],
                  @"photo":@"london-mockup",
                  @"height":@120,
                  @"tags" : @[
                          @{
                              @"label" : @"Near You",
-                             @"tint" : @[@0, @0, @0],
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             },
+                         @{
+                             @"label" : @"Fast",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             },
+                         @{
+                             @"label" : @"San Francisco",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
                              }
                          ]
                  },
              @{
                  @"name" : @"Axiom Hotel",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@0, @0, @0],
+                 @"tint" : @[@255, @255, @255],
                  @"photo":@"chicago-mockup",
                  @"height":@200,
                  @"tags" : @[
@@ -154,7 +176,6 @@
         
     } else if(scrollOffset + scrollViewHeight >= scrollContentSizeHeight) {
         float overLap = (scrollOffset + scrollViewHeight)-scrollContentSizeHeight;
-        NSLog(@"This is it.... %f %f", overLap, scrollOffset);
         VenueCell *cell = (VenueCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:data.count-1 inSection:0]];
         [cell resizeImageCellWithValue:overLap];
     }
@@ -192,6 +213,13 @@
     if (cell == nil) {
         cell = [[VenueCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    
+    
+    cell.titleLabel.text = [current objectForKey:@"name"];
+    cell.smallDescriptionLabel.text = [current objectForKey:@"smallDescription"];
+    
+    [cell changeColorWithColor:[current objectForKey:@"tint"]];
+    [cell buildTagsInView:[current objectForKey:@"tags"]];
     
     if([current objectForKey:@"photo"]){
         cell.image.image = [UIImage imageNamed:[current objectForKey:@"photo"]];

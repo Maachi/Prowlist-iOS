@@ -15,10 +15,14 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @property (strong, nonatomic) id <ProwlistTheme> theme;
+@property (weak, nonatomic) IBOutlet UIView *tagsWrapper;
 
 @property (strong, nonatomic) NSString *title;
 @property (weak, nonatomic) IBOutlet UIView *content;
 -(void) resizeImageCellWithValue:(CGFloat)value;
 -(void) render;
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *smallDescriptionLabel;
+-(void) changeColorWithColor:(NSArray *) colorArray;
+-(void) buildTagsInView:(NSArray *) tagsArray;
 @end
