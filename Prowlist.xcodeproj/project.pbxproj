@@ -31,6 +31,7 @@
 		63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A49F821B23587400D469E2 /* DetailVenueViewController.m */; };
 		63E2E75E1B2501B200B2FAA5 /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */; };
 		63E2E7611B2501DA00B2FAA5 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E2E7601B2501DA00B2FAA5 /* VenueCell.m */; };
+		63E2E7651B2D0C3000B2FAA5 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E2E7641B2D0C3000B2FAA5 /* UIImage+Util.m */; };
 		63EF87381AFA8D4A001B9C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87371AFA8D4A001B9C7B /* main.m */; };
 		63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF873A1AFA8D4A001B9C7B /* AppDelegate.m */; };
 		63EF87411AFA8D4A001B9C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF873F1AFA8D4A001B9C7B /* Main.storyboard */; };
@@ -94,6 +95,8 @@
 		63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenueCell.xib; path = Classes/Controls/VenueCell/VenueCell.xib; sourceTree = "<group>"; };
 		63E2E75F1B2501DA00B2FAA5 /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueCell.h; path = Classes/Controls/VenueCell/VenueCell.h; sourceTree = "<group>"; };
 		63E2E7601B2501DA00B2FAA5 /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueCell.m; path = Classes/Controls/VenueCell/VenueCell.m; sourceTree = "<group>"; };
+		63E2E7631B2D0C3000B2FAA5 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Util.h"; path = "Classes/Utils/UIImage+Util.h"; sourceTree = "<group>"; };
+		63E2E7641B2D0C3000B2FAA5 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Util.m"; path = "Classes/Utils/UIImage+Util.m"; sourceTree = "<group>"; };
 		63EF87321AFA8D4A001B9C7B /* Prowlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prowlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EF87361AFA8D4A001B9C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EF87371AFA8D4A001B9C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -225,6 +228,15 @@
 			name = VenueCell;
 			sourceTree = "<group>";
 		};
+		63E2E7621B2D0BB800B2FAA5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				63E2E7631B2D0C3000B2FAA5 /* UIImage+Util.h */,
+				63E2E7641B2D0C3000B2FAA5 /* UIImage+Util.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		63EF87291AFA8D4A001B9C7B = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +301,7 @@
 		63EF875B1AFC223A001B9C7B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				63E2E7621B2D0BB800B2FAA5 /* Utils */,
 				634655DE1AFECC7D00B3AC61 /* Theme */,
 				63EF87771AFDB2A4001B9C7B /* ControllerTransition */,
 				63EF876D1AFD96B6001B9C7B /* Controls */,
@@ -541,6 +554,7 @@
 				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
 				6352264F1B1AE20500544F34 /* MenuBase.m in Sources */,
 				635226411B175E3C00544F34 /* VenueContent.m in Sources */,
+				63E2E7651B2D0C3000B2FAA5 /* UIImage+Util.m in Sources */,
 				63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */,
 				634655E41AFECE4C00B3AC61 /* BlackTheme.m in Sources */,
 				635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */,

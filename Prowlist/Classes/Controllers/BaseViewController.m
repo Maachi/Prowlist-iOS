@@ -204,6 +204,10 @@
         }
     }];
     
+    if(self.controllerStyle ==  ProwlistControllerStyleLight){
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }
+    
     [UIView animateWithDuration:0.8
                           delay: 0
          usingSpringWithDamping: 0.8
@@ -225,6 +229,11 @@
             //}
         }
     }];
+    
+    if(self.controllerStyle ==  ProwlistControllerStyleLight){
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+    
     
     [UIView animateWithDuration:0.8
                           delay: 0

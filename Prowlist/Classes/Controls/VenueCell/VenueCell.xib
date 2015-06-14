@@ -8,8 +8,8 @@
         <mutableArray key="ITCFranklinGothicStd-Book.otf">
             <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
-        <mutableArray key="ITCFranklinGothicStd-Med.otf">
-            <string>ITCFranklinGothicStd-Med</string>
+        <mutableArray key="ITCFranklinGothicStd-Demi.otf">
+            <string>ITCFranklinGothicStd-Demi</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -31,25 +31,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Axiom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug4-t8-okB">
-                                <rect key="frame" x="10" y="108" width="300" height="36"/>
+                                <rect key="frame" x="10" y="91" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="t3K-gt-mQg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Med" family="ITC Franklin Gothic Std" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Demi" family="ITC Franklin Gothic Std" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-r2-rfI">
-                                <rect key="frame" x="10" y="162" width="300" height="42"/>
+                                <rect key="frame" x="10" y="157" width="300" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="yW5-fF-4VP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-aD-jDY">
-                                <rect key="frame" x="8" y="140" width="302" height="20"/>
+                                <rect key="frame" x="8" y="129" width="302" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="hZS-PB-H9k"/>
                                 </constraints>
@@ -57,13 +57,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Gnm-aD-jDY" secondAttribute="bottom" constant="2" id="4in-Zr-tus"/>
+                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Gnm-aD-jDY" secondAttribute="bottom" constant="8" id="4in-Zr-tus"/>
                             <constraint firstItem="Gnm-aD-jDY" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="8" id="9uO-05-7zl"/>
-                            <constraint firstAttribute="bottom" secondItem="D6X-r2-rfI" secondAttribute="bottom" constant="15" id="Bnn-eL-AoF"/>
+                            <constraint firstAttribute="bottom" secondItem="D6X-r2-rfI" secondAttribute="bottom" constant="20" id="Bnn-eL-AoF"/>
                             <constraint firstItem="D6X-r2-rfI" firstAttribute="leading" secondItem="Tv3-nz-McH" secondAttribute="leading" constant="10" id="DeF-vv-Qd2"/>
                             <constraint firstAttribute="height" secondItem="l9O-oz-ayv" secondAttribute="height" id="FlB-QU-Rsf"/>
                             <constraint firstAttribute="trailing" secondItem="D6X-r2-rfI" secondAttribute="trailing" constant="10" id="L7J-2T-aVO"/>
-                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" constant="18" id="TGJ-kv-jP3"/>
+                            <constraint firstItem="D6X-r2-rfI" firstAttribute="top" secondItem="Ug4-t8-okB" secondAttribute="bottom" constant="30" id="TGJ-kv-jP3"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="width" secondItem="Tv3-nz-McH" secondAttribute="width" id="XST-k3-5LX"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="top" secondItem="Tv3-nz-McH" secondAttribute="top" id="Xjf-la-ija"/>
                             <constraint firstItem="ef9-6G-PvF" firstAttribute="bottom" secondItem="l9O-oz-ayv" secondAttribute="bottom" id="a8z-VE-RXH"/>

@@ -75,10 +75,14 @@
         int i = 0;
         float xPos = 0;
         for (NSDictionary *tag in tagsArray){
-            CGSize stringsize = [[tag objectForKey:@"label"] sizeWithFont:[UIFont boldSystemFontOfSize:11]];
+            
+            
+            CGSize stringsize =  [[[tag objectForKey:@"label"] uppercaseString] sizeWithAttributes:@{
+                                    NSFontAttributeName:[UIFont boldSystemFontOfSize:10]
+                                }];
             UIButton *labelView = [[UIButton alloc] initWithFrame:CGRectMake(xPos, 0, stringsize.width+10, 20)];
-            labelView.titleLabel.font = [UIFont boldSystemFontOfSize:11];
-            [labelView setTitle:[tag objectForKey:@"label"] forState:UIControlStateNormal];
+            labelView.titleLabel.font = [UIFont boldSystemFontOfSize:10];
+            [labelView setTitle:[[tag objectForKey:@"label"] uppercaseString] forState:UIControlStateNormal];
             labelView.backgroundColor = [self arrayToColor:[tag objectForKey:@"tint"]];
         
             [labelView setTitleColor:[self arrayToColor:[tag objectForKey:@"textColor"]] forState:UIControlStateNormal];

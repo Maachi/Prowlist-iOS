@@ -13,7 +13,15 @@
 @class ContentBase;
 
 
+enum ProwlistControllerStyle
+{
+    ProwlistControllerStyleDefault = 1,
+    ProwlistControllerStyleLight = 2
+};
+
+
 @interface BaseViewController : UIViewController <UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *mainHeader;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *scrollWrapper;
@@ -24,6 +32,8 @@
 @property (strong, nonatomic) ContentBase *contentScroll;
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (strong, nonatomic) MenuBase *menuView;
+@property (nonatomic) enum ProwlistControllerStyle controllerStyle;
+
 - (void) initializeScroll;
 - (void) displayView;
 - (void) showProfileViewController;

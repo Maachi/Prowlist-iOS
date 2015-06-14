@@ -22,7 +22,7 @@
     [super viewDidLoad];
     data = @[
              @{
-                 @"name" : @"Axiom Hotel",
+                 @"name" : @"Los Angeles",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
                  @"tint" : @[@255, @255, @255],
                  @"photo":@"losangeles-mockup",
@@ -46,7 +46,7 @@
                          ]
                  },
              @{
-                 @"name" : @"Axiom Hotel",
+                 @"name" : @"Axiom Hotel, California",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
                  @"tint" : @[@255, @255, @255],
                  @"photo":@"sf-mockup",
@@ -54,6 +54,25 @@
                  @"tags" : @[
                          @{
                              @"label" : @"Near You",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             }
+                         ]
+                 },
+             @{
+                 @"name" : @"New York",
+                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+                 @"tint" : @[@255, @255, @255],
+                 @"photo":@"times-mockup",
+                 @"height":@300,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"New York",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             },
+                         @{
+                             @"label" : @"Entertaiment",
                              @"tint" : @[@247.0, @207.0, @23.0],
                              @"textColor" : @[@0, @0, @0],
                              }
@@ -114,6 +133,7 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 

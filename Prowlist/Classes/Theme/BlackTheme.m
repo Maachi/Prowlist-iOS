@@ -29,4 +29,33 @@
     view.layer.masksToBounds = YES;
 }
 
+
+-(UIImage *) tintImage:(UIImage *)image color:(UIColor*)color {
+    return [image imageWithColor:color];
+}
+
+-(UIButton *) tintButtonWithColor:(UIButton *)button color:(UIColor*)color imageNamed:(NSString *)name
+                            state:(UIControlState)state {
+    UIImage *stateNormalBackground = [UIImage imageNamed:name];
+    stateNormalBackground = [[self tintImage:stateNormalBackground color:color] resizableImageWithCapInsets:UIEdgeInsetsMake(3, 3, 3, 3)];
+    [button setImage:stateNormalBackground forState:state];
+    [button setTitleColor:color forState:state];
+    return button;
+}
+
+
+- (UIColor *) arrayToColor:(NSArray *)colorArray {
+    UIColor *color = [UIColor whiteColor];
+    
+    if (colorArray.count >1  && colorArray.count<4){
+        float alpha = 1;
+        if(colorArray.count == 4){
+            alpha = [[colorArray objectAtIndex:3] floatValue];
+        }
+        color = [UIColor colorWithRed:[[colorArray objectAtIndex:0] floatValue]/255.0 green:[[colorArray objectAtIndex:1] floatValue]/255.0 blue:[[colorArray objectAtIndex:2] floatValue]/255.0 alpha:alpha];
+    }
+    return color;
+}
+
+
 @end

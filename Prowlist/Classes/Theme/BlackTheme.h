@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ProwlistTheme.h"
+#import "UIImage+Util.h"
 
 @interface BlackTheme : NSObject<ProwlistTheme>
 
