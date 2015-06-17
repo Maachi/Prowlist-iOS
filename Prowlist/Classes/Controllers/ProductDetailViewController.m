@@ -10,7 +10,12 @@
 #import "ActionSheetStringPicker.h"
 
 @interface ProductDetailViewController () {
-    NSArray *data;
+    NSDictionary *data;
+    __weak IBOutlet UIView *priceMarker;
+    __weak IBOutlet UIView *nameMarker;
+    __weak IBOutlet UILabel *nameProduct;
+    __weak IBOutlet UILabel *priceProduct;
+    __weak IBOutlet UILabel *venueName;
 }
 @property (weak, nonatomic) IBOutlet UIView *imageWrapp;
 
@@ -22,13 +27,36 @@
     [super viewDidLoad];
     [super initializeScroll];
     [super formControllerEvents];
+    
+    data = @{
+             @"nameProduct" : @"Hola Mundo",
+             @"price" : @"$129"
+            };
+    
+    [self setPrice:[data objectForKey:@"price"]];
+}
+
+
+
+-(void) setPrice:(NSString *)price {
+    priceProduct.text = price;
+    CGSize stringsize =  [price sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:priceProduct.font.fontName size:priceProduct.font.pointSize]}];
+    
+    [priceMarker.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == priceMarker) && (constraint.firstAttribute == NSLayoutAttributeWidth)) {
+            if (constraint.constant>0){
+                constraint.constant = stringsize.width + 15;
+            }
+        }
+    }];
+    
+    
 }
 
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [super addMenu];
-    [self showHeader];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,18 +97,19 @@
 
 
 - (IBAction)placeOrder:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"Incomplete order."
-                               message:@"We need to know more information about this order, since its a configurable product."
+    [[[UIAlertView alloc] initWithTitle:@"Order incomplete."
+                               message:@"This is a configurable object and more information is required, Prowlist can suggest a desirable setup for you. \n \n Do you want Prowlist selects a configuration based in you profile?"
                               delegate:self
-                     cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+                     cancelButtonTitle:@"Cancel"
+                      otherButtonTitles:@"Suggest", nil] show];
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if(self.profileMenuShown){
+    [super scrollViewDidScroll:scrollView];
+    /*if(self.profileMenuShown){
         [self hideMenu];
-    }
+    }*/
     [self.imageWrapp.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
         if ((constraint.firstItem == self.imageWrapp) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
             if (constraint.constant>0){
@@ -90,14 +119,14 @@
             }
         }
     }];
-    
+    /*
     if(self.scrollView.contentOffset.y < 20 && self.scrollView.contentOffset.y < -20){
         [self hideHeader];
     } else if (self.scrollView.contentOffset.y < -20) {
         [self showHeader];
     } else {
         [self showHeader];
-    }
+    }*/
 }
 
 @end
