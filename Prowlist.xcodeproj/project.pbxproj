@@ -43,6 +43,7 @@
 		63EF87761AFDA23B001B9C7B /* CellBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EF87751AFDA23B001B9C7B /* CellBase.xib */; };
 		63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87791AFDB310001B9C7B /* CellTransitionSegue.m */; };
 		63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF877C1AFDB515001B9C7B /* CellBase.m */; };
+		63EF87961B335CD10074F060 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87951B335CD10074F060 /* PaymentViewController.m */; };
 		B36081EC6E30162FE374DA81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7234FB154731B2256C790884 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +118,8 @@
 		63EF87791AFDB310001B9C7B /* CellTransitionSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTransitionSegue.m; path = Classes/ControllerTransition/CellTransitionSegue.m; sourceTree = "<group>"; };
 		63EF877B1AFDB515001B9C7B /* CellBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellBase.h; path = Classes/Controls/MainCell/CellBase.h; sourceTree = "<group>"; };
 		63EF877C1AFDB515001B9C7B /* CellBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellBase.m; path = Classes/Controls/MainCell/CellBase.m; sourceTree = "<group>"; };
+		63EF87941B335CD10074F060 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentViewController.h; path = Classes/Controllers/PaymentViewController.h; sourceTree = "<group>"; };
+		63EF87951B335CD10074F060 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaymentViewController.m; path = Classes/Controllers/PaymentViewController.m; sourceTree = "<group>"; };
 		7234FB154731B2256C790884 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16D5AABD1789C241E9AF2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -325,6 +328,8 @@
 				635226551B1EAE3700544F34 /* ProductDetailViewController.m */,
 				63A49F811B23587300D469E2 /* DetailVenueViewController.h */,
 				63A49F821B23587400D469E2 /* DetailVenueViewController.m */,
+				63EF87941B335CD10074F060 /* PaymentViewController.h */,
+				63EF87951B335CD10074F060 /* PaymentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				634655E41AFECE4C00B3AC61 /* BlackTheme.m in Sources */,
 				635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */,
 				63E2E7611B2501DA00B2FAA5 /* VenueCell.m in Sources */,
+				63EF87961B335CD10074F060 /* PaymentViewController.m in Sources */,
 				635226491B178FA600544F34 /* ContentBase.m in Sources */,
 				634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */,
 				63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */,

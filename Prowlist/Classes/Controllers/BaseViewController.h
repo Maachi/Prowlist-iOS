@@ -34,9 +34,12 @@ enum ProwlistControllerStyle
 @property (strong, nonatomic) MenuBase *menuView;
 @property (nonatomic) enum ProwlistControllerStyle controllerStyle;
 
+@property (nonatomic) CGPoint lastScrollPosition;
+
 - (void) initializeScroll;
 - (void) displayView;
 - (void) showProfileViewController;
+- (void) showPaymentsViewContoller;
 - (void) hideMenu;
 - (void) showProfileMenu;
 - (void) addMenu;

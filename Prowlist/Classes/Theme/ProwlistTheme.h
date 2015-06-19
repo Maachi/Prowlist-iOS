@@ -18,6 +18,8 @@
 - (void) roundCorners:(UIView *)view;
 - (void) roundCornersButton:(UIView *)view;
 
+-(void) styleTextField:(UITextField *)textField;
+
 -(UIButton *) tintButtonWithColor:(UIButton *)button color:(UIColor*)color imageNamed:(NSString *)name state:(UIControlState)state;
 
 

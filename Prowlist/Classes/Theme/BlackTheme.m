@@ -18,6 +18,12 @@
 }
 
 
+-(void) styleTextField:(UITextField *)textField {
+    UIColor *color = [UIColor colorWithRed:134.0 green:134.0 blue:134.0 alpha:.7];
+    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:textField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+}
+
+
 - (void) roundCorners:(UIView *)view {
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = YES;

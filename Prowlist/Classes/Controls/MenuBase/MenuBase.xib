@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="ITCFranklinGothicStd-Book.otf">
@@ -104,6 +104,9 @@
                     <state key="normal" title="Payments">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="myPayments:" destination="iN0-l3-epB" eventType="touchUpInside" id="0ms-S6-KSS"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-Xo-Nqd">
                     <rect key="frame" x="0.0" y="312" width="600" height="50"/>
@@ -112,7 +115,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
                     <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="20" maxY="0.0"/>
-                    <state key="normal" title="Invite friends">
+                    <state key="normal" title="Friends">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -148,8 +151,8 @@
             <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="Xv3-Ib-cH9"/>
                     <exclude reference="rUY-cv-U0v"/>
+                    <exclude reference="Xv3-Ib-cH9"/>
                 </mask>
             </variation>
             <connections>

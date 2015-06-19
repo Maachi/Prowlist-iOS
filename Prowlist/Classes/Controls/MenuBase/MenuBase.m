@@ -33,5 +33,11 @@
         [_parent showProfileViewController];
     }
 }
+- (IBAction)myPayments:(id)sender {
+    if(_parent){
+        [_parent hideMenu];
+        [_parent showPaymentsViewContoller];
+    }
+}
 
 @end

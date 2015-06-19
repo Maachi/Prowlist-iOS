@@ -9,10 +9,13 @@
 #import "ProfileViewController.h"
 #import "VENTokenField.h"
 
-@interface ProfileViewController ()<VENTokenFieldDelegate, VENTokenFieldDataSource>
+@interface ProfileViewController ()<VENTokenFieldDelegate, VENTokenFieldDataSource, UITextFieldDelegate>
 @property (strong, nonatomic) NSMutableArray *names;
 @property (nonatomic) BOOL viewLoaded;
 @property (weak, nonatomic) IBOutlet VENTokenField *likesTagsField;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTexttField;
 
 @end
 
@@ -35,6 +38,10 @@
     self.likesTagsField.toLabelText = NSLocalizedString(@"Your Likes:", nil);
     [self.likesTagsField setColorScheme:[UIColor colorWithRed:128/255.0f green:168/255.0f blue:204/255.0f alpha:1.0f]];
     self.likesTagsField.inputTextFieldTextColor = [UIColor whiteColor];
+    
+    self.nameTextField.delegate = self;
+    self.locationTextField.delegate = self;
+    self.emailTexttField.delegate = self;
 }
 
 
@@ -104,6 +111,29 @@
 - (NSString *)tokenFieldCollapsedText:(VENTokenField *)tokenField
 {
     return [NSString stringWithFormat:@"%tu people", [self.names count]];
+}
+
+
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField*)textField {
+    if (textField){
+        
+        self.lastScrollPosition = self.scrollView.contentOffset;
+        
+        CGPoint center = CGPointMake(textField.bounds.origin.x + textField.bounds.size.width/2,
+                                     textField.bounds.origin.y + textField.bounds.size.height/2);
+        CGPoint point = [textField convertPoint:center toView:self.scrollView];
+        [self.scrollView setContentOffset:CGPointMake(0, point.y - (self.scrollView.bounds.size.height-240)) animated:YES];
+    }
+    return YES;
+}
+
+
+
+-(BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:self.lastScrollPosition animated:YES];
+    
+    return YES;
 }
 
 @end

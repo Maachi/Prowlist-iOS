@@ -24,6 +24,9 @@
     _theme = [ProwlistThemeManager sharedTheme];
 }
 
+- (IBAction)goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;
@@ -130,6 +133,16 @@
     [self.navigationController pushViewController:modalLoginViewController animated:YES];
     //modalLoginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //[self presentViewController:modalLoginViewController animated:YES completion:nil];
+    
+}
+
+
+
+- (void) showPaymentsViewContoller {
+    UIStoryboard *storyBoard = [self storyboard];
+    UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyPaymentViewController"];
+    
+    [self.navigationController pushViewController:modalLoginViewController animated:YES];
     
 }
 

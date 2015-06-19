@@ -9,13 +9,14 @@
 #import "ProductDetailViewController.h"
 #import "ActionSheetStringPicker.h"
 
-@interface ProductDetailViewController () {
+@interface ProductDetailViewController ()<UITextFieldDelegate> {
     NSDictionary *data;
     __weak IBOutlet UIView *priceMarker;
     __weak IBOutlet UIView *nameMarker;
     __weak IBOutlet UILabel *nameProduct;
     __weak IBOutlet UILabel *priceProduct;
     __weak IBOutlet UILabel *venueName;
+    __weak IBOutlet UITextField *specialGuides;
 }
 @property (weak, nonatomic) IBOutlet UIView *imageWrapp;
 
@@ -34,8 +35,27 @@
             };
     
     [self setPrice:[data objectForKey:@"price"]];
+    [self setNProduct:[data objectForKey:@"nameProduct"]];
+    
+    [self.theme styleTextField:specialGuides];
+    specialGuides.delegate = self;
 }
 
+
+
+
+-(void) setNProduct:(NSString *)nameP {
+    nameProduct.text = nameP;
+    CGSize stringsize =  [nameP sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:nameProduct.font.fontName size:nameProduct.font.pointSize]}];
+    
+    [nameMarker.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        if ((constraint.firstItem == nameMarker) && (constraint.firstAttribute == NSLayoutAttributeWidth)) {
+            if (constraint.constant>0){
+                constraint.constant = stringsize.width + 15;
+            }
+        }
+    }];
+}
 
 
 -(void) setPrice:(NSString *)price {
@@ -127,6 +147,28 @@
     } else {
         [self showHeader];
     }*/
+}
+
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField*)textField {
+    if (textField){
+        
+        self.lastScrollPosition = self.scrollView.contentOffset;
+        
+        CGPoint center = CGPointMake(textField.bounds.origin.x + textField.bounds.size.width/2,
+                                           textField.bounds.origin.y + textField.bounds.size.height/2);
+        CGPoint point = [textField convertPoint:center toView:self.scrollView];
+        [self.scrollView setContentOffset:CGPointMake(0, point.y - (self.scrollView.bounds.size.height-240)) animated:YES];
+    }
+    return YES;
+}
+
+
+
+-(BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:self.lastScrollPosition animated:YES];
+    
+    return YES;
 }
 
 @end
