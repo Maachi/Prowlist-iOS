@@ -114,10 +114,10 @@
             
         } else
         {
-            [self hideMenu];
-            if(translate.x > 60.0){
+            if(translate.x > 60.0 && !_profileMenuShown){
                 [self.navigationController popViewControllerAnimated:YES];
             }
+            [self hideMenu];
             
         }
         
