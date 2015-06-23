@@ -45,6 +45,7 @@
 		63EF877D1AFDB515001B9C7B /* CellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF877C1AFDB515001B9C7B /* CellBase.m */; };
 		63EF87961B335CD10074F060 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF87951B335CD10074F060 /* PaymentViewController.m */; };
 		B36081EC6E30162FE374DA81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7234FB154731B2256C790884 /* libPods.a */; };
+		F66156231B38F6DA001BDAD4 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66156221B38F6DA001BDAD4 /* FriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		63EF87951B335CD10074F060 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaymentViewController.m; path = Classes/Controllers/PaymentViewController.m; sourceTree = "<group>"; };
 		7234FB154731B2256C790884 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16D5AABD1789C241E9AF2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F66156211B38F6DA001BDAD4 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsViewController.h; path = Classes/Controllers/FriendsViewController.h; sourceTree = "<group>"; };
+		F66156221B38F6DA001BDAD4 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = Classes/Controllers/FriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +333,8 @@
 				63A49F821B23587400D469E2 /* DetailVenueViewController.m */,
 				63EF87941B335CD10074F060 /* PaymentViewController.h */,
 				63EF87951B335CD10074F060 /* PaymentViewController.m */,
+				F66156211B38F6DA001BDAD4 /* FriendsViewController.h */,
+				F66156221B38F6DA001BDAD4 /* FriendsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				634655FA1B056FF800B3AC61 /* Slide.m in Sources */,
 				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
 				6352264F1B1AE20500544F34 /* MenuBase.m in Sources */,
+				F66156231B38F6DA001BDAD4 /* FriendsViewController.m in Sources */,
 				635226411B175E3C00544F34 /* VenueContent.m in Sources */,
 				63E2E7651B2D0C3000B2FAA5 /* UIImage+Util.m in Sources */,
 				63EF873B1AFA8D4A001B9C7B /* AppDelegate.m in Sources */,

@@ -32,6 +32,7 @@
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -1133,6 +1134,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDA-JC-NCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2545" y="1763"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="Gd5-45-nDG">
+            <objects>
+                <viewController storyboardIdentifier="MyFriendsViewController" id="4Ir-gh-Sl6" customClass="FriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55a-6i-VIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="pYG-qK-Pwj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6cm-3G-m06">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-pl-ntn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-Cf-Rtv" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ygY-Iy-7Mo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-6a-xcu" userLabel="Menu">
+                                <rect key="frame" x="20" y="30" width="556" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="cxK-9f-grR"/>
+                                    <constraint firstAttribute="height" constant="40" id="vIh-wV-TN1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                                <state key="normal" title="  Back" image="back-arrow">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cxK-9f-grR"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="goBack:" destination="4Ir-gh-Sl6" eventType="touchUpInside" id="alJ-pe-fYN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="9Um-Cf-Rtv" firstAttribute="top" secondItem="55a-6i-VIb" secondAttribute="bottom" constant="-20" id="6NV-WJ-ZVI"/>
+                            <constraint firstItem="gPc-6a-xcu" firstAttribute="top" secondItem="55a-6i-VIb" secondAttribute="bottom" constant="10" id="MMB-9Y-4Wd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gPc-6a-xcu" secondAttribute="trailing" constant="8" id="RC4-mU-tnE"/>
+                            <constraint firstItem="9Um-Cf-Rtv" firstAttribute="leading" secondItem="6cm-3G-m06" secondAttribute="leadingMargin" constant="-16" id="gLw-iC-z9g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Um-Cf-Rtv" secondAttribute="trailing" constant="-16" id="h8c-rm-AqX"/>
+                            <constraint firstItem="gPc-6a-xcu" firstAttribute="leading" secondItem="6cm-3G-m06" secondAttribute="leadingMargin" constant="4" id="ncd-Oz-NMD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcN-S1-P30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3225" y="1763"/>
         </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="8jJ-tf-gEx">
