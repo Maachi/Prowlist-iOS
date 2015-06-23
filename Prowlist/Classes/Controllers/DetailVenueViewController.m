@@ -37,7 +37,7 @@
              @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
              @"detailDescription" : @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro, zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro",
              @"logoImage" : @"",
-             @"photo":@"losangeles-mockup",
+             @"photo":@"london-mockup",
              @"height":@470,
              @"stays" : @1222,
              @"perks" : @5,
@@ -61,7 +61,7 @@
                          @"textColor" : @[@0, @0, @0],
                          }
                      ],
-             @"controllerStyle" : @1,
+             @"controllerStyle" : @2,
             };
     
     self.mainHeader.image = [UIImage imageNamed:[data objectForKey:@"photo"]];
