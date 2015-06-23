@@ -118,6 +118,9 @@
                     <state key="normal" title="Friends">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="myFriends:" destination="iN0-l3-epB" eventType="touchUpInside" id="Zlf-1N-e3f"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>

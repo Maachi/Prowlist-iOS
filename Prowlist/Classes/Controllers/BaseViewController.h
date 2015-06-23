@@ -40,6 +40,7 @@ enum ProwlistControllerStyle
 - (void) displayView;
 - (void) showProfileViewController;
 - (void) showPaymentsViewContoller;
+- (void) showFriendsViewContoller;
 - (void) hideMenu;
 - (void) showProfileMenu;
 - (void) addMenu;

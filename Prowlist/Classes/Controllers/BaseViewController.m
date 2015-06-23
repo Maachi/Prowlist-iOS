@@ -146,6 +146,14 @@
     
 }
 
+- (void) showFriendsViewContoller {
+    UIStoryboard *storyBoard = [self storyboard];
+    UIViewController *modalLoginViewController  = [storyBoard instantiateViewControllerWithIdentifier:@"MyFriendsViewController"];
+    
+    [self.navigationController pushViewController:modalLoginViewController animated:YES];
+    
+}
+
 
 -(void) showProfileMenu {
     [UIView animateWithDuration:0.5

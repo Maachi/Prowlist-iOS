@@ -39,5 +39,11 @@
         [_parent showPaymentsViewContoller];
     }
 }
+- (IBAction)myFriends:(id)sender {
+    if(_parent){
+        [_parent hideMenu];
+        [_parent showFriendsViewContoller];
+    }
+}
 
 @end
