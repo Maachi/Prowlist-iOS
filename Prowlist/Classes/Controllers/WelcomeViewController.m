@@ -114,6 +114,23 @@
                              @"tint" : @[@0, @0, @0],
                              }
                          ]
+                 },
+             @{
+                 @"name" : @"Rio de Janeiro",
+                 @"smallDescription": @"This is test for me to learn :)",
+                 @"photo":@"riu-mockup",
+                 @"height":@300,
+                 @"tags" : @[
+                         @{
+                             @"label" : @"Near You",
+                             @"tint" : @[@128.0, @168.0, @204.0],
+                             },
+                         @{
+                             @"label" : @"Fast",
+                             @"tint" : @[@247.0, @207.0, @23.0],
+                             @"textColor" : @[@0, @0, @0],
+                             }
+                         ]
                  }
              ];
     
