@@ -102,6 +102,8 @@
 - (IBAction)selectType:(UIButton *)sender {
    __block NSArray *wines = [NSArray arrayWithObjects:@"Dow Vintage Port", @"Prats & Symington Douro Chryseia", @"Quinta do Vale Meão Douro ", @"Brewer-Clifton Pinot Noir Sta. Rita Hills", @"Castello di Volpaia Chianti Classico Riserva", nil];
     
+    [self.view endEditing:YES];
+    
     [ActionSheetStringPicker showPickerWithTitle:@"Select the brand of wine you want"
                                             rows:wines
                                 initialSelection:0
