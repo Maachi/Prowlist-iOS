@@ -200,7 +200,7 @@
                                     <constraint firstAttribute="bottom" secondItem="ex5-6E-ElG" secondAttribute="bottom" constant="-200" id="rYH-tQ-x1U"/>
                                 </constraints>
                             </scrollView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-jw-lVH" userLabel="Header">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-jw-lVH" userLabel="Header">
                                 <rect key="frame" x="4" y="-20" width="592" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1287,7 +1287,7 @@
                                                     <constraint firstItem="Wtb-CO-GCd" firstAttribute="leading" secondItem="TN4-uI-PJg" secondAttribute="leading" constant="10" id="kHG-jG-fvt"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likes-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tVP-w9-0U0">
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-stuff-big-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tVP-w9-0U0">
                                                 <rect key="frame" x="251" y="155" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="GHX-vK-JPK"/>
@@ -1508,9 +1508,9 @@
     <resources>
         <image name="back-arrow" width="8" height="10"/>
         <image name="javo" width="320" height="320"/>
-        <image name="likes-icon" width="42" height="42"/>
         <image name="main-background" width="320" height="566"/>
         <image name="more-icon" width="8" height="34"/>
+        <image name="my-stuff-big-icon" width="64" height="74"/>
         <image name="perks-big-icon" width="82" height="84"/>
         <image name="prowlist-logo" width="97" height="109"/>
         <image name="sf-mockup" width="320" height="566"/>

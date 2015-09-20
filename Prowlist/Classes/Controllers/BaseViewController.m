@@ -12,6 +12,7 @@
 @interface BaseViewController ()<UIGestureRecognizerDelegate, UIBarPositioningDelegate> {
     UIView *displayView;
     CGFloat initialPosition;
+    BOOL headerAnimated;
 }
 
 @end
@@ -217,54 +218,44 @@
 
 
 -(void) hideHeader{
-    [self.header.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == self.header) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
-            //if (constraint.constant>0){
-            constraint.constant = 0;
-            //}
+    if(!headerAnimated){
+        headerAnimated = YES;
+        if(self.controllerStyle ==  ProwlistControllerStyleLight){
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
         }
-    }];
-    
-    if(self.controllerStyle ==  ProwlistControllerStyleLight){
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        [UIView animateWithDuration:0.8
+                              delay: 0
+             usingSpringWithDamping: 0.8
+              initialSpringVelocity:0.5
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.header.alpha = 0;
+                         } completion:^(BOOL finished){
+                             headerAnimated = NO;
+                         }];
+        
     }
-    
-    [UIView animateWithDuration:0.8
-                          delay: 0
-         usingSpringWithDamping: 0.8
-          initialSpringVelocity:0.5
-                        options: UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         [self.header layoutIfNeeded];
-                     } completion:^(BOOL finished){
-                     }];
 }
 
 
 
 -(void) showHeader{
-    [self.header.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        if ((constraint.firstItem == self.header) && (constraint.firstAttribute == NSLayoutAttributeHeight)) {
-            //if (constraint.constant>0){
-            constraint.constant = 70;
-            //}
+    if(!headerAnimated){
+        headerAnimated = YES;
+        if(self.controllerStyle ==  ProwlistControllerStyleLight){
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
         }
-    }];
-    
-    if(self.controllerStyle ==  ProwlistControllerStyleLight){
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+        [UIView animateWithDuration:0.8
+                              delay: 0
+             usingSpringWithDamping: 0.8
+              initialSpringVelocity:0.5
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.header.alpha = 1;
+                         } completion:^(BOOL finished){
+                             headerAnimated = NO;
+                         }];
     }
-    
-    
-    [UIView animateWithDuration:0.8
-                          delay: 0
-         usingSpringWithDamping: 0.8
-          initialSpringVelocity:0.5
-                        options: UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         [self.header layoutIfNeeded];
-                     } completion:^(BOOL finished){
-                     }];
 }
 
 
