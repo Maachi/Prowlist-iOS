@@ -109,6 +109,9 @@
                                         <state key="normal" image="more-icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showMoreOptions:" destination="kYQ-PG-AqA" eventType="touchUpInside" id="dT1-2g-Gs3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
@@ -122,7 +125,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gAp-Ax-zPU" secondAttribute="trailing" constant="-16" id="2JN-qY-Top"/>
                             <constraint firstAttribute="trailingMargin" secondItem="azK-Ab-Pi4" secondAttribute="trailing" constant="-16" id="9vB-Pe-c7I"/>
@@ -594,7 +597,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Uc7-YD-0Wj" firstAttribute="top" secondItem="GdK-TX-ePb" secondAttribute="bottom" constant="-20" id="07w-Vd-i8A"/>
                             <constraint firstItem="9mT-6k-skB" firstAttribute="leading" secondItem="wo3-Pc-cFT" secondAttribute="leadingMargin" constant="-16" id="2gi-US-ayO"/>
@@ -862,7 +865,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="khz-9C-Bu4" secondAttribute="trailing" constant="-16" id="146-Ri-50Y"/>
                             <constraint firstItem="hfv-na-tdZ" firstAttribute="top" secondItem="ydh-hK-QGz" secondAttribute="bottom" constant="40" id="44L-Ho-a8s"/>
@@ -1110,7 +1113,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xwr-Yp-U0P" firstAttribute="leading" secondItem="yUs-mT-RHA" secondAttribute="leadingMargin" constant="-16" id="AsN-PV-nVw"/>
                             <constraint firstItem="0yP-fb-h2b" firstAttribute="top" secondItem="xwr-Yp-U0P" secondAttribute="bottom" id="CyR-XS-veS"/>
@@ -1178,7 +1181,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9Um-Cf-Rtv" firstAttribute="top" secondItem="55a-6i-VIb" secondAttribute="bottom" constant="-20" id="6NV-WJ-ZVI"/>
                             <constraint firstItem="gPc-6a-xcu" firstAttribute="top" secondItem="55a-6i-VIb" secondAttribute="bottom" constant="10" id="MMB-9Y-4Wd"/>

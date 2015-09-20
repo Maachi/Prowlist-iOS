@@ -7,11 +7,13 @@
 //
 #import "WelcomeViewController.h"
 #import "VenueCell.h"
+#import "ProwlistLocation.h"
+#import "Session.h"
 
-@interface WelcomeViewController ()<UITableViewDataSource, UITableViewDelegate>{
+@interface WelcomeViewController ()<UITableViewDataSource, UITableViewDelegate, ProwlistLocationDelegate>{
     __weak IBOutlet UITableView *tableView;
     __weak IBOutlet UIView *headerWelcome;
-    
+    ProwlistLocation *prowlistLocation;
     NSArray *data;
 }
 @end
@@ -157,9 +159,17 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self addMenu];
+    Session *session = [Session find:@"key == %@", @"WALKTHROUGH_VIEW_SHOWN"];
+    if(session){
+        self.walkthroughShown = YES;
+    }
     if(!self.walkthroughShown){
         self.walkthroughShown = YES;
         [self showWalkthroughController];
+    } else {
+        prowlistLocation = [[ProwlistLocation alloc] initLocation];
+        prowlistLocation.intervalTimes = 10;
+        prowlistLocation.delegate = self;
     }
 }
 
@@ -182,6 +192,19 @@
     [self presentViewController:modalLoginViewController animated:NO completion:nil];
     
 }
+
+
+#pragma ProwlistLocationDelegate
+
+- (void) locationStopped {
+    
+}
+
+
+- (void) locationNotEnabled {
+    [self showMessageToUser:NSLocalizedString(@"The location services are required, please go to settings and grant access permissions.", nil) withTitle:NSLocalizedString(@"Location services required.", nil)];
+}
+
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

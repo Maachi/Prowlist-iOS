@@ -44,6 +44,8 @@
 		637FE2D31BAE5B2500626DBF /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C71BAE5B2500626DBF /* Friend.m */; settings = {ASSET_TAGS = (); }; };
 		637FE2D81BAE5DA700626DBF /* Venue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D51BAE5DA700626DBF /* Venue+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		637FE2D91BAE5DA700626DBF /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D71BAE5DA700626DBF /* Venue.m */; settings = {ASSET_TAGS = (); }; };
+		637FE2DC1BAF316400626DBF /* ProwlistLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2DB1BAF316400626DBF /* ProwlistLocation.m */; settings = {ASSET_TAGS = (); }; };
+		63A422221BAF4F03004E4DAC /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A422211BAF4F03004E4DAC /* NSString+Util.m */; settings = {ASSET_TAGS = (); }; };
 		63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A49F821B23587400D469E2 /* DetailVenueViewController.m */; };
 		63E2E75E1B2501B200B2FAA5 /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */; };
 		63E2E7611B2501DA00B2FAA5 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E2E7601B2501DA00B2FAA5 /* VenueCell.m */; };
@@ -138,6 +140,10 @@
 		637FE2D51BAE5DA700626DBF /* Venue+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Venue+CoreDataProperties.m"; path = "Classes/Models/Venue+CoreDataProperties.m"; sourceTree = "<group>"; };
 		637FE2D61BAE5DA700626DBF /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Venue.h; path = Classes/Models/Venue.h; sourceTree = "<group>"; };
 		637FE2D71BAE5DA700626DBF /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Venue.m; path = Classes/Models/Venue.m; sourceTree = "<group>"; };
+		637FE2DA1BAF316400626DBF /* ProwlistLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProwlistLocation.h; path = Classes/Utils/ProwlistLocation.h; sourceTree = "<group>"; };
+		637FE2DB1BAF316400626DBF /* ProwlistLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProwlistLocation.m; path = Classes/Utils/ProwlistLocation.m; sourceTree = "<group>"; };
+		63A422201BAF4F03004E4DAC /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Util.h"; path = "Classes/Utils/NSString+Util.h"; sourceTree = "<group>"; };
+		63A422211BAF4F03004E4DAC /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Util.m"; path = "Classes/Utils/NSString+Util.m"; sourceTree = "<group>"; };
 		63A49F811B23587300D469E2 /* DetailVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailVenueViewController.h; path = Classes/Controllers/DetailVenueViewController.h; sourceTree = "<group>"; };
 		63A49F821B23587400D469E2 /* DetailVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailVenueViewController.m; path = Classes/Controllers/DetailVenueViewController.m; sourceTree = "<group>"; };
 		63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenueCell.xib; path = Classes/Controls/VenueCell/VenueCell.xib; sourceTree = "<group>"; };
@@ -321,6 +327,10 @@
 			children = (
 				63E2E7631B2D0C3000B2FAA5 /* UIImage+Util.h */,
 				63E2E7641B2D0C3000B2FAA5 /* UIImage+Util.m */,
+				63A422201BAF4F03004E4DAC /* NSString+Util.h */,
+				63A422211BAF4F03004E4DAC /* NSString+Util.m */,
+				637FE2DA1BAF316400626DBF /* ProwlistLocation.h */,
+				637FE2DB1BAF316400626DBF /* ProwlistLocation.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -547,6 +557,11 @@
 				TargetAttributes = {
 					63EF87311AFA8D4A001B9C7B = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					63EF874A1AFA8D4A001B9C7B = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -650,6 +665,7 @@
 				634655F21AFF136D00B3AC61 /* WalkthroughViewController.m in Sources */,
 				637FE2A61BAE342F00626DBF /* Prowlist.xcdatamodeld in Sources */,
 				637FE2AE1BAE5AD700626DBF /* Session+CoreDataProperties.m in Sources */,
+				637FE2DC1BAF316400626DBF /* ProwlistLocation.m in Sources */,
 				6352264F1B1AE20500544F34 /* MenuBase.m in Sources */,
 				F66156231B38F6DA001BDAD4 /* FriendsViewController.m in Sources */,
 				635226411B175E3C00544F34 /* VenueContent.m in Sources */,
@@ -678,6 +694,7 @@
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,
 				634656021B1132BF00B3AC61 /* SmallUserCell.m in Sources */,
 				63EF877A1AFDB310001B9C7B /* CellTransitionSegue.m in Sources */,
+				63A422221BAF4F03004E4DAC /* NSString+Util.m in Sources */,
 				63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

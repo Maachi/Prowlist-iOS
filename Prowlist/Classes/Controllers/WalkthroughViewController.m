@@ -8,17 +8,20 @@
 
 #import "WalkthroughViewController.h"
 #import "PageIndicator.h"
+#import <CoreLocation/CoreLocation.h>
+#import "Session.h"
+#import "ProwlistLocation.h"
 
-@interface WalkthroughViewController (){
-
+@interface WalkthroughViewController ()<ProwlistLocationDelegate> {
     __weak IBOutlet PageIndicator *pageIndicator;
     NSInteger previousPage;
     __weak IBOutlet UILabel *titleFooter;
     __weak IBOutlet UIView *footer;
     NSArray *sections;
     __weak IBOutlet UIButton *startWIth;
+    
+    ProwlistLocation *prowlistLocation;
 }
-
 @end
 
 @implementation WalkthroughViewController
@@ -27,6 +30,26 @@
     [super viewDidLoad];
     self.scrollView.delegate = self;
     sections = @[@"Personal", @"Upgraded", @"Tailored", @"Prowlist"];
+    
+    /**
+     * Saving the walkthrough variable, in order to do not display this again.
+     **/
+    Session *session = [Session create];
+    session.key = @"WALKTHROUGH_VIEW_SHOWN";
+    session.value = @"YES";
+    session.date = [NSDate date];
+    [session save];
+    /**
+     * Request location permission
+     **/
+    [self askForLocationServices];
+
+}
+
+
+- (void) askForLocationServices {
+    prowlistLocation = [[ProwlistLocation alloc] initLocation];
+    prowlistLocation.delegate = self;
 }
 
 
@@ -43,6 +66,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma ProwlistLocationDelegate
+
+- (void) locationStopped {
+    
+}
+
+
+- (void) locationNotEnabled {
+    [self showMessageToUser:NSLocalizedString(@"The location services are required, please go to settings and grant access permissions.", nil) withTitle:NSLocalizedString(@"Location services required.", nil)];
+}
+
+#pragma Helpers
 
 - (void) changeTitle:(NSString *)title {
     

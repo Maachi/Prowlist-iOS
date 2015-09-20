@@ -46,10 +46,10 @@ enum ProwlistControllerStyle
 - (void) addMenu;
 - (void) removeMenu;
 
--(void) showHeader;
--(void) hideHeader;
+- (void) showHeader;
+- (void) hideHeader;
 
--(void) addEventsMenu;
-
+- (void) addEventsMenu;
 - (void) formControllerEvents;
+- (void) showMessageToUser:(NSString *)message withTitle:(NSString *)title;
 @end

@@ -17,5 +17,15 @@
  */
 - (UIImage *)imageWithColor:(UIColor *)color;
 
+- (UIImage *)fixOrientationOfImage;
+
+- (UIImage *) resizeToSize:(CGSize) newSize cropWithRect:(CGRect) cropRect;
+
+- (NSString *) storedImageInDisk:(NSString *)imageNamed;
+
+- (NSString *) localImage:(NSString *)imageNamed;
+
+- (UIImage*) resizeImage:(CGSize)toSize;
+
 
 @end

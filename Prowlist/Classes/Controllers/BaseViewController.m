@@ -138,6 +138,17 @@
 }
 
 
+- (void) showMessageToUser:(NSString *)message withTitle:(NSString *)title {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"Aceptar"
+                                          otherButtonTitles:@"Cancelar", nil];
+    [alert show];
+}
+
+
+
 
 - (void) showPaymentsViewContoller {
     UIStoryboard *storyBoard = [self storyboard];
@@ -294,6 +305,13 @@
 }
 */
 
+- (IBAction)showMoreOptions:(id)sender {
+    
+    if(_menuView){
+        [self showProfileMenu];
+    }
+    
+}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
