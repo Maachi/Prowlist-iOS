@@ -13,6 +13,18 @@
 @class ContentBase;
 
 
+/**
+ *  Enumerates user cache time
+ */
+enum ProwlistUserRefreshCacheTime
+{
+    ProwlistUserRefreshCacheTimeFast = 1,
+    ProwlistUserRefreshCacheTimeInterval = 5,
+    ProwlistUserRefreshCacheTimeModerate = 30,
+    ProwlistUserRefreshCacheTimeDay = 1440,
+    ProwlistUserRefreshCacheTimeMonth = 438290639
+};
+
 enum ProwlistControllerStyle
 {
     ProwlistControllerStyleDefault = 1,

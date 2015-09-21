@@ -30,12 +30,17 @@
         if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [_locationManager requestWhenInUseAuthorization];
         }
-        if ([CLLocationManager locationServicesEnabled]) {
-            [_locationManager startUpdatingLocation];
-        }
+        [self startBroadCasting];
+    }
+    return self;
+}
+
+
+- (void) startBroadCasting {
+    if ([CLLocationManager locationServicesEnabled]) {
+        [_locationManager startUpdatingLocation];
     }
     [self performSelector:@selector(checkPermission) withObject:nil afterDelay:2];
-    return self;
 }
 
 
@@ -60,6 +65,7 @@
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:_locationManager.location.coordinate.latitude longitude:_locationManager.location.coordinate.longitude];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error){
+        _isBroadcasting = YES;
         if (!error){
             if(placemarks.count > 0) {
                 for (CLPlacemark *placemark in placemarks){
@@ -76,6 +82,7 @@
                                 }
                                 [locationObject save];
                             }
+                            _isBroadcasting = NO;
                             [_locationManager stopUpdatingLocation];
                             if (_delegate){
                                 if([_delegate respondsToSelector:@selector(locationStopped)]){
@@ -87,6 +94,9 @@
                     count++;
                 }
             }
+        } else {
+            _isBroadcasting = NO;
+            [_locationManager stopUpdatingLocation];
         }
     }];
 }

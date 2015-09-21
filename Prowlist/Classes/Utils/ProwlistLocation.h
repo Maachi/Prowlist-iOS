@@ -21,5 +21,9 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) NSInteger intervalTimes;
 @property (strong, nonatomic) id <ProwlistLocationDelegate> delegate;
+@property (nonatomic) BOOL isBroadcasting;
+
+
 - (instancetype) initLocation;
+- (void) startBroadCasting;
 @end

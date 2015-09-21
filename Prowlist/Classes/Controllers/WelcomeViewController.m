@@ -15,6 +15,7 @@
     __weak IBOutlet UIView *headerWelcome;
     ProwlistLocation *prowlistLocation;
     NSArray *data;
+    NSDate *lastTimeRequestLocation;
 }
 @end
 
@@ -167,9 +168,19 @@
         self.walkthroughShown = YES;
         [self showWalkthroughController];
     } else {
-        prowlistLocation = [[ProwlistLocation alloc] initLocation];
-        prowlistLocation.intervalTimes = 10;
-        prowlistLocation.delegate = self;
+        if(!prowlistLocation){
+            prowlistLocation = [[ProwlistLocation alloc] initLocation];
+            prowlistLocation.intervalTimes = 5;
+            prowlistLocation.delegate = self;
+            lastTimeRequestLocation = [NSDate date];
+        } else {
+            long timeIntervalInMinutes = (long)([[NSDate date] timeIntervalSinceDate:lastTimeRequestLocation] / 60);
+            if (timeIntervalInMinutes>ProwlistUserRefreshCacheTimeInterval){
+                if(!prowlistLocation.isBroadcasting){
+                    [prowlistLocation startBroadCasting];
+                }
+            }
+        }
     }
 }
 
