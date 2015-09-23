@@ -34,6 +34,7 @@
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
             <string>ITCFranklinGothicStd-Book</string>
+            <string>ITCFranklinGothicStd-Book</string>
         </mutableArray>
         <mutableArray key="ITCFranklinGothicStd-Demi.otf">
             <string>ITCFranklinGothicStd-Demi</string>
@@ -864,6 +865,25 @@
                                     <action selector="saveAndClose:" destination="Y0b-9B-aRm" eventType="touchUpInside" id="XCK-y8-LiX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEk-XI-Bh2" userLabel="Menu">
+                                <rect key="frame" x="24" y="25" width="548" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="H5d-Ug-8fX"/>
+                                    <constraint firstAttribute="height" constant="40" id="ygG-K4-0FS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
+                                <state key="normal" title="  Back" image="back-arrow">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H5d-Ug-8fX"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="goBack:" destination="Y0b-9B-aRm" eventType="touchUpInside" id="otX-vT-1jz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -871,6 +891,8 @@
                             <constraint firstItem="hfv-na-tdZ" firstAttribute="top" secondItem="ydh-hK-QGz" secondAttribute="bottom" constant="40" id="44L-Ho-a8s"/>
                             <constraint firstItem="SrH-a2-04i" firstAttribute="top" secondItem="NhA-PG-Ykt" secondAttribute="bottom" constant="-20" id="7nx-Cu-1Jg"/>
                             <constraint firstItem="SrH-a2-04i" firstAttribute="leading" secondItem="Wiv-l9-Q7y" secondAttribute="leadingMargin" constant="-16" id="7sG-jv-bFa"/>
+                            <constraint firstItem="BEk-XI-Bh2" firstAttribute="leading" secondItem="Wiv-l9-Q7y" secondAttribute="leadingMargin" constant="4" id="9xe-OU-eFk"/>
+                            <constraint firstItem="BEk-XI-Bh2" firstAttribute="top" secondItem="NhA-PG-Ykt" secondAttribute="bottom" constant="5" id="Huq-hm-x8e"/>
                             <constraint firstItem="SrH-a2-04i" firstAttribute="leading" secondItem="Wiv-l9-Q7y" secondAttribute="leadingMargin" constant="-16" id="IdN-MS-ids"/>
                             <constraint firstItem="hfv-na-tdZ" firstAttribute="top" secondItem="SrH-a2-04i" secondAttribute="bottom" id="JrC-Qk-RBo"/>
                             <constraint firstItem="ydh-hK-QGz" firstAttribute="top" secondItem="Wiv-l9-Q7y" secondAttribute="top" id="PvQ-ju-sLF"/>
@@ -882,6 +904,7 @@
                             <constraint firstItem="khz-9C-Bu4" firstAttribute="leading" secondItem="Wiv-l9-Q7y" secondAttribute="leadingMargin" constant="-16" id="bui-My-uc1"/>
                             <constraint firstItem="hfv-na-tdZ" firstAttribute="top" secondItem="khz-9C-Bu4" secondAttribute="bottom" id="cj6-SB-HSn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SrH-a2-04i" secondAttribute="trailing" constant="-16" id="fan-Sx-eAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BEk-XI-Bh2" secondAttribute="trailing" constant="8" id="geC-6e-0TH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

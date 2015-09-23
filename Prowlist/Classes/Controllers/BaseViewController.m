@@ -25,9 +25,6 @@
     _theme = [ProwlistThemeManager sharedTheme];
 }
 
-- (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;
@@ -304,6 +301,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (IBAction)goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)showMoreOptions:(id)sender {
     
