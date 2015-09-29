@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setSession];
     data = @[
              @{
                  @"name" : @"Los Angeles",

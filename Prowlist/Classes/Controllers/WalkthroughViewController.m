@@ -39,10 +39,6 @@
     session.value = @"YES";
     session.date = [NSDate date];
     [session save];
-    /**
-     * Request location permission
-     **/
-    [self askForLocationServices];
 
 }
 

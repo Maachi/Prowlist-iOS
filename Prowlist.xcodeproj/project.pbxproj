@@ -45,6 +45,8 @@
 		637FE2D81BAE5DA700626DBF /* Venue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D51BAE5DA700626DBF /* Venue+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		637FE2D91BAE5DA700626DBF /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D71BAE5DA700626DBF /* Venue.m */; settings = {ASSET_TAGS = (); }; };
 		637FE2DC1BAF316400626DBF /* ProwlistLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2DB1BAF316400626DBF /* ProwlistLocation.m */; settings = {ASSET_TAGS = (); }; };
+		6397DF301BBA1DD00035EC43 /* Prowlist-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6397DF2F1BBA1DD00035EC43 /* Prowlist-Config.plist */; settings = {ASSET_TAGS = (); }; };
+		6397DF341BBA1F2C0035EC43 /* ProwlistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6397DF331BBA1F2C0035EC43 /* ProwlistRequest.m */; settings = {ASSET_TAGS = (); }; };
 		63A422221BAF4F03004E4DAC /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A422211BAF4F03004E4DAC /* NSString+Util.m */; settings = {ASSET_TAGS = (); }; };
 		63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A49F821B23587400D469E2 /* DetailVenueViewController.m */; };
 		63E2E75E1B2501B200B2FAA5 /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */; };
@@ -142,6 +144,9 @@
 		637FE2D71BAE5DA700626DBF /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Venue.m; path = Classes/Models/Venue.m; sourceTree = "<group>"; };
 		637FE2DA1BAF316400626DBF /* ProwlistLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProwlistLocation.h; path = Classes/Utils/ProwlistLocation.h; sourceTree = "<group>"; };
 		637FE2DB1BAF316400626DBF /* ProwlistLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProwlistLocation.m; path = Classes/Utils/ProwlistLocation.m; sourceTree = "<group>"; };
+		6397DF2F1BBA1DD00035EC43 /* Prowlist-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Prowlist-Config.plist"; path = "Resources/Configuration/Prowlist-Config.plist"; sourceTree = "<group>"; };
+		6397DF321BBA1F2C0035EC43 /* ProwlistRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProwlistRequest.h; path = Classes/Request/ProwlistRequest.h; sourceTree = "<group>"; };
+		6397DF331BBA1F2C0035EC43 /* ProwlistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProwlistRequest.m; path = Classes/Request/ProwlistRequest.m; sourceTree = "<group>"; };
 		63A422201BAF4F03004E4DAC /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Util.h"; path = "Classes/Utils/NSString+Util.h"; sourceTree = "<group>"; };
 		63A422211BAF4F03004E4DAC /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Util.m"; path = "Classes/Utils/NSString+Util.m"; sourceTree = "<group>"; };
 		63A49F811B23587300D469E2 /* DetailVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailVenueViewController.h; path = Classes/Controllers/DetailVenueViewController.h; sourceTree = "<group>"; };
@@ -312,6 +317,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		6397DF311BBA1ED10035EC43 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6397DF321BBA1F2C0035EC43 /* ProwlistRequest.h */,
+				6397DF331BBA1F2C0035EC43 /* ProwlistRequest.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
 		63E2E75C1B25018700B2FAA5 /* VenueCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +390,7 @@
 			children = (
 				63EF87361AFA8D4A001B9C7B /* Info.plist */,
 				63EF87371AFA8D4A001B9C7B /* main.m */,
+				6397DF2F1BBA1DD00035EC43 /* Prowlist-Config.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -400,6 +415,7 @@
 		63EF875B1AFC223A001B9C7B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6397DF311BBA1ED10035EC43 /* Request */,
 				637FE2A91BAE5AB500626DBF /* Models */,
 				63E2E7621B2D0BB800B2FAA5 /* Utils */,
 				634655DE1AFECC7D00B3AC61 /* Theme */,
@@ -602,6 +618,7 @@
 				634655FF1B111D9900B3AC61 /* SmallUserCell.xib in Resources */,
 				634655ED1AFF05D300B3AC61 /* ITCFranklinGothicStd-Demi.otf in Resources */,
 				634655E71AFEFADF00B3AC61 /* StyleGuide.xib in Resources */,
+				6397DF301BBA1DD00035EC43 /* Prowlist-Config.plist in Resources */,
 				63EF87461AFA8D4A001B9C7B /* LaunchScreen.xib in Resources */,
 				63EF87431AFA8D4A001B9C7B /* Images.xcassets in Resources */,
 				6352264C1B1ABFB100544F34 /* MenuBase.xib in Resources */,
@@ -690,6 +707,7 @@
 				637FE2D91BAE5DA700626DBF /* Venue.m in Sources */,
 				634655F61AFF2D6900B3AC61 /* PageIndicator.m in Sources */,
 				63EF87621AFC2321001B9C7B /* WelcomeViewController.m in Sources */,
+				6397DF341BBA1F2C0035EC43 /* ProwlistRequest.m in Sources */,
 				63EF875F1AFC228A001B9C7B /* BaseViewController.m in Sources */,
 				63EF87381AFA8D4A001B9C7B /* main.m in Sources */,
 				634656021B1132BF00B3AC61 /* SmallUserCell.m in Sources */,

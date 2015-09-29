@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProwlistTheme.h"
 #import "MenuBase.h"
+#import "ProwlistRequest.h"
 
 @class ContentBase;
 
@@ -60,6 +61,8 @@ enum ProwlistControllerStyle
 
 - (void) showHeader;
 - (void) hideHeader;
+
+- (void) setSession;
 
 - (void) addEventsMenu;
 - (void) formControllerEvents;

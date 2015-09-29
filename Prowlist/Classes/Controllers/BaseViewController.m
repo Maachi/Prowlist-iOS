@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import "ContentBase.h"
+#import "Session.h"
+#import "Location.h"
 
 @interface BaseViewController ()<UIGestureRecognizerDelegate, UIBarPositioningDelegate> {
     UIView *displayView;
@@ -23,6 +25,29 @@
     [super viewDidLoad];
     [self hideHeader];
     _theme = [ProwlistThemeManager sharedTheme];
+}
+
+
+- (void) setSession {
+    if(![Session find:@"key=='PROWLIST_USER_TOKEN'"]){
+        NSLog(@"No hay token....");
+        ProwlistRequest *request = [[ProwlistRequest alloc] init];
+        [request signup:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
+            if(!error){
+                Session *session = [Session create];
+                session.key = @"PROWLIST_USER_TOKEN";
+                session.value = [responseObject objectForKey:@"token"];
+                session.date = [NSDate date];
+                [session save];
+            }
+        }];
+    } else {
+        for (Location *location in [Location all]){
+            if(!location.idLocation){
+                
+            }
+        }
+    }
 }
 
 
