@@ -17,5 +17,7 @@
 @dynamic state;
 @dynamic country;
 @dynamic idLocation;
+@dynamic longitude;
+@dynamic latitude;
 
 @end

@@ -34,4 +34,6 @@
 
 - (void) signup:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response;
 
+- (void) updateMember:(NSDictionary *)form response:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response;
+
 @end

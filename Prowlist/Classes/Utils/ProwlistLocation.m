@@ -75,6 +75,8 @@
                             locationObject = [Location find:@"city == %@ AND country == %@", [locationInformation objectForKey:@"City"], [locationInformation objectForKey:@"Country"]];
                             if(!locationObject){
                                 locationObject = [Location create];
+                                locationObject.latitude = @(_locationManager.location.coordinate.latitude);
+                                locationObject.longitude = @(_locationManager.location.coordinate.longitude);
                                 locationObject.city = [locationInformation objectForKey:@"City"];
                                 locationObject.country = [locationInformation objectForKey:@"Country"];
                                 if ([locationInformation objectForKey:@"State"]){

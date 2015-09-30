@@ -14,6 +14,8 @@
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idLocation" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
@@ -58,12 +60,12 @@
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Session" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Venue" positionX="-54" positionY="18" width="128" height="270"/>
         <element name="Friend" positionX="-36" positionY="27" width="128" height="105"/>
-        <element name="Profile" positionX="0" positionY="45" width="128" height="210"/>
         <element name="Like" positionX="18" positionY="63" width="128" height="75"/>
+        <element name="Location" positionX="-9" positionY="90" width="128" height="135"/>
+        <element name="Profile" positionX="0" positionY="45" width="128" height="210"/>
+        <element name="Session" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Tag" positionX="36" positionY="81" width="128" height="105"/>
-        <element name="Location" positionX="-9" positionY="90" width="128" height="105"/>
+        <element name="Venue" positionX="-54" positionY="18" width="128" height="270"/>
     </elements>
 </model>

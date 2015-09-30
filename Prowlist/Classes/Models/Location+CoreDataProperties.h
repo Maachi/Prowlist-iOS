@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *state;
 @property (nullable, nonatomic, retain) NSString *country;
 @property (nullable, nonatomic, retain) NSNumber *idLocation;
+@property (nullable, nonatomic, retain) NSNumber *latitude;
+@property (nullable, nonatomic, retain) NSNumber *longitude;
 
 @end
 

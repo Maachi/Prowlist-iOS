@@ -10,6 +10,15 @@
 
 @implementation Location
 
-// Insert code here to add functionality to your managed object subclass
+
+
+-(NSDictionary *) serialize {
+    return @{
+             @"city": self.city,
+             @"country" : self.country,
+             @"latitude" : self.latitude,
+             @"longitude" : self.longitude
+            };
+}
 
 @end

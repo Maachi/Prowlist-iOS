@@ -12,6 +12,7 @@
 #import "ProwlistRequest.h"
 
 @class ContentBase;
+@class Session;
 
 
 /**
@@ -46,6 +47,9 @@ enum ProwlistControllerStyle
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (strong, nonatomic) MenuBase *menuView;
 @property (nonatomic) enum ProwlistControllerStyle controllerStyle;
+
+
+@property (strong, nonatomic) Session *token;
 
 @property (nonatomic) CGPoint lastScrollPosition;
 

@@ -57,7 +57,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     if (_token){
-        [manager.requestSerializer setValue:[self tokenForTheRequest] forHTTPHeaderField:@"Authorization"];
+        [manager.requestSerializer setValue:_token forHTTPHeaderField:@"Prowlist-User"];
     }
     [manager POST:url parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject){
@@ -81,7 +81,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     if (_token){
-        [manager.requestSerializer setValue:[self tokenForTheRequest] forHTTPHeaderField:@"Authorization"];
+        [manager.requestSerializer setValue:_token forHTTPHeaderField:@"Prowlist-User"];
     }
     [manager GET:url parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject){
@@ -101,6 +101,20 @@
 - (void) signup:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response {
     NSString *service = [self getServiceWithName:@"signup"];
     [self request:service success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if(response){
+            response(nil, operation, responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if(response){
+            response(error, operation, nil);
+        }
+    }];
+}
+
+
+- (void) updateMember:(NSDictionary *)form response:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response {
+    NSString *service = [self getServiceWithName:@"member-update"];
+    [self request:service withParams:form success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(response){
             response(nil, operation, responseObject);
         }
