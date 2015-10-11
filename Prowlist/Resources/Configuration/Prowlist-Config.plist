@@ -7,7 +7,7 @@
 	<key>servers</key>
 	<dict>
 		<key>development</key>
-		<string>http://10.0.1.19:8000</string>
+		<string>http://localhost:8000</string>
 		<key>stage</key>
 		<string>http://prowlist.com</string>
 		<key>production</key>
@@ -16,9 +16,9 @@
 	<key>api</key>
 	<dict>
 		<key>signup</key>
-		<string>/api/v1/members/quick-signup/</string>
+		<string>/api/members/quick-signup/</string>
 		<key>member-update</key>
-		<string>/api/v1/members/update/</string>
+		<string>/api/members/update/</string>
 	</dict>
 </dict>
 </plist>
