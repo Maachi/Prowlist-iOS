@@ -28,26 +28,27 @@
 		6352264F1B1AE20500544F34 /* MenuBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352264E1B1AE20500544F34 /* MenuBase.m */; };
 		635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226511B1CCC9300544F34 /* ProfileViewController.m */; };
 		635226561B1EAE3700544F34 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635226551B1EAE3700544F34 /* ProductDetailViewController.m */; };
-		637FE2A61BAE342F00626DBF /* Prowlist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2A41BAE342F00626DBF /* Prowlist.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		6364CADE1BE30AFD00963BCE /* SynchronizeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364CADD1BE30AFD00963BCE /* SynchronizeManager.m */; };
+		637FE2A61BAE342F00626DBF /* Prowlist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2A41BAE342F00626DBF /* Prowlist.xcdatamodeld */; };
 		637FE2A81BAE347100626DBF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637FE2A71BAE347100626DBF /* CoreData.framework */; };
-		637FE2AE1BAE5AD700626DBF /* Session+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2AB1BAE5AD700626DBF /* Session+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2AF1BAE5AD700626DBF /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2AD1BAE5AD700626DBF /* Session.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2C81BAE5B2500626DBF /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B11BAE5B2500626DBF /* Location+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2C91BAE5B2500626DBF /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B31BAE5B2500626DBF /* Location.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2CA1BAE5B2500626DBF /* Profile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B51BAE5B2500626DBF /* Profile+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2CB1BAE5B2500626DBF /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B71BAE5B2500626DBF /* Profile.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2CE1BAE5B2500626DBF /* Like+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2BD1BAE5B2500626DBF /* Like+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2CF1BAE5B2500626DBF /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2BF1BAE5B2500626DBF /* Like.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D01BAE5B2500626DBF /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C11BAE5B2500626DBF /* Tag+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D11BAE5B2500626DBF /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C31BAE5B2500626DBF /* Tag.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D21BAE5B2500626DBF /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C51BAE5B2500626DBF /* Friend+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D31BAE5B2500626DBF /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C71BAE5B2500626DBF /* Friend.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D81BAE5DA700626DBF /* Venue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D51BAE5DA700626DBF /* Venue+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2D91BAE5DA700626DBF /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D71BAE5DA700626DBF /* Venue.m */; settings = {ASSET_TAGS = (); }; };
-		637FE2DC1BAF316400626DBF /* ProwlistLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2DB1BAF316400626DBF /* ProwlistLocation.m */; settings = {ASSET_TAGS = (); }; };
-		6397DF301BBA1DD00035EC43 /* Prowlist-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6397DF2F1BBA1DD00035EC43 /* Prowlist-Config.plist */; settings = {ASSET_TAGS = (); }; };
-		6397DF341BBA1F2C0035EC43 /* ProwlistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6397DF331BBA1F2C0035EC43 /* ProwlistRequest.m */; settings = {ASSET_TAGS = (); }; };
-		63A422221BAF4F03004E4DAC /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A422211BAF4F03004E4DAC /* NSString+Util.m */; settings = {ASSET_TAGS = (); }; };
+		637FE2AE1BAE5AD700626DBF /* Session+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2AB1BAE5AD700626DBF /* Session+CoreDataProperties.m */; };
+		637FE2AF1BAE5AD700626DBF /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2AD1BAE5AD700626DBF /* Session.m */; };
+		637FE2C81BAE5B2500626DBF /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B11BAE5B2500626DBF /* Location+CoreDataProperties.m */; };
+		637FE2C91BAE5B2500626DBF /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B31BAE5B2500626DBF /* Location.m */; };
+		637FE2CA1BAE5B2500626DBF /* Profile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B51BAE5B2500626DBF /* Profile+CoreDataProperties.m */; };
+		637FE2CB1BAE5B2500626DBF /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2B71BAE5B2500626DBF /* Profile.m */; };
+		637FE2CE1BAE5B2500626DBF /* Like+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2BD1BAE5B2500626DBF /* Like+CoreDataProperties.m */; };
+		637FE2CF1BAE5B2500626DBF /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2BF1BAE5B2500626DBF /* Like.m */; };
+		637FE2D01BAE5B2500626DBF /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C11BAE5B2500626DBF /* Tag+CoreDataProperties.m */; };
+		637FE2D11BAE5B2500626DBF /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C31BAE5B2500626DBF /* Tag.m */; };
+		637FE2D21BAE5B2500626DBF /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C51BAE5B2500626DBF /* Friend+CoreDataProperties.m */; };
+		637FE2D31BAE5B2500626DBF /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2C71BAE5B2500626DBF /* Friend.m */; };
+		637FE2D81BAE5DA700626DBF /* Venue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D51BAE5DA700626DBF /* Venue+CoreDataProperties.m */; };
+		637FE2D91BAE5DA700626DBF /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2D71BAE5DA700626DBF /* Venue.m */; };
+		637FE2DC1BAF316400626DBF /* ProwlistLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 637FE2DB1BAF316400626DBF /* ProwlistLocation.m */; };
+		6397DF301BBA1DD00035EC43 /* Prowlist-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6397DF2F1BBA1DD00035EC43 /* Prowlist-Config.plist */; };
+		6397DF341BBA1F2C0035EC43 /* ProwlistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6397DF331BBA1F2C0035EC43 /* ProwlistRequest.m */; };
+		63A422221BAF4F03004E4DAC /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A422211BAF4F03004E4DAC /* NSString+Util.m */; };
 		63A49F831B23587400D469E2 /* DetailVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A49F821B23587400D469E2 /* DetailVenueViewController.m */; };
 		63E2E75E1B2501B200B2FAA5 /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2E75D1B2501B200B2FAA5 /* VenueCell.xib */; };
 		63E2E7611B2501DA00B2FAA5 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E2E7601B2501DA00B2FAA5 /* VenueCell.m */; };
@@ -112,6 +113,8 @@
 		635226511B1CCC9300544F34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Classes/Controllers/ProfileViewController.m; sourceTree = "<group>"; };
 		635226541B1EAE3700544F34 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = Classes/Controllers/ProductDetailViewController.h; sourceTree = "<group>"; };
 		635226551B1EAE3700544F34 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = Classes/Controllers/ProductDetailViewController.m; sourceTree = "<group>"; };
+		6364CADC1BE30AFD00963BCE /* SynchronizeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynchronizeManager.h; path = Classes/Utils/SynchronizeManager.h; sourceTree = "<group>"; };
+		6364CADD1BE30AFD00963BCE /* SynchronizeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SynchronizeManager.m; path = Classes/Utils/SynchronizeManager.m; sourceTree = "<group>"; };
 		637FE2A51BAE342F00626DBF /* Prowlist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prowlist.xcdatamodel; sourceTree = "<group>"; };
 		637FE2A71BAE347100626DBF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		637FE2AA1BAE5AD700626DBF /* Session+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Session+CoreDataProperties.h"; path = "Classes/Models/Session+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				63A422211BAF4F03004E4DAC /* NSString+Util.m */,
 				637FE2DA1BAF316400626DBF /* ProwlistLocation.h */,
 				637FE2DB1BAF316400626DBF /* ProwlistLocation.m */,
+				6364CADC1BE30AFD00963BCE /* SynchronizeManager.h */,
+				6364CADD1BE30AFD00963BCE /* SynchronizeManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				634655E41AFECE4C00B3AC61 /* BlackTheme.m in Sources */,
 				637FE2D81BAE5DA700626DBF /* Venue+CoreDataProperties.m in Sources */,
 				635226521B1CCC9300544F34 /* ProfileViewController.m in Sources */,
+				6364CADE1BE30AFD00963BCE /* SynchronizeManager.m in Sources */,
 				63E2E7611B2501DA00B2FAA5 /* VenueCell.m in Sources */,
 				63EF87961B335CD10074F060 /* PaymentViewController.m in Sources */,
 				637FE2CE1BAE5B2500626DBF /* Like+CoreDataProperties.m in Sources */,

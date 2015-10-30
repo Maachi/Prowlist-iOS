@@ -28,37 +28,6 @@
 }
 
 
-- (void) setSession {
-    _token = [Session find:@"key=='PROWLIST_USER_TOKEN'"];
-    if(!_token){
-        ProwlistRequest *request = [[ProwlistRequest alloc] init];
-        [request signup:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
-            if(!error){
-                _token = [Session create];
-                _token.key = @"PROWLIST_USER_TOKEN";
-                _token.value = [responseObject objectForKey:@"token"];
-                _token.date = [NSDate date];
-                [_token save];
-            }
-        }];
-    } else {
-        for (Location *location in [Location all]){
-            if([location.idLocation integerValue] < 1){
-                ProwlistRequest *request = [[ProwlistRequest alloc] init];
-                request.token = _token.value;
-                [request updateMember:[location serialize] response:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
-                    if(!error){
-                        if([responseObject objectForKey:@"last_location"]){
-                            
-                        }
-                    }
-                }];
-            }
-        }
-    }
-}
-
-
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;
 }

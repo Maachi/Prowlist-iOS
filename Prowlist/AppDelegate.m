@@ -7,16 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "Session.h"
+#import "Location.h"
+#import "ProwlistRequest.h"
+#import "SynchronizeManager.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate () {
+    SynchronizeManager *synchronizeManager;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setSession];
     return YES;
 }
 
@@ -40,6 +45,47 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma User Session
+
+- (void) initilizeSynchronizeManager {
+    synchronizeManager = [SynchronizeManager getInstance];
+    synchronizeManager.token = _token;
+    [synchronizeManager getNearVenues];
+}
+
+- (void) setSession {
+    _token = [Session find:@"key=='PROWLIST_USER_TOKEN'"];
+    if(!_token){
+        ProwlistRequest *request = [[ProwlistRequest alloc] init];
+        [request signup:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
+            if(!error){
+                _token = [Session create];
+                _token.key = @"PROWLIST_USER_TOKEN";
+                _token.value = [responseObject objectForKey:@"token"];
+                _token.date = [NSDate date];
+                [_token save];
+                [self initilizeSynchronizeManager];
+            }
+        }];
+    } else {
+        [self initilizeSynchronizeManager];
+        for (Location *location in [Location all]){
+            if([location.idLocation integerValue] < 1){
+                ProwlistRequest *request = [[ProwlistRequest alloc] init];
+                request.token = _token.value;
+                [request updateMember:[location serialize] response:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
+                    if(!error){
+                        if([responseObject objectForKey:@"last_location"]){
+                            
+                        }
+                    }
+                }];
+            }
+        }
+    }
 }
 
 @end

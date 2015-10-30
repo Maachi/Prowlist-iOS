@@ -26,11 +26,10 @@
         }
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
-        _locationManager.pausesLocationUpdatesAutomatically = NO;
         if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [_locationManager requestWhenInUseAuthorization];
         }
-        [self startBroadCasting];
+        //[self startBroadCasting];
     }
     return self;
 }

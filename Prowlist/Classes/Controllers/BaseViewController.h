@@ -66,7 +66,6 @@ enum ProwlistControllerStyle
 - (void) showHeader;
 - (void) hideHeader;
 
-- (void) setSession;
 
 - (void) addEventsMenu;
 - (void) formControllerEvents;

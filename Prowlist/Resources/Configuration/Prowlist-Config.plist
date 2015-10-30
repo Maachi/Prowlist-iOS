@@ -19,6 +19,8 @@
 		<string>/api/members/quick-signup/</string>
 		<key>member-update</key>
 		<string>/api/members/update/</string>
+		<key>near-venues</key>
+		<string>/api/venues/near/</string>
 	</dict>
 </dict>
 </plist>

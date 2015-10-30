@@ -36,4 +36,6 @@
 
 - (void) updateMember:(NSDictionary *)form response:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response;
 
+- (void) getNearVenues:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response;
+
 @end

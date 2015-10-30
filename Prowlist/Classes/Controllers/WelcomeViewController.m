@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setSession];
     data = @[
              @{
                  @"name" : @"Los Angeles",
@@ -174,14 +173,14 @@
             prowlistLocation.intervalTimes = 5;
             prowlistLocation.delegate = self;
             lastTimeRequestLocation = [NSDate date];
-        } else {
-            long timeIntervalInMinutes = (long)([[NSDate date] timeIntervalSinceDate:lastTimeRequestLocation] / 60);
-            if (timeIntervalInMinutes>ProwlistUserRefreshCacheTimeInterval){
-                if(!prowlistLocation.isBroadcasting){
-                    [prowlistLocation startBroadCasting];
-                }
+        }
+        long timeIntervalInMinutes = (long)([[NSDate date] timeIntervalSinceDate:lastTimeRequestLocation] / 60);
+        if (timeIntervalInMinutes>ProwlistUserRefreshCacheTimeFast){
+            if(!prowlistLocation.isBroadcasting){
+                [prowlistLocation startBroadCasting];
             }
         }
+        
     }
 }
 

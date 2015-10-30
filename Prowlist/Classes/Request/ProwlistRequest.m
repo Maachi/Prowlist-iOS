@@ -125,4 +125,20 @@
     }];
 }
 
+
+#pragma Venues services
+
+- (void) getNearVenues:(void (^)(NSError *error, AFHTTPRequestOperation *operation, id responseObject))response {
+    NSString *service = [self getServiceWithName:@"near-venues"];
+    [self request:service success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if(response){
+            response(nil, operation, responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if(response){
+            response(error, operation, nil);
+        }
+    }];
+}
+
 @end
