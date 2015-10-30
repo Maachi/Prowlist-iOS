@@ -50,11 +50,13 @@
 
 #pragma User Session
 
+
 - (void) initilizeSynchronizeManager {
     synchronizeManager = [SynchronizeManager getInstance];
     synchronizeManager.token = _token;
-    [synchronizeManager getNearVenues];
+    [synchronizeManager startSynchronizationInBackground];
 }
+
 
 - (void) setSession {
     _token = [Session find:@"key=='PROWLIST_USER_TOKEN'"];

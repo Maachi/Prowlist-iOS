@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "ObjectiveRecord.h"
 
 @class Location, Tag;
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Venue : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (void) processVenuesResponseFromServer:(NSArray *)venues;
 
 @end
 

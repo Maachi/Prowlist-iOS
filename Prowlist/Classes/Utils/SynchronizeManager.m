@@ -8,6 +8,7 @@
 
 #import "SynchronizeManager.h"
 #import "ProwlistRequest.h"
+#import "Venue.h"
 #import "Session.h"
 
 @interface SynchronizeManager (){
@@ -27,18 +28,23 @@
 }
 
 
+
+- (void) startSynchronizationInBackground {
+    [self getNearVenues];
+}
+
+
 - (void) getNearVenues {
     ProwlistRequest *request = [[ProwlistRequest alloc] init];
     request.token = _token.value;
     [request getNearVenues:^(NSError *error, AFHTTPRequestOperation *operation, id responseObject) {
         if(!error){
-            
+            if([responseObject objectForKey:@"items"]){
+                NSArray *venues = (NSArray *)[responseObject objectForKey:@"items"];
+                [Venue processVenuesResponseFromServer:venues];
+            }
         }
     }];
 }
-
-
-
-
 
 @end

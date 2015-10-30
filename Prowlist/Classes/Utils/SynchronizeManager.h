@@ -14,6 +14,8 @@
 @property (strong, nonatomic) Session *token;
 + (id)getInstance;
 
+
+- (void) startSynchronizationInBackground;
 - (void) getNearVenues;
 
 @end
