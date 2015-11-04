@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>environment</key>
-	<string>development</string>
+	<string>development-remote</string>
 	<key>servers</key>
 	<dict>
 		<key>development</key>
 		<string>http://localhost:8000</string>
+		<key>development-remote</key>
+		<string>http://10.0.1.7:8000</string>
 		<key>stage</key>
 		<string>http://prowlist.com</string>
 		<key>production</key>

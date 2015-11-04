@@ -29,6 +29,10 @@
                 venueObject.latitude = [[venue objectForKey:@"location"] objectForKey:@"latitude"];
                 venueObject.longitude = [[venue objectForKey:@"location"] objectForKey:@"longitude"];
             }
+            if (![[venue objectForKey:@"location"] isEqual:[NSNull null]]){
+                venueObject.latitude = [[venue objectForKey:@"location"] objectForKey:@"latitude"];
+                venueObject.longitude = [[venue objectForKey:@"location"] objectForKey:@"longitude"];
+            }
             [venueObject save];
         }
     }

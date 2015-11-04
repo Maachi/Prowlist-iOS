@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Venue : NSManagedObject
 
+/**
+ *  This method process the remote response inside this function and create the respective set ofof venues by it self.
+ *  @param venues Array of venues, check the api response to check it structure
+ */
 + (void) processVenuesResponseFromServer:(NSArray *)venues;
 
 @end
