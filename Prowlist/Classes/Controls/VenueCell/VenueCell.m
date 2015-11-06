@@ -7,6 +7,7 @@
 //
 
 #import "VenueCell.h"
+#import "Tag.h"
 
 @implementation VenueCell
 
@@ -69,24 +70,20 @@
 }
 
 
--(void) buildTagsInView:(NSArray *) tagsArray {
+-(void) buildTagsInView:(NSSet *) tagsArray {
     
     if(tagsArray){
         int i = 0;
         float xPos = 0;
-        for (NSDictionary *tag in tagsArray){
-            
-            
-            CGSize stringsize =  [[[tag objectForKey:@"label"] uppercaseString] sizeWithAttributes:@{
+        for (Tag *tag in tagsArray){
+            CGSize stringsize =  [[tag.label uppercaseString] sizeWithAttributes:@{
                                     NSFontAttributeName:[UIFont boldSystemFontOfSize:10]
                                 }];
             UIButton *labelView = [[UIButton alloc] initWithFrame:CGRectMake(xPos, 0, stringsize.width+10, 20)];
             labelView.titleLabel.font = [UIFont boldSystemFontOfSize:10];
-            [labelView setTitle:[[tag objectForKey:@"label"] uppercaseString] forState:UIControlStateNormal];
-            labelView.backgroundColor = [self arrayToColor:[tag objectForKey:@"tint"]];
-        
-            [labelView setTitleColor:[self arrayToColor:[tag objectForKey:@"textColor"]] forState:UIControlStateNormal];
-            
+            [labelView setTitle:[tag.label uppercaseString] forState:UIControlStateNormal];
+            labelView.backgroundColor = [self.theme arrayToColorWithDictionary:tag.tint];
+            [labelView setTitleColor:[self.theme arrayToColorWithDictionary:tag.textColor] forState:UIControlStateNormal];
             [_tagsWrapper addSubview:labelView];
             labelView.layer.cornerRadius = 5;
             labelView.layer.masksToBounds = YES;

@@ -49,6 +49,18 @@
     return button;
 }
 
+- (UIColor *) arrayToColorWithDictionary:(NSDictionary *)colorDictionary {
+    UIColor *color = [UIColor whiteColor];
+    if (colorDictionary){
+        float alpha = 1;
+        if([colorDictionary objectForKey:@"alpha"]){
+            alpha = [[colorDictionary objectForKey:@"alpha"] floatValue];
+        }
+        color = [UIColor colorWithRed:[[colorDictionary objectForKey:@"red"] floatValue]/255.0 green:[[colorDictionary objectForKey:@"green"] floatValue]/255.0 blue:[[colorDictionary objectForKey:@"blue"] floatValue]/255.0 alpha:alpha];
+    }
+    return color;
+}
+
 
 - (UIColor *) arrayToColor:(NSArray *)colorArray {
     UIColor *color = [UIColor whiteColor];

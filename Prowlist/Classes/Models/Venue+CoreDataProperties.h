@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *latitude;
 @property (nullable, nonatomic, retain) NSNumber *longitude;
 @property (nullable, nonatomic, retain) NSNumber *idVenue;
+@property (nullable, nonatomic, retain) NSNumber *height;
 @property (nullable, nonatomic, retain) NSString *statusBarDetailColor;
 @property (nullable, nonatomic, retain) id tintColor;
 @property (nullable, nonatomic, retain) NSSet<Tag *> *tags;

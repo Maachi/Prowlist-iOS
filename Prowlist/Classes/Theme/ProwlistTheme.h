@@ -25,7 +25,19 @@
 
 @optional
 
+/**
+ *  <#Description#>
+ *  @param colorArray <#colorArray description#>
+ *  @return <#return value description#>
+ */
 - (UIColor *) arrayToColor:(NSArray *)colorArray;
+
+/**
+ *  <#Description#>
+ *  @param colorDictionary <#colorDictionary description#>
+ *  @return <#return value description#>
+ */
+- (UIColor *) arrayToColorWithDictionary:(NSDictionary *)colorDictionary;
 
 @end
 

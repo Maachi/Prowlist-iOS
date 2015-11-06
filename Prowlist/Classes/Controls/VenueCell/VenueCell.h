@@ -24,5 +24,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *smallDescriptionLabel;
 -(void) changeColorWithColor:(NSArray *) colorArray;
--(void) buildTagsInView:(NSArray *) tagsArray;
+-(void) buildTagsInView:(NSSet *) tagsArray;
 @end

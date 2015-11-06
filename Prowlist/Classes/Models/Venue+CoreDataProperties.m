@@ -27,6 +27,7 @@
 @dynamic statusBarDetailColor;
 @dynamic tintColor;
 @dynamic tags;
+@dynamic height;
 @dynamic location;
 
 @end

@@ -14,7 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Tag : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+/**
+ *  <#Description#>
+ *  @param tags <#tags description#>
+ *  @return <#return value description#>
+ */
++ (NSSet *) processTag:(NSArray *)tags;
 
 @end
 

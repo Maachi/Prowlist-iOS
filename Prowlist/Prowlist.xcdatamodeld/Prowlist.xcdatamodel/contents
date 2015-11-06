@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="idFriend" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,6 +44,7 @@
     </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
         <attribute name="detailPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="idVenue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="logoPicture" optional="YES" attributeType="String" syncable="YES"/>
@@ -66,6 +67,6 @@
         <element name="Profile" positionX="0" positionY="45" width="128" height="210"/>
         <element name="Session" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Tag" positionX="36" positionY="81" width="128" height="105"/>
-        <element name="Venue" positionX="-54" positionY="18" width="128" height="270"/>
+        <element name="Venue" positionX="-54" positionY="18" width="128" height="285"/>
     </elements>
 </model>

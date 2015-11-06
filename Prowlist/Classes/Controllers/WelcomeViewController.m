@@ -9,6 +9,7 @@
 #import "VenueCell.h"
 #import "ProwlistLocation.h"
 #import "Session.h"
+#import "Venue.h"
 
 @interface WelcomeViewController ()<UITableViewDataSource, UITableViewDelegate, ProwlistLocationDelegate>{
     __weak IBOutlet UITableView *tableView;
@@ -23,7 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    data = @[
+    data = [Venue all];
+    /*NSArray *arr = [Venue all];
+    for (Venue *venue in arr){
+        NSLog(@"%@", venue.name);
+    }*/
+    /*data = @[
              @{
                  @"name" : @"Los Angeles",
                  @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
@@ -135,7 +141,7 @@
                              }
                          ]
                  }
-             ];
+             ];*/
     
     [tableView setContentInset:UIEdgeInsetsMake(-20,0,0,0)];
     
@@ -259,8 +265,9 @@
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 {
     CGFloat rowHeight = 220;
-    if ([[data objectAtIndex:indexPath.row] objectForKey:@"height"]){
-        rowHeight = [[[data objectAtIndex:indexPath.row] objectForKey:@"height"] floatValue];
+    Venue *venue = (Venue *)[data objectAtIndex:indexPath.row];
+    if (venue.height){
+        rowHeight = [venue.height floatValue];
     }
     return rowHeight;
 }
@@ -277,7 +284,7 @@
 -(UITableViewCell *) tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"VenueCell";
-    NSDictionary *current = [data objectAtIndex:indexPath.row];
+    Venue *current = (Venue *)[data objectAtIndex:indexPath.row];
     VenueCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     
@@ -286,19 +293,16 @@
     }
     
     
-    cell.titleLabel.text = [current objectForKey:@"name"];
-    cell.smallDescriptionLabel.text = [current objectForKey:@"smallDescription"];
+    cell.titleLabel.text = current.name;
+    cell.smallDescriptionLabel.text = current.smallDescription;
     
-    [cell changeColorWithColor:[current objectForKey:@"tint"]];
-    [cell buildTagsInView:[current objectForKey:@"tags"]];
+    //[cell changeColorWithColor:[current objectForKey:@"tint"]];
+    [cell buildTagsInView:current.tags];
     
-    if([current objectForKey:@"photo"]){
-        cell.image.image = [UIImage imageNamed:[current objectForKey:@"photo"]];
-    }
-    
-    cell.title = @"Hola Mundo";
+    //if([current objectForKey:@"photo"]){
+    //    cell.image.image = [UIImage imageNamed:[current objectForKey:@"photo"]];
+    //}
     [cell render];
-    
     return cell;
 }
 
