@@ -25,124 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     data = [Venue all];
-    /*NSArray *arr = [Venue all];
-    for (Venue *venue in arr){
-        NSLog(@"%@", venue.name);
-    }*/
-    /*data = @[
-             @{
-                 @"name" : @"Los Angeles",
-                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@255, @255, @255],
-                 @"photo":@"losangeles-mockup",
-                 @"height":@470,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"Near You",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             },
-                         @{
-                             @"label" : @"Fast",
-                             @"tint" : @[@128.0, @168.0, @204.0],
-                             @"textColor" : @[@0, @0, @0],
-                             },
-                         @{
-                             @"label" : @"San Francisco",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             }
-                         ]
-                 },
-             @{
-                 @"name" : @"Axiom Hotel, California",
-                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@255, @255, @255],
-                 @"photo":@"sf-mockup",
-                 @"height":@200,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"Near You",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             }
-                         ]
-                 },
-             @{
-                 @"name" : @"New York",
-                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@255, @255, @255],
-                 @"photo":@"times-mockup",
-                 @"height":@300,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"New York",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             },
-                         @{
-                             @"label" : @"Entertaiment",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             }
-                         ]
-                 },
-             @{
-                 @"name" : @"London view",
-                 @"smallDescription": @"",
-                 @"tint" : @[@0, @0, @0],
-                 @"photo":@"london-mockup",
-                 @"height":@120,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"Near You",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             },
-                         @{
-                             @"label" : @"Fast",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             },
-                         @{
-                             @"label" : @"San Francisco",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             }
-                         ]
-                 },
-             @{
-                 @"name" : @"Axiom Hotel",
-                 @"smallDescription": @"Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-                 @"tint" : @[@255, @255, @255],
-                 @"photo":@"chicago-mockup",
-                 @"height":@200,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"Near You",
-                             @"tint" : @[@0, @0, @0],
-                             }
-                         ]
-                 },
-             @{
-                 @"name" : @"Rio de Janeiro",
-                 @"smallDescription": @"This is test for me to learn :)",
-                 @"photo":@"riu-mockup",
-                 @"height":@300,
-                 @"tags" : @[
-                         @{
-                             @"label" : @"Near You",
-                             @"tint" : @[@128.0, @168.0, @204.0],
-                             },
-                         @{
-                             @"label" : @"Fast",
-                             @"tint" : @[@247.0, @207.0, @23.0],
-                             @"textColor" : @[@0, @0, @0],
-                             }
-                         ]
-                 }
-             ];*/
-    
     [tableView setContentInset:UIEdgeInsetsMake(-20,0,0,0)];
     
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -299,9 +181,9 @@
     //[cell changeColorWithColor:[current objectForKey:@"tint"]];
     [cell buildTagsInView:current.tags];
     
-    //if([current objectForKey:@"photo"]){
-    //    cell.image.image = [UIImage imageNamed:[current objectForKey:@"photo"]];
-    //}
+    if(current.detailPhoto){
+        cell.imagePath = current.detailPhoto;
+    }
     [cell render];
     return cell;
 }

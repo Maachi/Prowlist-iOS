@@ -24,5 +24,10 @@
 		<key>near-venues</key>
 		<string>/api/venues/near/</string>
 	</dict>
+	<key>services</key>
+	<dict>
+		<key>image</key>
+		<string>/services/image/[WIDTH]x[HEIGHT]/[IMAGE_PATH]</string>
+	</dict>
 </dict>
 </plist>

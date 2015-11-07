@@ -18,6 +18,14 @@
 }
 
 
+- (NSString *) imagePathService {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Prowlist-Config" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSString *service = [NSString stringWithFormat:@"%@%@", [settings[@"servers"] objectForKey:settings[@"environment"]], [settings[@"services"][@"image"] stringByReplacingOccurrencesOfString:@"[IMAGE_PATH]" withString:self]];
+    return service;
+}
+
+
 -(NSString *) formatTime {
     NSArray *arrayTime = [self componentsSeparatedByString:@":"];
     NSInteger hours = [[arrayTime objectAtIndex:0] integerValue];

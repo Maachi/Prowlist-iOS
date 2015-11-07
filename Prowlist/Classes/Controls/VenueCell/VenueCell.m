@@ -5,7 +5,8 @@
 //  Created by Sebastian Romero on 7/06/15.
 //  Copyright (c) 2015 Maachi. All rights reserved.
 //
-
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "NSString+Util.h"
 #import "VenueCell.h"
 #import "Tag.h"
 
@@ -52,6 +53,19 @@
                 constraint.constant = (8 + value)*-1;
             }
         }];
+    }
+}
+
+
+- (void) setImagePath:(NSString *)imagePath {
+    _imagePath = [imagePath imagePathService];
+    _imagePath = [_imagePath stringByReplacingOccurrencesOfString:@"[WIDTH]x[HEIGHT]" withString:[NSString stringWithFormat:@"%dx%d", 600, 600]];
+    if(_imagePath){
+        [_image sd_setImageWithURL:[NSURL URLWithString:_imagePath]
+                          placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     
+                                 }];
     }
 }
 

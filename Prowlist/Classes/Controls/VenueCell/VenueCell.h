@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *tagButton;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 
+@property (weak, nonatomic) NSString *imagePath;
+
 @property (strong, nonatomic) id <ProwlistTheme> theme;
 @property (weak, nonatomic) IBOutlet UIView *tagsWrapper;
 

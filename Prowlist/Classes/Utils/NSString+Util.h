@@ -21,5 +21,6 @@
 -(NSString *)lastname;
 -(NSDate *)toDate;
 -(NSString *) formatTime;
+- (NSString *) imagePathService;
 
 @end
