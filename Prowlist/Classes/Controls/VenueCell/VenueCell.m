@@ -59,7 +59,7 @@
 
 - (void) setImagePath:(NSString *)imagePath {
     _imagePath = [imagePath imagePathService];
-    _imagePath = [_imagePath stringByReplacingOccurrencesOfString:@"[WIDTH]x[HEIGHT]" withString:[NSString stringWithFormat:@"%dx%d", 600, 600]];
+    _imagePath = [_imagePath stringByReplacingOccurrencesOfString:@"[WIDTH]x[HEIGHT]" withString:[NSString stringWithFormat:@"%dx%d", 800, 400]];
     if(_imagePath){
         [_image sd_setImageWithURL:[NSURL URLWithString:_imagePath]
                           placeholderImage:[UIImage imageNamed:@"placeholder.png"]
